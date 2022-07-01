@@ -1,0 +1,31 @@
+.contact__title{
+    font-size: 200%;
+    margin: 10px;
+}
+
+.contact__content{
+    font-size: 100%;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.contact__input{
+    font-weight: bold;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+input, select{
+    position: absolute;
+    left: 250px;
+}
+
+.contact__submit{
+    position: relative;
+    left: 150px;
+}
+
+textarea{
+    position: relative;
+    left: 150px;
+}
