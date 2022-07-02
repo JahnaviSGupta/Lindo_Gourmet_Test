@@ -1,0 +1,28 @@
+/* table, th, td{
+    border: 1px solid black;
+  } */
+
+*{
+    text-align: left;
+}
+
+.home__categories{
+    /* border-bottom: 2px solid #cecece; */
+    float: left;
+    margin: 50px;
+    display: flex;
+}
+
+.home__categoryname{
+    font-size: 125%;
+    padding: 10px;
+    /* padding-right: 10px; */
+    float: left;
+    background-color: black;
+    color: white;
+}
+
+.home__categories:hover{
+    transform: scale(1.10);
+}
+

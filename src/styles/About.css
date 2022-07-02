@@ -1,0 +1,10 @@
+.about__title{
+    font-size: 200%;
+    margin: 10px;
+}
+
+.about__content{
+    font-size: 100%;
+    margin-left: 175px;
+    margin-right: 175px;
+}
