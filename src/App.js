@@ -11,6 +11,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Categoryentityidpage from "./pages/Categoryentityidpage";
 import Productpage from "./pages/Productpage";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
+          <Route path="/Payment">
+            <Payment />
+          </Route>
           <Route path="/Categoryentityidpage">
             <Categoryentityidpage />
           </Route>
