@@ -3,22 +3,32 @@ import { loadStripe } from "@stripe/stripe-js";
 
 let stripePromise;
 
+// create .env file in root directory with REACT_APP_PK=<publishable key> (no quotations)
+const pk = process.env.REACT_APP_PK;
+// on next line of .env file, include REACT_APP_PRICE=<price api key>
+const itemPrice = process.env.REACT_APP_PRICE;
+
+// loads Stripe
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(process.env.REACT_APP_PK);
+    stripePromise = loadStripe(pk);
   }
 
   return stripePromise;
 };
 
 export default function Payment() {
+  // react useState
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
+
+  // the item being bought
   const item = {
-    price: "price_1LJ7adGJxBRjftygZK4z2w8b",
+    price: itemPrice,
     quantity: 1,
   };
 
+  // generic checkout options for one-time payments
   const checkoutOptions = {
     lineItems: [item],
     mode: "payment",
@@ -26,6 +36,7 @@ export default function Payment() {
     cancelUrl: `${window.location.origin}/cancel`,
   };
 
+  // redirects to integrated Stripe checkout page
   const redirectToCheckout = async () => {
     setLoading(true);
     console.log("redirectToCheckout");
@@ -38,6 +49,7 @@ export default function Payment() {
     setLoading(false);
   };
 
+  // safeguard for general errors
   if (stripeError) alert(stripeError);
 
   return (
