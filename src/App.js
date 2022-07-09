@@ -1,11 +1,15 @@
+// Dependency imports
 import "./styles/App.css";
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// Component imports
 import Header from "./components/Header";
+import Pagebottom from "./components/Pagebottom";
+
+// Page imports
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Pagebottom from "./components/Pagebottom";
 import Categorypage from "./pages/Categorypage";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -14,12 +18,14 @@ import Productpage from "./pages/Productpage";
 import Payment from "./pages/Payment";
 
 function App() {
+  console.log(process.env.REACT_APP_PK);
+
   return (
     <Router>
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/Payment">
+          <Route path="/payment">
             <Payment />
           </Route>
           <Route path="/Categoryentityidpage">
@@ -43,7 +49,7 @@ function App() {
           <Route path="/category">
             <Categorypage />
           </Route>
-          <Route path="/">
+          <Route index path="/">
             <Home />
           </Route>
         </Switch>
