@@ -53,9 +53,9 @@ function Header() {
           </div>
         </Link>
 
-        <div class="dropdown">
-          <button class="dropbtn">Account &#x25BE;</button>
-          <div class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn">Account &#x25BE;</button>
+          <div className="dropdown-content">
             <a href="/">Dashboard</a>
             <a href="/">Profile</a>
             <a href="/">Cart</a>
