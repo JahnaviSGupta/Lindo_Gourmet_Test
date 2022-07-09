@@ -16,7 +16,6 @@ import Privacy from "./pages/Privacy";
 import Categoryentityidpage from "./pages/Categoryentityidpage";
 import Productpage from "./pages/Productpage";
 import Payment from "./pages/Payment";
-import { Fragment } from "react";
 
 function App() {
   return (
