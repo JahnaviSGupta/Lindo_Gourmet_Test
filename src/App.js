@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Component imports
 import Header from "./components/Header";
 import Pagebottom from "./components/Pagebottom";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
 
 // Page imports
 import Home from "./pages/Home";
@@ -20,18 +22,28 @@ import Payment from "./pages/Payment";
 function App() {
   return (
     <BrowserRouter>
+      {/* Header with navbar */}
       <Header />
+
+      {/* Routes */}
       <Routes>
-        <Route path="/Payment" element={<Payment />}></Route>
-        <Route path="/Payment" element={<Categoryentityidpage />}></Route>
-        <Route path="/Payment" element={<Productpage />}></Route>
-        <Route path="/privacy" element={<Privacy />}></Route>
-        <Route path="/terms" element={<Terms />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/category" element={<Categorypage />}></Route>
-        <Route index path="/" element={<Home />}></Route>
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route
+          path="/categoryentityidpage"
+          element={<Categoryentityidpage />}
+        />
+        <Route path="/productpage" element={<Productpage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/category" element={<Categorypage />} />
+        <Route index path="/" element={<Home />} />
       </Routes>
+
+      {/* Footer */}
       <Pagebottom />
     </BrowserRouter>
   );
