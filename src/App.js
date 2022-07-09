@@ -18,8 +18,6 @@ import Productpage from "./pages/Productpage";
 import Payment from "./pages/Payment";
 
 function App() {
-  console.log(process.env.REACT_APP_PK);
-
   return (
     <Router>
       <div className="App">
