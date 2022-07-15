@@ -23,6 +23,14 @@ function Header() {
           </div>
         </Link>
 
+        <Link to="/labelteas" className="header__link">
+          {" "}
+          {/* href will refresh page, Link won't refresh */}
+          <div className="header__option">
+            <span className="header__optionLineOne">Label Teas</span>
+          </div>
+        </Link>
+
         <Link to="/about" className="header__link">
           {" "}
           {/* href will refresh page, Link won't refresh */}
