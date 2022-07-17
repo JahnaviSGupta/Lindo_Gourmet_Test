@@ -1,39 +1,41 @@
 import { useState, useEffect } from "react";
 
 import CartItem from "../components/CartItem";
+import Payment from "../components/Payment";
+
+// testing; remove after
 import AddToCart from "../components/AddToCart";
 
 export default function ShoppingCart() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const itemString = localStorage.getItem("name");
-    console.log(itemString);
-    if (itemString) {
-      const item = JSON.parse(itemString);
-      setItems(item);
-    }
-
-    function checkItems(event) {
-      if (event.key === "name") {
-        const item = JSON.parse(event.newValue);
-        setItems(item);
-      }
-    }
-
-    window.addEventListener("storage", checkItems);
-
-    return () => {
-      window.removeEventListener("storage", checkItems);
-    };
+    const parsedItems = JSON.parse(localStorage.getItem("items"));
+    setItems(parsedItems || []);
   }, []);
+  console.log(items);
+
+  function handleClear() {
+    localStorage.clear();
+    window.location.reload();
+  }
 
   return (
     <div>
       {items.map((i) => (
-        <CartItem name={i.name} price={i.price} img={i.img} />
+        <CartItem
+          key={i.id}
+          name={i.name}
+          price={i.price}
+          quantity={i.quantity}
+        />
       ))}
+
+      {/* testing; remove after */}
       <AddToCart />
+      <button onClick={handleClear}>Clear Cart</button>
+
+      <Payment />
     </div>
   );
 }
