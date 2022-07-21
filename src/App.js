@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Pagebottom from "./components/Pagebottom";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
+import Payment from "./components/Payment";
 
 // Page imports
 import Home from "./pages/Home";
@@ -17,7 +18,8 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Categoryentityidpage from "./pages/Categoryentityidpage";
 import Productpage from "./pages/Productpage";
-import Payment from "./pages/Payment";
+import LabelTeas from "./pages/LabelTeas";
+import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
 
       {/* Routes */}
       <Routes>
+        <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/labelteas" element={<LabelTeas />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
         <Route path="/payment" element={<Payment />} />
