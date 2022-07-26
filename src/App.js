@@ -19,6 +19,7 @@ import Privacy from "./pages/Privacy";
 import Categoryentityidpage from "./pages/Categoryentityidpage";
 import Productpage from "./pages/Productpage";
 import LabelTeas from "./pages/LabelTeas";
+import TeaGifts from "./pages/TeaGifts";
 import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       {/* Routes */}
       <Routes>
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/teagifts" element={<TeaGifts />} />
         <Route path="/labelteas" element={<LabelTeas />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
