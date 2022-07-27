@@ -15,9 +15,8 @@
     margin-top: 10px;
 }
 
-input, select{
+.contact__input input, select{
     position: absolute;
-    left: 250px;
 }
 
 .contact__submit{
@@ -25,7 +24,7 @@ input, select{
     left: 150px;
 }
 
-textarea{
+.contact__input textarea{
     position: relative;
-    left: 150px;
+    width: 100px;
 }
