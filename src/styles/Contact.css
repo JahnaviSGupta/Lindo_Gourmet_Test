@@ -24,7 +24,13 @@
     left: 150px;
 }
 
+<<<<<<< HEAD
 .contact__input textarea{
     position: relative;
     width: 100px;
+=======
+textarea{
+    position: relative;
+    left: 150px;
+>>>>>>> main
 }
