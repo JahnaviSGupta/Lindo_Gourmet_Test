@@ -1,60 +1,42 @@
 import React from "react";
-import "../styles/Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import Dropdown from "react-dropdown";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import LindoGourmetLogo from "../images/LindoGourmetLogo.png";
-import "../styles/dropdown.css";
+
+import "../styles/Header.css";
+
+import MobileNav from "./MobileNav";
+import { HeaderLink } from "./HeaderLink";
+
+import HomeIcon from "@material-ui/icons/Home";
+import InfoIcon from "@material-ui/icons/Info";
+import ContactIcon from "@material-ui/icons/Contacts";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function Header() {
   return (
-    <nav className="header">
-      <Link to="/">
-        <img className="header__logo" src={LindoGourmetLogo} alt="" />
-      </Link>
-
-      <div className="header__nav">
-        <Link to="/" className="header__link">
-          {" "}
-          {/* href will refresh page, Link won't refresh */}
-          <div className="header__option">
-            <span className="header__optionLineOneHome">Home</span>
-          </div>
+    <>
+      <nav className="header">
+        {/* This is the logo link */}
+        <Link to="/">
+          <img className="header__logo" src={LindoGourmetLogo} alt="" />
         </Link>
 
-        <Link to="/about" className="header__link">
-          {" "}
-          {/* href will refresh page, Link won't refresh */}
-          <div className="header__option">
-            <span className="header__optionLineOne">About</span>
-          </div>
-        </Link>
+        {/* This is the search bar and icon*/}
+        <div className="header__searchbar">
+          <input type="text" className="header__searchInput" />
+          <SearchIcon className="header__searchIcon" />
+        </div>
 
-        <Link to="/category" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Products</span>
-          </div>
-        </Link>
-
-        <Link to="/contact" className="header__link">
-          {" "}
-          {/* href will refresh page, Link won't refresh */}
-          <div className="header__option">
-            <span className="header__optionLineOne">Contact</span>
-          </div>
-        </Link>
-
-        <Link to="/" className="header__link">
-          {" "}
-          {/* href will refresh page, Link won't refresh */}
-          <div className="header__option">
-            <span className="header__optionLineOne">Username</span>
-          </div>
-        </Link>
-
+        {/* This is button for account */}
         <div className="dropdown">
-          <button className="dropbtn">Account &#x25BE;</button>
+          <button className="dropbtn">
+            <AccountCircleIcon className="header__accountcircleIconIcon" />
+            &#x25BE;
+          </button>
+
           <div className="dropdown-content">
             <a href="/">Dashboard</a>
             <a href="/">Profile</a>
@@ -64,12 +46,21 @@ function Header() {
           </div>
         </div>
 
-        <div className="header__search">
-          <input type="text" className="header__searchInput" />
-          <SearchIcon className="header__searchIcon" />
+        {/* This is the mobile navbar */}
+        <MobileNav />
+      </nav>
+
+      <nav>
+        <div className="header2">
+          <div className="header__linkContainer">
+            <HeaderLink name={"Home"} linkTo={"/"} />
+            <HeaderLink name={"About"} linkTo={"/about"} />
+            <HeaderLink name={"Product"} linkTo={"/category"} />
+            <HeaderLink name={"Contact"} linkTo={"/contact"} />
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 

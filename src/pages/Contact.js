@@ -31,11 +31,11 @@ function Contact() {
           <option value="information">Additional information</option>
           <option value="others">Others</option>
         </select>
-      </div>
       <div className="contact__content">How can we be of help?</div>
       <textarea id="w3review" name="w3review" rows="12" cols="100"></textarea>
       <br />
       <input className="contact__submit" type="submit" value="Submit"></input>
+      </div>
     </div>
   );
 }
