@@ -8,7 +8,11 @@ function Categorypage() {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:8080/app/category/list");
+      //
+      // use first link to test without server, second to test with server
+      //
+      // const response = await fetch("http://localhost:8080/app/category/list");
+      const response = await fetch("http://lindogourmet.com/app/category/list");
       const jsonData = await response.json();
 
       setTodos(jsonData);
@@ -58,7 +62,11 @@ function Categorypage() {
                     <td className="catpage__categoryimage">
                       <img
                         src={
-                          "http://localhost:8080/images/category?categoryEntityId=" +
+                          //
+                          // use first link to test without server, second to test with server
+                          //
+                          "http://lindogourmet.com/images/category?categoryEntityId=" +
+                          // "http://localhost:8080/images/category?categoryEntityId=" +
                           todo.categoryEntityId +
                           "&action=medium&v=" +
                           todo.version
