@@ -1,0 +1,9 @@
+.instructions {
+  display: block;
+  background-color: red;
+}
+
+.instructions-hidden {
+  position: absolute;
+  left: -1000px;
+}

@@ -6,7 +6,9 @@ export default function HomeCategories() {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:8080/app/category/list");
+      const response = await fetch(
+        "https://lindogourmet.com/app/category/list"
+      );
       const jsonData = await response.json();
 
       setTodos(jsonData);
@@ -48,7 +50,7 @@ export default function HomeCategories() {
                 <td className="home__categoryimage">
                   <img
                     src={
-                      "http://localhost:8080/images/category?categoryEntityId=" +
+                      "http://lindogourmet.com/images/category?categoryEntityId=" +
                       todo.categoryEntityId +
                       "&action=medium&v=" +
                       todo.version
