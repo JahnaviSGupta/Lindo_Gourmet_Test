@@ -22,6 +22,7 @@ import LabelTeas from "./pages/LabelTeas";
 import TeaGifts from "./pages/TeaGifts";
 import ShoppingCart from "./pages/ShoppingCart";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       {/* Routes */}
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/teagifts" element={<TeaGifts />} />
         <Route path="/labelteas" element={<LabelTeas />} />
