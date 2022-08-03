@@ -11,7 +11,11 @@ function Categoryentityidpage() {
   const getTodos = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/app/product/listbycategory?categoryEntityId=" +
+        //
+        // use first link to test without server, second to test with server
+        //
+        "http://lindogourmet.com/app/product/listbycategory?categoryEntityId=" +
+          // "http://localhost:8080/app/product/listbycategory?categoryEntityId=" +
           state.id
       );
       const jsonData = await response.json();
@@ -30,7 +34,7 @@ function Categoryentityidpage() {
   const getTodos2 = async () => {
     try {
       const response2 = await fetch(
-        "http://localhost:8080/app/category/textlongdescription?categoryEntityId=" +
+        "http://lindogourmet.com/app/category/textlongdescription?categoryEntityId=" +
           state.id
       );
       const jsonData2 = await response2.text();
@@ -51,7 +55,7 @@ function Categoryentityidpage() {
       <div className="catentity__longdscrpt">
         <img
           src={
-            "http://localhost:8080/images/category?categoryEntityId=" +
+            "http://lindogourmet.com/images/category?categoryEntityId=" +
             state.id +
             "&action=medium&v=" +
             state.version
@@ -85,7 +89,7 @@ function Categoryentityidpage() {
                     <td className="catentity__productimage">
                       <img
                         src={
-                          "http://localhost:8080/images/product?productEntityId=" +
+                          "http://lindogourmet.com/images/product?productEntityId=" +
                           todo.productEntityId +
                           "&action=thumb&v=" +
                           todo.version
