@@ -10,7 +10,6 @@ function Home() {
     //   {todos ? todos : 'There is no data available'}
     // </div>
     <div>
-      <h2>Home</h2>
       <HeroSection />
       <HomeCategories />
     </div>
