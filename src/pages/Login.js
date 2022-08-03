@@ -17,28 +17,74 @@ const Login = () => {
     setErrMsg("");
   }, [user, pwd]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user, pwd);
+    setUser("");
+    setPwd("");
+    setSuccess(true);
+  };
+
   return (
-    <section>
-      <p
-        ref={errRef}
-        className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
-        {errMsg}
-      </p>
-      <h1>Sign In</h1>
-      <form>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          ref={userRef}
-          autoComplete="off"
-          onChange={(e) => setUser(e.target.value)}
-          value={user}
-          required
-        />
-      </form>
-    </section>
+    <>
+      {success ? (
+        <section>
+          <h1>You are logged in!</h1>
+          <br />{" "}
+          <p>
+            <a href="#">Go to home</a>
+          </p>
+        </section>
+      ) : (
+        <section>
+          {/* error message display */}
+          <p
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
+          <h1>Sign In</h1>
+          <form onSubmit={handleSubmit}>
+            {/* username */}
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              ref={userRef}
+              autoComplete="off"
+              onChange={(e) => setUser(e.target.value)}
+              value={user}
+              required
+            />
+
+            {/* password */}
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              onChange={(e) => setPwd(e.target.value)}
+              value={pwd}
+              required
+            />
+
+            {/* submit btn */}
+            <button>Sign In</button>
+          </form>
+
+          <p>
+            Need an Account?
+            <br />
+            <span>
+              {/*put router link here*/}
+              <a href="#">Sign Up</a>
+            </span>
+          </p>
+        </section>
+      )}
+    </>
   );
 };
+
+export default Login;
