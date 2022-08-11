@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function HeroSection() {
   return (
@@ -7,7 +8,7 @@ export default function HeroSection() {
       <h1 id="textBold">YOUR WAY</h1>
       <div className="prodBackground">
         <a class="prod_link" href="/category">
-          Our Producs -{">"}
+          Our Products <ArrowForwardIcon/>
         </a>
       </div>
     </div>

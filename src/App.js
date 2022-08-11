@@ -24,6 +24,8 @@ import ShoppingCart from "./pages/ShoppingCart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 function App() {
   return (
     <BrowserRouter>
