@@ -8,8 +8,9 @@ export default function HeroSection() {
       <h1 id="textBold">YOUR WAY</h1>
       <div className="prodBackground">
         <a class="prod_link" href="/category">
-          Our Products <ArrowForwardIcon/>
+          Our products 
         </a>
+        <ArrowForwardIcon className="arrowForward"/>
       </div>
     </div>
   );
