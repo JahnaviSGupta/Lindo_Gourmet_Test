@@ -1,10 +1,13 @@
 /* Main header */
 .header {
+  margin-top: 17px;
   width: 100%;
-  max-width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  
 }
 
 .header__logo{
@@ -14,19 +17,47 @@
 
 .header__searchbar {
   display: flex;
-  height: 20px;
+  align-items: center;
   justify-content: flex-end;
+  color: #6D6D6D;;
+  
 }
 .header__searchbar input {
-  position: relative;
+  /* display: flex; */
   padding: 0px 25px 0px 0px;
   width: 250px;
+  background: #E9E9E9;
+  border-radius: 30px;
+  height: 27px;
+  border: none;
+  outline: none;
+  font-family: 'Noto Sans', sans-serif;
 }
-.header__searchbar .header__searchIcon {
+
+.search-button{
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -35px;
+  margin-bottom: 22px;
+  color: #6D6D6D;;
+}
+
+.header__searchIcon {
   position: absolute;
 }
 
+.dropbtn{
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 .dropdown-content {
+  border: none;
+  outline: none;
+  background: transparent;
   display: none;
 }
 
@@ -34,27 +65,30 @@
   display: none;
 }
 
-
-
 /* Subheader */
 .header2 {
   width: 100%;
-  max-width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 1vw 0;
+  margin-bottom: 16px;
+  margin-top: 46px;
 }
 
 .header__linkContainer{
   display: flex;
-  width: 30%;
   justify-content: space-between;
   text-decoration: none;
 }
 
 /* Responsive */
 @media (max-width: 732px) {
+  .header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    margin-bottom: 33px;
+  }
+
   .header2 {
     display: none;
   }

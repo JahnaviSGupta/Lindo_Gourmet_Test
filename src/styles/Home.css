@@ -28,7 +28,7 @@
 
 
 .heroSection{
-    background: url(../images/teaBackground.png) center center/cover no-repeat;
+    background: url(../images/teaBackground.jpg) center center/cover no-repeat;
     width: 100%;
     height: 40vw;
     display: flex;
@@ -39,34 +39,46 @@
     margin: 0 0;
 }
 .heroSection > #textReg {
-    font-size: 4vw;
+    font-size: 52px;
     text-align: center;
-    font-family: sans-serif;
-    font-weight: 200;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    line-height: 62.93px;
+    letter-spacing: .5rem;
     color: #000000;
 }
 .heroSection > #textBold {
     font-weight: bold;
-    font-size: 6vw;
+    font-size: 80px;
+    line-height: 60px;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     color: #000000;
     z-index: +1;
 }
 .heroSection > .prodBackground{
-    background-color: red;
+    background-color: #FF3A3A;
     position: relative;
-    bottom: 4vw;
-    width: 40vw;
-    height: 5vw;
+    width: 488px;
+    height: 71px;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    align-items: flex-end;
+    /* flex-direction: row;
+    justify-content: end; */
     padding-bottom: 0.5vw;
     padding-left: 2vw;
+    bottom: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
     
 }
+
+.heroSection > .prodBackground> .prod_link{
+    color: white;
+}
+
 @media only screen and (max-width: 600px) {
     .heroSection{
         height: 60vw;
@@ -74,18 +86,27 @@
     .heroSection > .prodBackground{
         position:relative;
         top: 10vw;
-        justify-content: center;
-        padding-left: 20vw;
-        width: 100%;
-        height: 10vw;
+        /* margin-left: 54px; */
+        /* justify-content: center; */
+        padding-left:100px;
+        /* width: 100%; */
+        height: 71px;
     }
     .heroSection > #textReg {
+        letter-spacing: .1rem;
         font-size: 10vw;
     }
     .heroSection > #textBold {
+        letter-spacing: .2rem;
         font-size: 12vw;
     }
+    .heroSection > .prodBackground> .prod_link{
+        color: white;
+        margin-top: 24px;
+        margin-bottom: 23px;
     }
-.heroSection > .prodBackground> .prod_link{
-    color: white;
+    .heroSection >.prodBackground > .arrowForward{
+        margin-top: 24px;
+        margin-bottom: 23px;
+    }
 }

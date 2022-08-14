@@ -27,14 +27,15 @@ function Header() {
         {/* This is the search bar and icon*/}
         <div className="header__searchbar">
           <input type="text" className="header__searchInput" />
-          <SearchIcon className="header__searchIcon" />
+          <button type="submit" className="search-button"> 
+            <SearchIcon className="header__searchIcon" />
+          </button>
         </div>
 
         {/* This is button for account */}
         <div className="dropdown">
           <button className="dropbtn">
             <AccountCircleIcon className="header__accountcircleIconIcon" />
-            &#x25BE;
           </button>
 
           <div className="dropdown-content">

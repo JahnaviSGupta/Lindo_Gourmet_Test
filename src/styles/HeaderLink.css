@@ -1,5 +1,15 @@
 .header__link{
   color: black;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 24.2px;
   text-decoration: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+.header__link:hover{
+  text-decoration: underline;
+  color: #FF3A3A;
 }
