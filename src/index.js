@@ -1,27 +1,18 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { CartProvider } from "use-shopping-cart";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Router from "./components/Router";
+import {setPrefix} from "./lib/Bandung" ;
+import "./lib/Bandung.css";
+import "./Unchurch.css";
 
-const pk = process.env.REACT_APP_PK;
+//setPrefix("http://localhost:5000/https://www.unchurch.org") ;
+//setPrefix("http://localhost:5000/https://www.uncovergem.com") ;
+//setPrefix("http://localhost:5000/https://startup4.ipserlab.com") ;
+setPrefix("http://localhost:5000/https://www.lindogourmet.com") ;
+//setPrefix("http://localhost:5000/https://www.tectralabs.com") ;
+//setPrefix("http://localhost:5000/http://localhost:8080") ;
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <CartProvider
-    mode="payment"
-    cartMode="client-only"
-    stripe={pk}
-    successUrl={`${window.location.origin}/success`}
-    cancelUrl={`${window.location.origin}/cart`}
-    currency="USD"
-  >
-    <App />
-  </CartProvider>
-);
+AOS.init() ;
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.createRoot(document.getElementById("root")).render(<Router/>) ;
