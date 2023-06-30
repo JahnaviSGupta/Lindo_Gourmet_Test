@@ -403,17 +403,90 @@ class ProfileComponent
 	        return this.renderSignin() ;
         else
             return (
-                <div className="profile-wrapper w-full mt-8 flex space-x-10">
-                    <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-                        <div className="flex flex-col space-y-10">
-                            {this.renderIndex()}
-                        </div>
+                <div className="flex flex-col m-0 p-3">
+                <h1 className="font-700 text-[50px]">Profile</h1>
+                <hr />
+                <div className="relative mt-[30px] mb-[30px] rounded-[10px] border-[1px] border-[black]">
+                    <div className="flex flex-row mt-[40px] mr-[20px] mb-[40px] ml-[20px]">
+                    <img
+                        className="h-[75px] w-[75px] mr-[20px] rounded-[50%]"
+                        src={`${process.env.PUBLIC_URL}/assets/images/saller-1.png`}
+                        alt=""
+                    />
+                    <div className="flex flex-col">
+                        <span className="font-700">hac habitasse</span>
+                        <span className="font-700 text-qgray">hac habitasse</span>
+                        <span className="font-700 text-qgray">hac habitasse</span>
                     </div>
-                    <div className="flex-1">
-                        <div className="item-body profile-wrapper w-full">
-                            {this.renderTab()}
-                        </div>
                     </div>
+                    <button
+                    className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] border-[none] bg-[lightgray]"
+                    type="button"
+                    >
+                    Edit
+                    </button>
+                </div>
+                <div className="flex flex-row">
+                    <div className="relative flex-[7]  mr-[40px] border-[1px] border-[black] rounded-[10px]">
+                    <div className="flex flex-col m-[10px] font-700 text-qgray">
+                        <span className="mb-[10px] text-qblack">
+                        Personal Information
+                        </span>
+                        <span className="mb-[20px] ">First Name: John</span>
+                        <span className="mb-[20px]">Last Name: Doe</span>
+                        <span className="mb-[20px]">Email: Johndoe@hotmail.com</span>
+                        <span className="mb-[20px]">Phone Number: 523-223-2233</span>
+                    </div>
+                    <button
+                        className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] border-[none] bg-[lightgray]"
+                        type="button"
+                    >
+                        Edit
+                    </button>
+                    </div>
+                    <div className="flex-[5] border-[1px] border-[black] rounded-[10px]">
+                    <div className="m-[10px] font-700 text-qgray">
+                        <span className="text-qblack">Account Settings</span>
+                        <form className="flex flex-col mt-[10px]">
+                        <label class="form-check-label mb-[20px]">
+                            varius morbi enim nunc faucibus
+                            <input
+                            class="form-check-input ml-[20px] transform scale-150"
+                            type="checkbox"
+                            />
+                        </label>
+                        <label class="form-check-label mb-[20px]">
+                            varius morbi enim nunc faucibus
+                            <input
+                            class="form-check-input ml-[20px] transform scale-150"
+                            type="checkbox"
+                            />
+                        </label>
+                        <label class="form-check-label mb-[20px]">
+                            varius morbi enim nunc faucibus
+                            <input
+                            class="form-check-input ml-[20px] transform scale-150"
+                            type="checkbox"
+                            />
+                        </label>
+                        <label class="form-check-label mb-[20px]">
+                            varius morbi enim nunc faucibus
+                            <input
+                            class="form-check-input ml-[20px] transform scale-150"
+                            type="checkbox"
+                            />
+                        </label>
+                        <label class="form-check-label mb-[20px]">
+                            varius morbi enim nunc faucibus
+                            <input
+                            class="form-check-input ml-[20px] transform scale-150"
+                            type="checkbox"
+                            />
+                        </label>
+                        </form>
+                    </div>
+                    </div>
+                </div>
                 </div>
             ) ;
 	}
