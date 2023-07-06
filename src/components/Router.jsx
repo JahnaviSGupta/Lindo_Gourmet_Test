@@ -23,6 +23,7 @@ import Faq from "./Faq";
 import Terms from "./Terms";
 import Privacy from "./Privacy";
 import FourZeroFour from "./FourZeroFour";
+import Admin from "./Admin";
 
 export default function Routers() {
     return (
@@ -56,6 +57,7 @@ export default function Routers() {
                 <Route exact path="/terms" element={<Terms/>} />
                 <Route exact path="/privacy" element={<Privacy/>} />
                 <Route exact path="*" element={<FourZeroFour/>} />
+                <Route exact path="/admin" element={<Admin/>} />
             </Routes>
         </BrowserRouter>
     ) ;
