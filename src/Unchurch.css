@@ -66,6 +66,12 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+h2{
+  font-size:2rem;
+}
+
+
 .font-100 {
   font-weight: 100;
 }
@@ -202,6 +208,11 @@ body {
   visibility: visible;
   pointer-events: auto;
 }
+
+
+
+
+
 /*TODO: ===============home page============ */
 
 .header-section-wrapper
@@ -249,6 +260,161 @@ body {
   font-size: 12px;
   text-transform: capitalize;
 }
+
+
+
+.homePartOne{
+  position:relative;
+  height: 500px;
+  width: 100%;
+  
+  /* display:inline-block; */
+  
+}
+
+.homeOne-img{
+  width: 300px;
+  height: 300px;
+  text-align:center;
+}
+
+.homeOne{
+  position: absolute;
+  padding: 2% 5% 2% 10%;
+
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .homePartOne{
+  height:800px;
+  }
+  }
+
+ .partOneOne{
+  /* display: none!; */
+  padding: 5% 2% 5% 10%;
+  text-align:center;
+ }
+
+ .partOneText{
+  text-align: left;
+ }
+
+ .partOneTwo{
+  padding:5% 2% 2% 1%;
+  text-align:center;
+ }
+
+ .partTwoPic{
+  padding: 2% 10% 2% 28%;
+  text-align:center;
+ }
+
+
+
+.homePartTwo{
+  position:relative;
+  height: 530px; 
+  width: 100%;
+
+}
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .homePartTwo{
+  height:2000px;
+  }
+  }
+
+  .column {
+    float: center;
+    width:50%;
+    padding: 10px;
+    /* height: 300px;  */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    /* hide element on small screens */
+    .column{
+    width:100%;
+    }
+  }
+
+  .col{
+    width: 20%;
+  }
+  @media screen and (max-width: 1023px) {
+    /* hide element on small screens */
+    .col{
+    width:100%;
+    }
+  }
+  
+  .categoryButton{
+    color: blue;
+    background-color: grey;
+  }
+
+
+.homePartThree{
+  position:relative;
+  height: 900px;
+  width: 100%;
+}
+
+.recoSec{
+  padding: 2% 5% 2% 5%;
+}
+
+.homeThree-img{
+  height:300px;
+  width:600px;
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .homePartThree{
+  height: 1500px;
+  }
+}
+
+
+
+.homePartFour{
+  position:relative;
+  height: 500px; 
+  width: 100%;
+
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .homePartFour{
+  height:800px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*TODO: ===============all product page============ */
 
@@ -340,5 +506,103 @@ body {
 
 @media (max-width: 1536px) {
 }
+
+
+
+
+/* DashBoard */
+.DashPartOne{
+  height: 50px;
+  margin: 5% 10% 2% 10%;
+  font-size: 3rem;
+}
+
+.Dashpic{
+  height: 60px;
+  width: 260px;
+}
+
+.dashCard:hover{
+  color: blue;
+}
+
+.dashPartOneCard:hover{
+  background-color: lightgray;
+}
+
+.DashPartTwo{
+  position:relative;
+  height: 600px;
+  width: 100%;
+}
+
+
+.PartTwoTable{
+  margin: 3% 10% 10% 10%;
+}
+
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .DashPartTwo{
+  height: 2500px;
+  }
+}
+
+.DashPartThree{
+  position:relative;
+  height: 530px; 
+  width: 100%;
+  /* margin: 10% 10% 10% 10%; */
+
+}
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .DashPartThree{
+  height:1300px;
+  }
+  }
+
+  .buyAgainPic{
+    width:300px;
+    height:200px;
+  }
+
+  .dashTwo-img{
+    height:300px;
+    width:300px;
+  }
+
+  .dashTwoTop{
+    margin: 10% 10% 10% 20%;
+  }
+
+  .colDash {
+    text-align: center;
+    float: center;
+    width:33%;
+    padding: 10px 10px 10px 10px;
+    /* height: 300px;  */
+  }
+  
+  
+  @media screen and (max-width: 1023px) {
+    /* hide element on small screens */
+    .colDash{
+    width:100%;
+    }
+  }
+
+  .DashPartFour{
+    margin:7% 7% 10% 7%;
+  }
+
+
+
+
+
+
+
+
 
 /* TODO: ===============RESPONSIVE END */

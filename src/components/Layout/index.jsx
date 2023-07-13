@@ -3,6 +3,7 @@ import Drawer from "../Mobile/Drawer";
 import Footer from "./Footer";
 import Header from "./Header";
 
+
 export default function Layout({children}) {
     const [drawer, setDrawer] = useState(false);
     return (
@@ -13,6 +14,9 @@ export default function Layout({children}) {
                 <div className='w-full pt-0 pb-0'>
                     {children && children}
                 </div>
+
+
+                
                 <Footer/>
             </div>
         </>

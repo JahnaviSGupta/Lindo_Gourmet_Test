@@ -290,7 +290,7 @@ export default function CheckoutPage() {
                   <div className="mt-[30px]">
                     <div className=" flex justify-between mb-5">
                       <p className="text-2xl font-medium text-qblack">Total</p>
-                      <p className="text-2xl font-medium text-qblack">$365</p>
+                      <p className="text-2xl font-medium text-qred">$365</p>
                     </div>
                   </div>
                   <div className="shipping mt-[30px]">
@@ -356,8 +356,8 @@ export default function CheckoutPage() {
                     </ul>
                   </div>
                   <a href="#">
-                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
-                      <span className="text-sm text-white font-semibold">
+                    <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                      <span className="text-sm font-semibold">
                         Place Order Now
                       </span>
                     </div>
