@@ -230,7 +230,7 @@ export default function Cart({ className }) {
                   <span>View Cart</span>
                 </div>
               </a>
-              <a href="#">
+              <a href="/checkout">
                 <div className="w-full h-[50px]">
                   <div className="yellow-btn">
                     <span className="text-sm">Checkout Now</span>
