@@ -8,7 +8,7 @@ export default function LoadingPage() {
     const delay = 3000;
 
     const timer = setTimeout(() => {
-      navigate('/order');
+      navigate('/order-confirmed');
     }, delay);
 
     return () => clearTimeout(timer);

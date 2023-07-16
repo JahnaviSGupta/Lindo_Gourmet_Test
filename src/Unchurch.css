@@ -59,7 +59,7 @@
 
 html {
   font-family: "Inter", sans-serif;
-  background-color: #f8f8f8;
+  background-color: white;
 }
 body {
   margin: 0;
@@ -131,18 +131,20 @@ body {
 }
 /*TODO:  ========= home one ========= */
 .home-one .search-btn {
-    @apply bg-qyellow text-qblack;
+  @apply bg-qyellow text-qblack;
 }
 .home-one .cart-wrappwer {
-    @apply border-qyellow;
+  @apply border-qyellow;
 }
 /*TODO:  ========= home one end ========= */
 /*TODO:  ========= home two ========= */
 .home-two .search-btn {
-    @apply bg-qh2-green text-white;
+  @apply bg-qh2-green text-white;
 }
-.home-two :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two) .yellow-btn {
-    @apply bg-qh2-green text-white;
+.home-two
+  :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two)
+  .yellow-btn {
+  @apply bg-qh2-green text-white;
 }
 
 /*TODO:  ========= home two end ========= */

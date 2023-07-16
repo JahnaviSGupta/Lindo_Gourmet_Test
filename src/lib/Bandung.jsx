@@ -411,7 +411,7 @@ class AccountMenuComponent extends BandungComponent {
         <Link to="/signin">
           <div className="black-btn w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
             <div className="flex space-x-2 items-center">
-              <span className="text-sm font-600">Signin/Join </span>
+              <span className="text-sm font-600">Signin/Join ></span>
             </div>
           </div>
         </Link>
@@ -512,91 +512,13 @@ class ProfileComponent extends BandungComponent {
     if (!validSession()) return this.renderSignin();
     else
       return (
-        // <div className="profile-wrapper w-full mt-8 flex space-x-10">
-        //   <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-        //     <div className="flex flex-col space-y-10">
-        //       {this.renderIndex()}
-        //     </div>
-        //   </div>
-        //   <div className="flex-1">
-        //     <div className="item-body profile-wrapper w-full">
-        //       {this.renderTab()}
-        //     </div>
-        //   </div>
-        // </div>
-
-        <div className="flex flex-col m-0 p-3">
-          <h1 className="font-700 text-[50px]">Profile</h1>
-          <hr />
-          <div className="p-[10px]"></div>
-          <div className="relative mt-[30px] mb-[30px] rounded-[10px] w-[100%] border-[1px] border-[solid]">
-            <div className="">
-              <div className="flex flex-row mt-[40px] mr-[20px] mb-[40px] ml-[20px]">
-                <img
-                  className="h-[75px] w-[75px] mr-[20px] rounded-[50%]"
-                  src={`${process.env.PUBLIC_URL}/assets/images/saller-1.png`}
-                  alt=""
-                />
-                <div className="flex flex-col">
-                  <span className="font-700">hac habitasse</span>
-                  <span className="font-700 text-qgray">hac habitasse</span>
-                  <span className="font-700 text-qgray">hac habitasse</span>
-                </div>
-              </div>
-              <button
-                className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white"
-                type="button"
-              >
-                Edit
-              </button>
-            </div>
+        <div className="profile-wrapper w-full mt-8 flex space-x-10">
+          <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
+            <div className="flex flex-col space-y-10">{this.renderIndex()}</div>
           </div>
-          <div className="p-[10px]"></div>
-          <div className="flex flex-row">
-            <div className="relative flex-[7] mr-[40px] w-[100%]">
-              {this.renderGeneralTab()}
-            </div>
-            <div className="flex-[5] rounded-[10px] border-[1px] border-[solid]">
-              <div className="font-700 text-qgray m-[15px]">
-                <span className="text-qblack">Account Settings</span>
-                <form className="flex flex-col mt-[10px]">
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                </form>
-              </div>
+          <div className="flex-1">
+            <div className="item-body profile-wrapper w-full">
+              {this.renderTab()}
             </div>
           </div>
         </div>
@@ -636,210 +558,148 @@ class ProfileComponent extends BandungComponent {
       });
     }
   }
-  // renderIndex() {
-  //   // need modify
-  //   return (
-  //     <>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("general", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">General</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("settings", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Settings</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("password", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Password</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("contact", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Contact</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("bio", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Bio</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("emails", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Emails</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("socials", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Socials</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("image", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Image</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("quit", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Quit</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-  // renderTab() {
-  //   return !this.state.command || this.state.command === "general"
-  //     ? this.renderGeneralTab()
-  //     : this.state.command === "settings"
-  //     ? this.renderSettingsTab()
-  //     : this.state.command === "password"
-  //     ? this.renderPasswordTab()
-  //     : this.state.command === "contact"
-  //     ? this.renderContactTab()
-  //     : this.state.command === "bio"
-  //     ? this.renderBioTab()
-  //     : this.state.command === "emails"
-  //     ? this.renderEmailsTab()
-  //     : this.state.command === "socials"
-  //     ? this.renderSocialsTab()
-  //     : this.state.command === "image"
-  //     ? this.renderImageTab()
-  //     : this.state.command === "quit"
-  //     ? this.renderQuitTab()
-  //     : this.renderGeneralTab();
-  // }
+  renderIndex() {
+    // need modify
+    return (
+      <>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("general", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">General</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("settings", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Settings</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("password", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Password</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("contact", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Contact</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("bio", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Bio</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("emails", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Emails</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("socials", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Socials</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("image", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Image</span>
+            </div>
+          </div>
+        </div>
+        <div className="item group">
+          <div
+            onClick={() => {
+              this.command("quit", null);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+              <span className=" font-normal text-base">Quit</span>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+  renderTab() {
+    return !this.state.command || this.state.command === "general"
+      ? this.renderGeneralTab()
+      : this.state.command === "settings"
+      ? this.renderSettingsTab()
+      : this.state.command === "password"
+      ? this.renderPasswordTab()
+      : this.state.command === "contact"
+      ? this.renderContactTab()
+      : this.state.command === "bio"
+      ? this.renderBioTab()
+      : this.state.command === "emails"
+      ? this.renderEmailsTab()
+      : this.state.command === "socials"
+      ? this.renderSocialsTab()
+      : this.state.command === "image"
+      ? this.renderImageTab()
+      : this.state.command === "quit"
+      ? this.renderQuitTab()
+      : this.renderGeneralTab();
+  }
   renderGeneralTab() {
     //fix shortDescription
     if (!this.state.action)
       return (
         <>
-          <div className="flex flex-col font-700 text-qgray border-[1px] border-[solid] rounded-[10px]">
-            <div className="m-[15px]">
-              <span className="mb-[10px] text-qblack">
-                Personal Information
-              </span>
-              <div className="input-item mb-[20px] mt-[10px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <label className="input-label capitalize block">
-                      First Name:
-                    </label>
-                    <div className="input-wrapper w-[50%] h-[50%] overflow-hidden relative ml-[10px]">
-                      {getSession().firstName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <label className="input-label capitalize block">
-                      Last Name:
-                    </label>
-                    <div className="input-wrapper w-[50%] h-[50%] overflow-hidden relative ml-[10px]">
-                      {getSession().lastName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <label className="input-label capitalize block">
-                      Email:
-                    </label>
-                    <div className="input-wrapper w-[50%] h-[50%] overflow-hidden relative ml-[10px]">
-                      {getSession().email}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <label className="input-label capitalize block">
-                      Phone Number:
-                    </label>
-                    <div className="input-wrapper w-[50%] h-[50%] overflow-hidden relative ml-[10px]">
-                      {getSession().phone}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              onClick={(event) => this.action("update")}
-              className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white"
-              type="button"
-            >
-              Edit
-            </button>
-          </div>
-          {/* <div className="flex space-x-8">
+          <div className="flex space-x-8">
             <div className="w-[570px] ">
               <div className="input-item mb-8">
                 <div className="w-full">
@@ -874,7 +734,7 @@ class ProfileComponent extends BandungComponent {
             >
               Update
             </button>
-          </div> */}
+          </div>
         </>
       );
     else if (this.state.action === "update") {
@@ -887,79 +747,7 @@ class ProfileComponent extends BandungComponent {
           }}
           method="POST"
         >
-          <div className="flex flex-col font-700 text-qgray border-[1px] border-[solid] rounded-[10px]">
-            <div className="m-[15px]">
-              <span className="mb-[10px] text-qblack">
-                Personal Information
-              </span>
-              <div className="input-item mb-[20px] mt-[10px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <span>First Name*:</span>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      defaultValue={getSession().firstName}
-                      className="input-field placeholder:text-sm text-sm mt-1 px-6 text-dark-gray w-[50%] h-[50%] font-normal bg-white focus:ring-0 focus:outline-none"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <span>Last Name*:</span>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      defaultValue={getSession().lastName}
-                      className="input-field placeholder:text-sm text-sm mt-1 px-6 text-dark-gray w-[50%] h-[50%] font-normal bg-white focus:ring-0 focus:outline-none"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <span>Email: </span>
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      defaultValue={getSession().email}
-                      className="input-field placeholder:text-sm text-sm mt-1 px-6 text-dark-gray w-[50%] h-[50%] font-normal bg-white focus:ring-0 focus:outline-none"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-[20px]">
-                <div className="w-full">
-                  <div className="input-com flex flex-row">
-                    <span>Phone Number:</span>
-                    <input
-                      type="text"
-                      id="phone"
-                      name="phone"
-                      defaultValue={getSession().phone}
-                      className="input-field placeholder:text-sm text-sm mt-1 px-6 text-dark-gray w-[50%] h-[50%] font-normal bg-white focus:ring-0 focus:outline-none"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] border-[1px] border-[#5cb85c] hover:bg-[#5cb85c] text-[#5cb85c] hover:text-white">
-              Save
-            </button>
-            <button
-              onClick={(event) => this.action(null)}
-              className="absolute font-700 w-[80px] h-[40px] top-[60px] right-[10px] rounded-[5px] border-[1px] border-[#d9534f] hover:bg-[#d9534f] text-[#d9534f] hover:text-white"
-            >
-              Cancel
-            </button>
-          </div>
-          {/* <div className="flex space-x-8">
+          <div className="flex space-x-8">
             <div className="w-[570px] ">
               <div className="input-item mb-8">
                 <div className="w-full">
@@ -1037,7 +825,7 @@ class ProfileComponent extends BandungComponent {
             <button className="w-[164px] h-[50px] bg-qblack text-white text-sm">
               Save
             </button>
-          </div> */}
+          </div>
         </form>
       );
     }
