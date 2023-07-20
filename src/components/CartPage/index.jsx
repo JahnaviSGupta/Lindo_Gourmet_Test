@@ -5,7 +5,7 @@ import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Layout";
 import ProductsTable from "./ProductsTable";
 
-export default function CardPage({ cart = true }) { 
+export default function CardPage({ cart = true }) {
   return (
     <Layout childrenClasses={cart ? "pt-0 pb-0" : ""}>
       {cart === false ? (
@@ -52,20 +52,20 @@ export default function CardPage({ cart = true }) {
                     </div>
                   </a>
                   <a href="#">
-                    <div className="w-[140px] h-[50px] bg-[#028090] flex justify-center items-center">
-                      <span className="text-sm text-white font-semibold">Update Cart</span>
+                    <div className="w-[140px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                      <span className="text-sm font-semibold">Update Cart</span>
                     </div>
                   </a>
                 </div>
               </div>
-              <div className="w-full mt-[30px] flex sm:justify-end ">
+              <div className="w-full mt-[30px] flex sm:justify-end">
                 <div className="sm:w-[370px] w-full border border-[#EDEDED] px-[30px] py-[26px]">
                   <div className="sub-total mb-6">
                     <div className=" flex justify-between mb-6">
                       <p className="text-[15px] font-medium text-qblack">
                         Subtotal
                       </p>
-                      <p className="text-[15px] font-medium text-qblack">$365</p>
+                      <p className="text-[15px] font-medium text-qred">$365</p>
                     </div>
                     <div className="w-full h-[1px] bg-[#EDEDED]"></div>
                   </div>
@@ -167,8 +167,8 @@ export default function CardPage({ cart = true }) {
                     </div>
                   </div>
                   <button type="button" className="w-full mb-10">
-                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
-                      <span className="text-sm text-white font-semibold">Update Cart</span>
+                    <div className="w-full h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                      <span className="text-sm font-semibold">Update Cart</span>
                     </div>
                   </button>
                   <div className="total mb-6">
@@ -176,12 +176,12 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[18px] font-medium text-qblack">
                         Total
                       </p>
-                      <p className="text-[18px] font-medium text-qblack">$365</p>
+                      <p className="text-[18px] font-medium text-qred">$365</p>
                     </div>
                   </div>
                   <a href="/checkout">
-                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
-                      <span className="text-sm text-white font-semibold">
+                    <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                      <span className="text-sm font-semibold">
                         Proceed to Checkout
                       </span>
                     </div>

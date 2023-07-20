@@ -26,7 +26,6 @@ import FourZeroFour from "./FourZeroFour";
 import Admin from "./Admin";
 import LoadingPage from "./CheckoutPage/LoadingPage";
 import OrderConfimedPage from "./CheckoutPage/OrderConfimedPage";
-
 export default function Routers() {
     return (
         <BrowserRouter>
