@@ -11,6 +11,7 @@ module.exports = {
         qgray: "#797979",
         qblacktext: "#1D1D1D",
         qgraytwo: "#8E8E8E",
+        qteal: "#236B8E",
         "qgray-border": "#EFEFEF",
         "qblue-white": "#CBECFF",
         "qh2-green": "#2D6F6D",

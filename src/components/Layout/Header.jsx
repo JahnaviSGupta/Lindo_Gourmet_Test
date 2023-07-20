@@ -1,7 +1,6 @@
 import ThinBag from "../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
-import TopBar from "./TopBar";
 
 export default function HeaderOne({ className, drawerAction }) {
   return (

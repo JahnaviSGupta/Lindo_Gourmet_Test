@@ -1,33 +1,67 @@
-import {Link} from "react-router-dom";
-import {getPrefix,getSession,clearSession,validSession,AccountMenuComponent} from "../../lib/Bandung" ;
+import { Link } from "react-router-dom";
+import { AccountMenuComponent, SigninAndOutComponent } from "../../lib/Bandung";
+import Cart from "../Cart";
+import ThinBag from "../Helpers/icons/ThinBag";
 
 export default function Navbar({ className }) {
   return (
-    <div className={`nav-widget-wrapper w-full bg-qyellow h-[60px] relative z-30  ${className || ""}`}>
+    <div className={`nav-widget-wrapper w-full bg-qteal h-[60px] relative z-30  ${className || ""}`}>
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
-          <div className="w-full h-full flex justify-between items-center">
+          <div className="w-full h-full d-flex flex-row-reverse justify-between items-center">
             <div className="category-and-nav flex xl:space-x-7 space-x-3 items-center">
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li>
-                    <Link to="/">
-                      <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
-                        Home
+                    <Link to="*">
+                      <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
+                        Product
                       </span>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about">
-                      <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
-                        About
+                    <Link to="/profile">
+                      <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
+                        Profile
                       </span>
                     </Link>
                   </li>
-                  <li className="relative">
-                    <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
+                  <li>
+                    <Link to="/dashboard">
+                      <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
+                        Dashboard
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <SigninAndOutComponent/>
+                  </li>
+                  <li>
+                    <div className="flex space-x-6 items-center">
+                      {
+                        true &&
+                          <div className="cart-wrapper group relative">
+                            <div className="cart relative cursor-pointer">
+                              <Link to="/cart">
+                                <span>
+                                  <ThinBag />
+                                </span>
+                              </Link>
+                              <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
+                                15
+                              </span>
+                            </div>
+                            {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}
+                            {/* hidden group-hover:block" */}
+                            <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
+                          </div>
+                    }
+                    </div>
+                  </li>
+                  {/* <li className="relative">
+                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                         <Link to="/event">
-                          <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
+                          <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                             Events
                           </span>
                         </Link>
@@ -64,9 +98,9 @@ export default function Navbar({ className }) {
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li className="relative">
-                    <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
+                  </li> */}
+                  {/* <li className="relative">
+                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                       <span>Conversations</span>
                       <span className="ml-1.5 ">&#9660;</span>
                     </span>
@@ -101,9 +135,9 @@ export default function Navbar({ className }) {
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li>
-                    <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
+                  </li> */}
+                  {/* <li>
+                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                       Topics
                       <span className="ml-1.5 ">&#9660;</span>
                     </span>
@@ -225,14 +259,7 @@ export default function Navbar({ className }) {
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li>
-                    <Link to="/contact">
-                      <span className="flex items-center text-sm text-qblacktext font-600 cursor-pointer ">
-                        <span>Contact</span>
-                      </span>
-                    </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
