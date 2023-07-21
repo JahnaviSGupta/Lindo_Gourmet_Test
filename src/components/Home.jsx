@@ -9,22 +9,22 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div>
-          <div className="homePartOne">
+        <div className="">
+          <div className="m-[70px]">
             <HomePartOneComponent />
           </div>
 
-          <div className="homePartTwo">
+          <div className="m-[70px]">
             <HomePartTwoComponent />
           </div>
 
-          <div className="homePartThree">
+          <div className="m-[70px] mb-[0px]">
             <HomePartThreeComponent />
           </div>
-
-          <div class="homePartFour">
+{/* 
+          <div className="m-[70px]">
             <HomePartFourComponent />
-          </div>
+          </div> */}
         </div>
       </Layout>
     </>
