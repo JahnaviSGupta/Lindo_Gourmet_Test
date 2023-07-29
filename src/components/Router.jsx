@@ -25,7 +25,7 @@ import Privacy from "./Privacy";
 import FourZeroFour from "./FourZeroFour";
 import Admin from "./Admin";
 import LoadingPage from "./CheckoutPage/LoadingPage";
-
+import OrderConfimedPage from "./CheckoutPage/OrderConfimedPage";
 export default function Routers() {
     return (
         <BrowserRouter>
@@ -61,6 +61,7 @@ export default function Routers() {
                 <Route exact path="/admin" element={<Admin/>} />
 
                 <Route exact path="/loading" element={<LoadingPage/>} />
+                <Route exact path="/order-confirmed" element={<OrderConfimedPage/>} />
             </Routes>
         </BrowserRouter>
     ) ;

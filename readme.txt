@@ -1,3 +1,3 @@
 node server
-npm install --force (both server folder and main folder need)
+npm install --force
 npm run start

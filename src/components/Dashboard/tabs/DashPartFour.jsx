@@ -1,4 +1,4 @@
-afunction DashPartFour() {
+function DashPartFour() {
     return (
       <div>
         <div className="row">

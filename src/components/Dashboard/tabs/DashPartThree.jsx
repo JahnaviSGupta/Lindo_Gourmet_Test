@@ -1,21 +1,21 @@
-import BasicExample from "../../Helpers/Cards/Category";
+
+import productsData from "../../../ProductsData";
+import DashBuyAgainCard from "./DashBuyAgainCard";
+
 
 
 function DashPartThree() {
   return (
     <div class="homeOne row">
-      <div className="column col">
-        <BasicExample />
-      </div>
-      <div className="column col">
-        <BasicExample />
-      </div>
-      <div className="column col">
-        <BasicExample />
-      </div>
-      <div className="column col">
-        <BasicExample />
-      </div>
+    {productsData.map(productItem =>(
+      <DashBuyAgainCard
+            key={productItem.key}
+            title = {productItem.title}
+            picture = {productItem.picture.path}
+            description = {productItem.description}
+         
+      />
+    ))}
     </div>
   );
 }

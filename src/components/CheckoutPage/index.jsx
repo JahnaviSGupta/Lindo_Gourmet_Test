@@ -290,7 +290,7 @@ export default function CheckoutPage() {
                   <div className="mt-[30px]">
                     <div className=" flex justify-between mb-5">
                       <p className="text-2xl font-medium text-qblack">Total</p>
-                      <p className="text-2xl font-medium text-qblack">$365</p>
+                      <p className="text-2xl font-medium text-qred">$365</p>
                     </div>
                   </div>
                   <BankCardPayment />
