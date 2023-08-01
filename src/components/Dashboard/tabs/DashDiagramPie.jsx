@@ -3,11 +3,15 @@ import React from 'react';
 
 const Pie = () => {
     let option = {
+        title: {
+            text: 'sales by category',
+            left: 'center',
+        },
         tooltip: {
             trigger: 'item'
         },
         legend: {
-            top: '5%',
+            top: 'bottom',
             left: 'center'
         },
         series: [
@@ -36,11 +40,11 @@ const Pie = () => {
                     show: false
                 },
                 data: [
-                    {value: 1048, name: 'Amazon'},
-                    {value: 735, name: 'Meta'},
-                    {value: 580, name: 'Apple'},
-                    {value: 484, name: 'Msft'},
-                    {value: 300, name: 'Google'}
+                    {value: 1048, name: 'Gaming'},
+                    {value: 735, name: 'Image & Video'},
+                    {value: 580, name: 'Furnitures'},
+                    {value: 484, name: 'Sport'},
+                    {value: 300, name: 'Vehicles'}
                 ]
             }
         ]

@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
+
 function DashPartOne() {
     return (
-      <div >
-      <h1>DashBoard</h1>
+      <div className="d-flex align-items-center">
+        <h1>DashBoard</h1>
+        <div className="ml-auto">
+          <Link to="/*">
+            <button  className="btn bg-qteal w-[130px]"><span className="text-white">Admin</span></button>
+          </Link>
+        </div>
       </div>
     );
   }

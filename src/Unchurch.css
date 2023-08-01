@@ -67,10 +67,9 @@ body {
   box-sizing: border-box;
 }
 
-h2{
-  font-size:2rem;
+h2 {
+  font-size: 2rem;
 }
-
 
 .font-100 {
   font-weight: 100;
@@ -98,6 +97,10 @@ h2{
 }
 .font-900 {
   font-weight: 900;
+}
+.font-arial {
+  font-family: arial;
+  font-weight: bold;
 }
 .container-x {
   @apply md:px-6 px-2 w-full;
@@ -137,18 +140,20 @@ h2{
 }
 /*TODO:  ========= home one ========= */
 .home-one .search-btn {
-    @apply bg-qyellow text-qblack;
+  @apply bg-qyellow text-qblack;
 }
 .home-one .cart-wrappwer {
-    @apply border-qyellow;
+  @apply border-qyellow;
 }
 /*TODO:  ========= home one end ========= */
 /*TODO:  ========= home two ========= */
 .home-two .search-btn {
-    @apply bg-qh2-green text-white;
+  @apply bg-qh2-green text-white;
 }
-.home-two :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two) .yellow-btn {
-    @apply bg-qh2-green text-white;
+.home-two
+  :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two)
+  .yellow-btn {
+  @apply bg-qh2-green text-white;
 }
 
 /*TODO:  ========= home two end ========= */
@@ -209,10 +214,6 @@ h2{
   pointer-events: auto;
 }
 
-
-
-
-
 /*TODO: ===============home page============ */
 
 .header-section-wrapper
@@ -261,160 +262,134 @@ h2{
   text-transform: capitalize;
 }
 
-
-
-.homePartOne{
-  position:relative;
+.homePartOne {
+  position: relative;
   height: 500px;
   width: 100%;
-  
+
   /* display:inline-block; */
-  
 }
 
-.homeOne-img{
+.homeOne-img {
   width: 300px;
   height: 300px;
-  text-align:center;
+  text-align: center;
 }
 
-.homeOne{
+.homeOne {
   position: absolute;
   padding: 2% 5% 2% 10%;
-
 }
 
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .homePartOne{
-  height:800px;
+  .homePartOne {
+    height: 800px;
   }
-  }
+}
 
- .partOneOne{
+.partOneOne {
   /* display: none!; */
   padding: 5% 2% 5% 10%;
-  text-align:center;
- }
+  text-align: center;
+}
 
- .partOneText{
+.partOneText {
   text-align: left;
- }
+}
 
- .partOneTwo{
-  padding:5% 2% 2% 1%;
-  text-align:center;
- }
+.partOneTwo {
+  padding: 5% 2% 2% 1%;
+  text-align: center;
+}
 
- .partTwoPic{
+.partTwoPic {
   padding: 2% 10% 2% 28%;
-  text-align:center;
- }
+  text-align: center;
+}
 
-
-
-.homePartTwo{
-  position:relative;
-  height: 530px; 
+.homePartTwo {
+  position: relative;
+  height: 530px;
   width: 100%;
-
 }
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .homePartTwo{
-  height:2000px;
+  .homePartTwo {
+    height: 2000px;
   }
-  }
+}
 
+.column {
+  float: center;
+  width: 50%;
+  padding: 10px;
+  /* height: 300px;  */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
   .column {
-    float: center;
-    width:50%;
-    padding: 10px;
-    /* height: 300px;  */
+    width: 100%;
   }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  @media screen and (max-width: 1023px) {
-    /* hide element on small screens */
-    .column{
-    width:100%;
-    }
-  }
+}
 
-  .col{
-    width: 20%;
+.col {
+  width: 20%;
+}
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .col {
+    width: 100%;
   }
-  @media screen and (max-width: 1023px) {
-    /* hide element on small screens */
-    .col{
-    width:100%;
-    }
-  }
-  
-  .categoryButton{
-    color: blue;
-    background-color: grey;
-  }
+}
 
+.categoryButton {
+  color: blue;
+  background-color: grey;
+}
 
-.homePartThree{
-  position:relative;
+.homePartThree {
+  position: relative;
   height: 900px;
   width: 100%;
 }
 
-.recoSec{
+.recoSec {
   padding: 2% 5% 2% 5%;
 }
 
-.homeThree-img{
-  height:300px;
-  width:600px;
+.homeThree-img {
+  height: 300px;
+  width: 600px;
 }
 
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .homePartThree{
-  height: 1500px;
+  .homePartThree {
+    height: 1500px;
   }
 }
 
-
-
-.homePartFour{
-  position:relative;
-  height: 500px; 
+.homePartFour {
+  position: relative;
+  height: 500px;
   width: 100%;
-
 }
 
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .homePartFour{
-  height:800px;
+  .homePartFour {
+    height: 800px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*TODO: ===============all product page============ */
 
@@ -507,102 +482,87 @@ h2{
 @media (max-width: 1536px) {
 }
 
-
-
-
 /* DashBoard */
-.DashPartOne{
+.DashPartOne {
   height: 50px;
   margin: 5% 10% 2% 10%;
   font-size: 3rem;
 }
 
-.Dashpic{
+.Dashpic {
   height: 60px;
   width: 260px;
 }
 
-.dashCard:hover{
+.dashCard:hover {
   color: blue;
 }
 
-.dashPartOneCard:hover{
+.dashPartOneCard:hover {
   background-color: lightgray;
 }
 
-.DashPartTwo{
-  position:relative;
+.DashPartTwo {
+  position: relative;
   height: 600px;
   width: 100%;
 }
 
-
-.PartTwoTable{
+.PartTwoTable {
   margin: 3% 10% 10% 10%;
 }
 
-
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .DashPartTwo{
-  height: 2500px;
+  .DashPartTwo {
+    height: 2500px;
   }
 }
 
-.DashPartThree{
-  position:relative;
-  height: 530px; 
+.DashPartThree {
+  position: relative;
+  height: 530px;
   width: 100%;
   /* margin: 10% 10% 10% 10%; */
-
 }
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
-  .DashPartThree{
-  height:1300px;
+  .DashPartThree {
+    height: 1300px;
   }
-  }
+}
 
-  .buyAgainPic{
-    width:300px;
-    height:200px;
-  }
+.buyAgainPic {
+  width: 300px;
+  height: 200px;
+}
 
-  .dashTwo-img{
-    height:300px;
-    width:300px;
-  }
+.dashTwo-img {
+  height: 300px;
+  width: 300px;
+}
 
-  .dashTwoTop{
-    margin: 10% 10% 10% 20%;
-  }
+.dashTwoTop {
+  margin: 10% 10% 10% 20%;
+}
 
+.colDash {
+  text-align: center;
+  float: center;
+  width: 33%;
+  padding: 10px 10px 10px 10px;
+  /* height: 300px;  */
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
   .colDash {
-    text-align: center;
-    float: center;
-    width:33%;
-    padding: 10px 10px 10px 10px;
-    /* height: 300px;  */
+    width: 100%;
   }
-  
-  
-  @media screen and (max-width: 1023px) {
-    /* hide element on small screens */
-    .colDash{
-    width:100%;
-    }
-  }
+}
 
-  .DashPartFour{
-    margin:7% 7% 10% 7%;
-  }
-
-
-
-
-
-
-
-
+.DashPartFour {
+  margin: 7% 7% 10% 7%;
+}
 
 /* TODO: ===============RESPONSIVE END */

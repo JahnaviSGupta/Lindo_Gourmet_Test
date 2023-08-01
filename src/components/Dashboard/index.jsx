@@ -20,7 +20,7 @@ export default function Dashbaord() {
 
           <hr />
 
-          <div className="DashDiagram flex justify-content-center">
+          <div className="DashDiagram flex justify-content-center my-4">
             <div className="col-lg-5">
               <DashDiagramLine />
             </div>
