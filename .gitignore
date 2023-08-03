@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 nbproject/private/private.properties
 /nbproject
+.vscode/settings.json
