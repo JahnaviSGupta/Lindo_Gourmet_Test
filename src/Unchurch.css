@@ -66,11 +66,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-h2 {
-  font-size: 2rem;
-}
-
 .font-100 {
   font-weight: 100;
 }
@@ -213,7 +208,6 @@ h2 {
   visibility: visible;
   pointer-events: auto;
 }
-
 /*TODO: ===============home page============ */
 
 .header-section-wrapper
@@ -262,133 +256,24 @@ h2 {
   text-transform: capitalize;
 }
 
-.homePartOne {
-  position: relative;
-  height: 500px;
-  width: 100%;
-
-  /* display:inline-block; */
+.homepage-middle-bar .product-items::-webkit-scrollbar {
+  height: 3px;
+  display: none;
 }
 
-.homeOne-img {
-  width: 300px;
-  height: 300px;
-  text-align: center;
+/* Track */
+.homepage-middle-bar .product-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.homeOne {
-  position: absolute;
-  padding: 2% 5% 2% 10%;
+/* Handle */
+.homepage-middle-bar .product-items::-webkit-scrollbar-thumb {
+  background: #8e8e8e;
 }
 
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .homePartOne {
-    height: 800px;
-  }
-}
-
-.partOneOne {
-  /* display: none!; */
-  padding: 5% 2% 5% 10%;
-  text-align: center;
-}
-
-.partOneText {
-  text-align: left;
-}
-
-.partOneTwo {
-  padding: 5% 2% 2% 1%;
-  text-align: center;
-}
-
-.partTwoPic {
-  padding: 2% 10% 2% 28%;
-  text-align: center;
-}
-
-.homePartTwo {
-  position: relative;
-  height: 530px;
-  width: 100%;
-}
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .homePartTwo {
-    height: 2000px;
-  }
-}
-
-.column {
-  float: center;
-  width: 50%;
-  padding: 10px;
-  /* height: 300px;  */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .column {
-    width: 100%;
-  }
-}
-
-.col {
-  width: 20%;
-}
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .col {
-    width: 100%;
-  }
-}
-
-.categoryButton {
-  color: blue;
-  background-color: grey;
-}
-
-.homePartThree {
-  position: relative;
-  height: 900px;
-  width: 100%;
-}
-
-.recoSec {
-  padding: 2% 5% 2% 5%;
-}
-
-.homeThree-img {
-  height: 300px;
-  width: 600px;
-}
-
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .homePartThree {
-    height: 1500px;
-  }
-}
-
-.homePartFour {
-  position: relative;
-  height: 500px;
-  width: 100%;
-}
-
-@media screen and (max-width: 1023px) {
-  /* hide element on small screens */
-  .homePartFour {
-    height: 800px;
-  }
+/* Handle on hover */
+.homepage-middle-bar .product-items::-webkit-scrollbar-thumb:hover {
+  background: #8e8e8e;
 }
 
 /*TODO: ===============all product page============ */

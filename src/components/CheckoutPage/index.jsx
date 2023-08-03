@@ -1,7 +1,7 @@
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Layout";
-
+import BankCardPayment from "./BankCardPayment";
 export default function CheckoutPage() {
   return (
     <Layout>
@@ -293,71 +293,10 @@ export default function CheckoutPage() {
                       <p className="text-2xl font-medium text-qred">$365</p>
                     </div>
                   </div>
-                  <div className="shipping mt-[30px]">
-                    <ul className="flex flex-col space-y-1">
-                      <li className=" mb-5">
-                        <div className="flex space-x-2.5 items-center mb-4">
-                          <div className="input-radio">
-                            <input
-                              type="radio"
-                              name="price"
-                              className="accent-pink-500"
-                              id="transfer"
-                            />
-                          </div>
-                          <label
-                            htmlFor="transfer"
-                            className="text-[18px] text-normal text-qblack"
-                          >
-                            Direct Bank Transfer
-                          </label>
-                        </div>
-                        <p className="text-qgraytwo text-[15px] ml-6">
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
-                        </p>
-                      </li>
-                      <li>
-                        <div className="flex space-x-2.5 items-center mb-5">
-                          <div className="input-radio">
-                            <input
-                              type="radio"
-                              name="price"
-                              className="accent-pink-500"
-                              id="delivery"
-                            />
-                          </div>
-                          <label
-                            htmlFor="delivery"
-                            className="text-[18px] text-normal text-qblack"
-                          >
-                            Cash on Delivery
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex space-x-2.5 items-center mb-5">
-                          <div className="input-radio">
-                            <input
-                              type="radio"
-                              name="price"
-                              className="accent-pink-500"
-                              id="bank"
-                            />
-                          </div>
-                          <label
-                            htmlFor="bank"
-                            className="text-[18px] text-normal text-qblack"
-                          >
-                            Credit/Debit Cards or Paypal
-                          </label>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <a href="#">
-                    <div className="w-full h-[50px] black-btn flex justify-center items-center">
-                      <span className="text-sm font-semibold">
+                  <BankCardPayment />
+                  <a href="/loading">
+                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
+                      <span className="text-sm text-white font-semibold">
                         Place Order Now
                       </span>
                     </div>

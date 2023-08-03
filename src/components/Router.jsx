@@ -23,7 +23,9 @@ import Faq from "./Faq";
 import Terms from "./Terms";
 import Privacy from "./Privacy";
 import FourZeroFour from "./FourZeroFour";
-
+import Admin from "./Admin";
+import LoadingPage from "./CheckoutPage/LoadingPage";
+import OrderConfimedPage from "./CheckoutPage/OrderConfimedPage";
 export default function Routers() {
     return (
         <BrowserRouter>
@@ -56,6 +58,10 @@ export default function Routers() {
                 <Route exact path="/terms" element={<Terms/>} />
                 <Route exact path="/privacy" element={<Privacy/>} />
                 <Route exact path="*" element={<FourZeroFour/>} />
+                <Route exact path="/admin" element={<Admin/>} />
+
+                <Route exact path="/loading" element={<LoadingPage/>} />
+                <Route exact path="/order-confirmed" element={<OrderConfimedPage/>} />
             </Routes>
         </BrowserRouter>
     ) ;

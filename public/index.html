@@ -5,7 +5,10 @@
     <link rel="icon" href="%PUBLIC_URL%/favico.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Join us for a casual but spirited exploration of religion, God, and the meaning of life."/>
+    <meta
+      name="description"
+      content="Join us for a casual but spirited exploration of religion, God, and the meaning of life."
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -21,12 +24,22 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+    <!-- react-google-maps 相关脚本和样式表 -->
+    <script src="https://cdn.jsdelivr.net/npm/react-google-maps/bundles/react-google-maps.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-google-maps/lib/main.css">
+
     <title>Unchurch</title>
   </head>
   <body>
     <noscript>
       <h1>Unchurch</h1>
-      <p>Join us for a casual but spirited exploration of religion, God, and the meaning of life.</p>
+      <p>
+        Join us for a casual but spirited exploration of religion, God, and the
+        meaning of life.
+      </p>
     </noscript>
     <div id="root"></div>
   </body>
