@@ -125,6 +125,10 @@ body {
   background: #f0f1f3;
 }
 
+.btn:hover {
+  background-color: #236b8e;
+}
+
 .overflow-style-none::-webkit-scrollbar {
   display: none;
 }
@@ -397,6 +401,10 @@ body {
   margin: 3% 10% 10% 10%;
 }
 
+.CardSize {
+  width: 20%;
+}
+
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
   .DashPartTwo {
@@ -408,7 +416,7 @@ body {
   position: relative;
   height: 530px;
   width: 100%;
-  /* margin: 10% 10% 10% 10%; */
+  margin: 5% 10% 0% 10%;
 }
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */

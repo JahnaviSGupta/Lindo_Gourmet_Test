@@ -5,7 +5,7 @@ function DashPartOne() {
       <div className="d-flex align-items-center">
         <h1>DashBoard</h1>
         <div className="ml-auto">
-          <Link to="/*">
+          <Link to="/admin">
             <button  className="btn bg-qteal w-[130px]"><span className="text-white">Admin</span></button>
           </Link>
         </div>
