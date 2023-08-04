@@ -1,6 +1,6 @@
 import React from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
-import {FaCcVisa} from "react-icons/fa6"
+import { GoogleMap, withGoogleMap } from 'react-google-maps';
+import { FaCcVisa } from "react-icons/fa6";
 import Layout from '../Layout';
 
 
@@ -40,9 +40,9 @@ export default function OrderConfimedPage (){
               </div>
             </div>
             <div className='flex-[1] border-[1px] rounded-[5px] w-[80%]'>
-                <label class="flex form-check-label font-300 text-[10px] items-center">
+                <label className="flex form-check-label font-300 text-[10px] items-center">
                   <input
-                    class="form-check-input m-[15px] transform scale-150"
+                    className="form-check-input m-[15px] transform scale-150"
                     type="checkbox"
                   />
                   Save my information for faster checkout
