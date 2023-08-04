@@ -1,9 +1,8 @@
-import React from "react" ;
-import Axios from "axios" ;
-import {Link} from "react-router-dom";
-import {Editor} from "react-draft-wysiwyg" ;
-import {EditorState, ContentState, convertFromHTML, convertToRaw} from "draft-js" ;
-import draftToHtml from "draftjs-to-html" ;
+import Axios from "axios";
+import { EditorState, convertToRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import React from "react";
+import { Link } from "react-router-dom";
 
 var prefix = null ;
 function getPrefix () {return prefix?prefix:"" ;}
@@ -308,18 +307,6 @@ class AccountMenuComponent
 	render ()
 	{
 	    return(
-            !validSession()
-            ?
-                <div className="become-seller-btn">
-                    <Link to="/signin">
-                        <div className="black-btn w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
-                            <div className="flex space-x-2 items-center">
-                                <span className="text-sm font-600">Signin/Join ></span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-            :
                 <div className="become-seller-btn">
                     <div className="black-btn w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
                         <div className="flex space-x-2 items-center">
@@ -327,7 +314,7 @@ class AccountMenuComponent
                                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                                     <li className="relative">
                                         <span className="flex items-center text-sm text-qwhitetext font-600 cursor-pointer ">
-                                            <span>Account</span>
+                                            <span><Link to="/">Home</Link></span>
                                             <span className="ml-1.5 ">&#9660;</span>
                                         </span>
                                         <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
@@ -337,23 +324,13 @@ class AccountMenuComponent
                                                         <div className="category-items">
                                                             <ul className="flex flex-col space-y-2">
                                                                 <li>
-                                                                    <Link to="/dashboard">
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Dashboard</span>
+                                                                    <Link to="/about">
+                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">About</span>
                                                                     </Link>
                                                                 </li>
                                                                 <li>
-                                                                    <Link to="/profile">
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Profile</span>
-                                                                    </Link>
-                                                                </li>
-                                                                <li>
-                                                                    <Link to="/admin">
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Admin</span>
-                                                                    </Link>
-                                                                </li>
-                                                                <li>
-                                                                    <Link to="/dashboard" onClick={()=>{clearSession()}}>
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Signout</span>
+                                                                    <Link to="/contact">
+                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Contact</span>
                                                                     </Link>
                                                                 </li>
                                                             </ul>
@@ -370,6 +347,36 @@ class AccountMenuComponent
                 </div>
         ) ;
 	}
+}
+
+class SigninAndOutComponent
+    extends BandungComponent
+{
+    constructor (props)
+	{
+		super(props) ;
+		this.state =
+		{
+		} ;
+    }
+	render ()
+    {
+        return (
+            !validSession()
+            ?
+                <Link to="/signin">
+                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
+                    Sign in/Join
+                    </span>
+                </Link>
+            :
+                <Link to="/dashboard" onClick={()=>{clearSession()}}>
+                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
+                    Sign out
+                    </span>
+                </Link>
+        );
+    }
 }
 
 class ProfileComponent
@@ -750,4 +757,5 @@ class JoinComponent
 	}
 }
 
-export {getPrefix,setPrefix,getSession,getSessionErrorMessage,setSession,clearSession,validSession,getSessionToken,adminPermission,editorPermission,managerPermission,signin,signout,BandungComponent,AccountMenuComponent,ProfileComponent,SigninComponent,JoinComponent} ;
+export { AccountMenuComponent, BandungComponent, JoinComponent, ProfileComponent, SigninAndOutComponent, SigninComponent, adminPermission, clearSession, editorPermission, getPrefix, getSession, getSessionErrorMessage, getSessionToken, managerPermission, setPrefix, setSession, signin, signout, validSession };
+

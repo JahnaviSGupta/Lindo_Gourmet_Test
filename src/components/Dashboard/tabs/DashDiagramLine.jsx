@@ -3,6 +3,10 @@ import React from 'react';
 
 const Line = () => {
     let option = {
+            title: {
+              text: 'sales over a week',
+              left: 'center',
+            },
             xAxis: {
               type: 'category',
               data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

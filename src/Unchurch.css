@@ -93,6 +93,10 @@ body {
 .font-900 {
   font-weight: 900;
 }
+.font-arial {
+  font-family: arial;
+  font-weight: bold;
+}
 .container-x {
   @apply md:px-6 px-2 w-full;
   max-width: 1216px !important;
@@ -121,6 +125,10 @@ body {
   background: #f0f1f3;
 }
 
+.btn:hover {
+  background-color: #236b8e;
+}
+
 .overflow-style-none::-webkit-scrollbar {
   display: none;
 }
@@ -131,18 +139,20 @@ body {
 }
 /*TODO:  ========= home one ========= */
 .home-one .search-btn {
-    @apply bg-qyellow text-qblack;
+  @apply bg-qyellow text-qblack;
 }
 .home-one .cart-wrappwer {
-    @apply border-qyellow;
+  @apply border-qyellow;
 }
 /*TODO:  ========= home one end ========= */
 /*TODO:  ========= home two ========= */
 .home-two .search-btn {
-    @apply bg-qh2-green text-white;
+  @apply bg-qh2-green text-white;
 }
-.home-two :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two) .yellow-btn {
-    @apply bg-qh2-green text-white;
+.home-two
+  :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two)
+  .yellow-btn {
+  @apply bg-qh2-green text-white;
 }
 
 /*TODO:  ========= home two end ========= */
@@ -254,7 +264,15 @@ body {
   height: 3px;
   display: none;
 }
+.homepage-middle-bar .product-items::-webkit-scrollbar {
+  height: 3px;
+  display: none;
+}
 
+/* Track */
+.homepage-middle-bar .product-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 /* Track */
 .homepage-middle-bar .product-items::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -264,12 +282,19 @@ body {
 .homepage-middle-bar .product-items::-webkit-scrollbar-thumb {
   background: #8e8e8e;
 }
+/* Handle */
+.homepage-middle-bar .product-items::-webkit-scrollbar-thumb {
+  background: #8e8e8e;
+}
 
 /* Handle on hover */
 .homepage-middle-bar .product-items::-webkit-scrollbar-thumb:hover {
   background: #8e8e8e;
 }
-
+/* Handle on hover */
+.homepage-middle-bar .product-items::-webkit-scrollbar-thumb:hover {
+  background: #8e8e8e;
+}
 
 /*TODO: ===============all product page============ */
 
@@ -360,6 +385,93 @@ body {
 }
 
 @media (max-width: 1536px) {
+}
+
+/* DashBoard */
+.DashPartOne {
+  height: 50px;
+  margin: 5% 10% 2% 10%;
+  font-size: 3rem;
+}
+
+.Dashpic {
+  height: 60px;
+  width: 260px;
+}
+
+.dashCard:hover {
+  color: blue;
+}
+
+.dashPartOneCard:hover {
+  background-color: lightgray;
+}
+
+.DashPartTwo {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+
+.PartTwoTable {
+  margin: 3% 10% 10% 10%;
+}
+
+.CardSize {
+  width: 20%;
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .DashPartTwo {
+    height: 2500px;
+  }
+}
+
+.DashPartThree {
+  position: relative;
+  height: 530px;
+  width: 100%;
+  margin: 5% 10% 0% 10%;
+}
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .DashPartThree {
+    height: 1300px;
+  }
+}
+
+.buyAgainPic {
+  width: 300px;
+  height: 200px;
+}
+
+.dashTwo-img {
+  height: 300px;
+  width: 300px;
+}
+
+.dashTwoTop {
+  margin: 10% 10% 10% 20%;
+}
+
+.colDash {
+  text-align: center;
+  float: center;
+  width: 33%;
+  padding: 10px 10px 10px 10px;
+  /* height: 300px;  */
+}
+
+@media screen and (max-width: 1023px) {
+  /* hide element on small screens */
+  .colDash {
+    width: 100%;
+  }
+}
+
+.DashPartFour {
+  margin: 7% 7% 10% 7%;
 }
 
 /* TODO: ===============RESPONSIVE END */

@@ -1,6 +1,5 @@
 
 
-import { Tab } from 'bootstrap';
 import { Table } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -12,7 +11,7 @@ function DashPartTwo() {
     <Table className = "PartTwoTable">
         <Row xs={1} md={2} className="g-4">
       
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -29,7 +28,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -46,7 +45,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -63,7 +62,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -85,7 +84,7 @@ function DashPartTwo() {
 
 
     <Row xs={1} md={2} className="g-4">
-    <Col>
+    <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -102,7 +101,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -119,7 +118,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
@@ -136,7 +135,7 @@ function DashPartTwo() {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='CardSize'>
           <Card className='dashPartOneCard'>
             <Card.Img className = "Dashpic" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/apple-store.png`} />
             <Card.Body>
