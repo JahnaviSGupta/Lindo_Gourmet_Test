@@ -6,7 +6,7 @@ import DashBuyAgainCard from "./DashBuyAgainCard";
 
 function DashPartThree() {
   return (
-    <div class="homeOne row">
+    <div className="homeOne row">
     {productsData.map(productItem =>(
       <DashBuyAgainCard
             key={productItem.key}
