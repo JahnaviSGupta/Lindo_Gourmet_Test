@@ -1,4 +1,3 @@
-
 import Layout from "../Layout";
 import DashDiagramLine from "./tabs/DashDiagramLine";
 import DashDiagramPie from "./tabs/DashDiagramPie";
@@ -6,8 +5,6 @@ import DashPartFour from "./tabs/DashPartFour";
 import DashPartOne from "./tabs/DashPartOne";
 import DashPartThree from "./tabs/DashPartThree";
 import DashPartTwo from "./tabs/DashPartTwo";
-
-
 
 export default function Dashbaord() {
   return (
@@ -33,16 +30,15 @@ export default function Dashbaord() {
           <hr />
 
           <div className="DashPartOne">
-            <div>Top Product</div>
+            <div>Store Settings</div>
           </div>
 
-          
-          <div className="DashPartTwo">       
-            <DashPartTwo/>
+          <div className="DashPartTwo">
+            <DashPartTwo />
           </div>
 
           <hr />
-          
+
           <div className="DashPartOne">
             <div>Buy it Again</div>
           </div>
