@@ -3,7 +3,6 @@ import DashDiagramLine from "./tabs/DashDiagramLine";
 import DashDiagramPie from "./tabs/DashDiagramPie";
 import DashPartFour from "./tabs/DashPartFour";
 import DashPartOne from "./tabs/DashPartOne";
-import DashPartThree from "./tabs/DashPartThree";
 import DashPartTwo from "./tabs/DashPartTwo";
 
 export default function Dashbaord() {
@@ -39,7 +38,7 @@ export default function Dashbaord() {
 
           <hr />
 
-          <div className="DashPartOne">
+          {/* <div className="DashPartOne">
             <div>Buy it Again</div>
           </div>
 
@@ -47,7 +46,7 @@ export default function Dashbaord() {
             <DashPartThree />
           </div>
 
-          <hr />
+          <hr /> */}
 
           <div class="DashPartFour">
             <DashPartFour />
