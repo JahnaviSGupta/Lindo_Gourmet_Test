@@ -33,6 +33,8 @@ function validSession() {
 function getSessionToken() {
   return session ? session.sessionToken : "";
 }
+function getSessionUserEntityId () {return getSession()?getSession().userEntityId:"" ;}
+
 function adminPermission() {
   return getSession() && getSession().administrator;
 }
@@ -1210,6 +1212,7 @@ export {
   editorPermission,
   getPrefix,
   getSession,
+  getSessionUserEntityId,
   getSessionErrorMessage,
   getSessionToken,
   managerPermission,

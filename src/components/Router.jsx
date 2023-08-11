@@ -1,31 +1,32 @@
-import {BrowserRouter,Route,Routes} from "react-router-dom";
-import Home from "./Home";
-import Signin from "./Signin";
-import Join from "./Join";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./About";
 import AddShop from "./AddShop";
-import Dashboard from "./Dashboard";
-import Profile from "./Profile";
-import ProductList from "./ProductList";
-import ProductView from "./ProductView";
-import ShopList from "./ShopList";
-import ShopView from "./ShopView";
-import CardPage from "./CartPage";
-import CheckoutPage from "./CheckoutPage";
-import TrackingOrder from "./TrackingOrder";
-import Wishlist from "./Wishlist";
-import FlashSale from "./FlashSale";
-import Compare from "./Compare";
+import Admin from "./Admin";
 import Blog from "./Blog";
 import BlogItem from "./Blog/BlogItem";
-import About from "./About";
-import Contact from "./Contact";
-import Faq from "./Faq";
-import Terms from "./Terms";
-import Privacy from "./Privacy";
-import FourZeroFour from "./FourZeroFour";
-import Admin from "./Admin";
+import CardPage from "./CartPage";
+import CheckoutPage from "./CheckoutPage";
 import LoadingPage from "./CheckoutPage/LoadingPage";
 import OrderConfimedPage from "./CheckoutPage/OrderConfimedPage";
+import Compare from "./Compare";
+import Contact from "./Contact";
+import Dashboard from "./Dashboard";
+import Faq from "./Faq";
+import FlashSale from "./FlashSale";
+import FourZeroFour from "./FourZeroFour";
+import Home from "./Home";
+import Join from "./Join";
+import Privacy from "./Privacy";
+import ProductList from "./ProductList";
+import ProductView from "./ProductView";
+import Profile from "./Profile";
+import ShopList from "./ShopList";
+import ShopView from "./ShopView";
+import Signin from "./Signin";
+import Stats from "./Stats";
+import Terms from "./Terms";
+import TrackingOrder from "./TrackingOrder";
+import Wishlist from "./Wishlist";
 export default function Routers() {
     return (
         <BrowserRouter>
@@ -59,6 +60,7 @@ export default function Routers() {
                 <Route exact path="/privacy" element={<Privacy/>} />
                 <Route exact path="*" element={<FourZeroFour/>} />
                 <Route exact path="/admin" element={<Admin/>} />
+                <Route exact path="/stat" element={<Stats/>} />
 
                 <Route exact path="/loading" element={<LoadingPage/>} />
                 <Route exact path="/order-confirmed" element={<OrderConfimedPage/>} />

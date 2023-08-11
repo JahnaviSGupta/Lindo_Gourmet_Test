@@ -475,3 +475,32 @@ body {
 }
 
 /* TODO: ===============RESPONSIVE END */
+
+.curved-box {
+  border: 2px solid #236b8e; /* Teal border color */
+  padding: 10px;
+  border-radius: 20px; /* Rounded corners */
+  justify-content: space-between;
+}
+
+.outter-box {
+  padding: 10px;
+  border-radius: 20px; /* Rounded corners */
+  justify-content: space-between;
+}
+
+/* TwoBoxesInLine.css */
+.container {
+  display: flex;
+}
+
+.box {
+  border: 2px solid #236b8e; /* Teal border color */
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+}
+
+.space {
+  width: 20px;
+}
