@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SigninAndOutComponent } from "../../../lib/Bandung";
 import Compair from "../../Helpers/icons/Compair";
 import ThinLove from "../../Helpers/icons/ThinLove";
 
@@ -925,12 +926,238 @@ export default function Drawer({ className, open, action }) {
                       </div>
                     </div>
                   </a>
+                  <ul className="submenu-list ml-5">
+                    <li className="category-item">
+                      <a href="/about">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                          <div className="flex items-center space-x-6">
+                            <span className="text-sm font-400">About</span>
+                          </div>
+                          <div>
+                            <span>
+                              <svg
+                                width="6"
+                                height="9"
+                                viewBox="0 0 6 9"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  x="1.49805"
+                                  y="0.818359"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(45 1.49805 0.818359)"
+                                  fill="#1D1D1D"
+                                />
+                                <rect
+                                  x="5.58984"
+                                  y="4.90918"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(135 5.58984 4.90918)"
+                                  fill="#1D1D1D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="category-item">
+                      <a href="/contact">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                          <div className="flex items-center space-x-6">
+                            <span className="text-sm font-400">Contact</span>
+                          </div>
+                          <div>
+                            <span>
+                              <svg
+                                width="6"
+                                height="9"
+                                viewBox="0 0 6 9"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  x="1.49805"
+                                  y="0.818359"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(45 1.49805 0.818359)"
+                                  fill="#1D1D1D"
+                                />
+                                <rect
+                                  x="5.58984"
+                                  y="4.90918"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(135 5.58984 4.90918)"
+                                  fill="#1D1D1D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="category-item">
+                      <a href="/wishlist">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                          <div className="flex items-center space-x-6">
+                            <span className="text-sm font-400">Wish List</span>
+                          </div>
+                          <div>
+                            <span>
+                              <svg
+                                width="6"
+                                height="9"
+                                viewBox="0 0 6 9"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  x="1.49805"
+                                  y="0.818359"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(45 1.49805 0.818359)"
+                                  fill="#1D1D1D"
+                                />
+                                <rect
+                                  x="5.58984"
+                                  y="4.90918"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(135 5.58984 4.90918)"
+                                  fill="#1D1D1D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="category-item">
+                      <a href="/orderhistory">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                          <div className="flex items-center space-x-6">
+                            <span className="text-sm font-400">
+                              Order History
+                            </span>
+                          </div>
+                          <div>
+                            <span>
+                              <svg
+                                width="6"
+                                height="9"
+                                viewBox="0 0 6 9"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  x="1.49805"
+                                  y="0.818359"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(45 1.49805 0.818359)"
+                                  fill="#1D1D1D"
+                                />
+                                <rect
+                                  x="5.58984"
+                                  y="4.90918"
+                                  width="5.78538"
+                                  height="1.28564"
+                                  transform="rotate(135 5.58984 4.90918)"
+                                  fill="#1D1D1D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li className="category-item">
-                  <a href="/shops/shop">
+                  <a href="/productlist">
                     <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Shop</span>
+                        <span className="text-sm font-400">Products</span>
+                      </div>
+                      <div>
+                        <span>
+                          <svg
+                            width="6"
+                            height="9"
+                            viewBox="0 0 6 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.49805"
+                              y="0.818359"
+                              width="5.78538"
+                              height="1.28564"
+                              transform="rotate(45 1.49805 0.818359)"
+                              fill="#1D1D1D"
+                            />
+                            <rect
+                              x="5.58984"
+                              y="4.90918"
+                              width="5.78538"
+                              height="1.28564"
+                              transform="rotate(135 5.58984 4.90918)"
+                              fill="#1D1D1D"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li className="category-item">
+                  <a href="/profile">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                      <div className="flex items-center space-x-6">
+                        <span className="text-sm font-400">Profile</span>
+                      </div>
+                      <div>
+                        <span>
+                          <svg
+                            width="6"
+                            height="9"
+                            viewBox="0 0 6 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.49805"
+                              y="0.818359"
+                              width="5.78538"
+                              height="1.28564"
+                              transform="rotate(45 1.49805 0.818359)"
+                              fill="#1D1D1D"
+                            />
+                            <rect
+                              x="5.58984"
+                              y="4.90918"
+                              width="5.78538"
+                              height="1.28564"
+                              transform="rotate(135 5.58984 4.90918)"
+                              fill="#1D1D1D"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li className="category-item">
+                  <a href="/dashboard">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                      <div className="flex items-center space-x-6">
+                        <span className="text-sm font-400">Dashboard</span>
                       </div>
                       <div>
                         <span>
@@ -967,236 +1194,7 @@ export default function Drawer({ className, open, action }) {
                   <a href="#">
                     <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Pages</span>
-                      </div>
-                      <div>
-                        <span>
-                          <svg
-                            width="6"
-                            height="9"
-                            viewBox="0 0 6 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.49805"
-                              y="0.818359"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(45 1.49805 0.818359)"
-                              fill="#1D1D1D"
-                            />
-                            <rect
-                              x="5.58984"
-                              y="4.90918"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(135 5.58984 4.90918)"
-                              fill="#1D1D1D"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                  <ul className="submenu-list ml-5">
-                    <li className="category-item">
-                      <a href="/privacy-policy">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                          <div className="flex items-center space-x-6">
-                            <span className="text-sm font-400">
-                              Privacy Policy
-                            </span>
-                          </div>
-                          <div>
-                            <span>
-                              <svg
-                                width="6"
-                                height="9"
-                                viewBox="0 0 6 9"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="1.49805"
-                                  y="0.818359"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(45 1.49805 0.818359)"
-                                  fill="#1D1D1D"
-                                />
-                                <rect
-                                  x="5.58984"
-                                  y="4.90918"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(135 5.58984 4.90918)"
-                                  fill="#1D1D1D"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li className="category-item">
-                      <a href="/faq">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                          <div className="flex items-center space-x-6">
-                            <span className="text-sm font-400">FAQ</span>
-                          </div>
-                          <div>
-                            <span>
-                              <svg
-                                width="6"
-                                height="9"
-                                viewBox="0 0 6 9"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="1.49805"
-                                  y="0.818359"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(45 1.49805 0.818359)"
-                                  fill="#1D1D1D"
-                                />
-                                <rect
-                                  x="5.58984"
-                                  y="4.90918"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(135 5.58984 4.90918)"
-                                  fill="#1D1D1D"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li className="category-item">
-                      <a href="/terms-condition">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                          <div className="flex items-center space-x-6">
-                            <span className="text-sm font-400">
-                              Terms and Conditions
-                            </span>
-                          </div>
-                          <div>
-                            <span>
-                              <svg
-                                width="6"
-                                height="9"
-                                viewBox="0 0 6 9"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="1.49805"
-                                  y="0.818359"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(45 1.49805 0.818359)"
-                                  fill="#1D1D1D"
-                                />
-                                <rect
-                                  x="5.58984"
-                                  y="4.90918"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(135 5.58984 4.90918)"
-                                  fill="#1D1D1D"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="category-item">
-                  <a href="/about">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">About</span>
-                      </div>
-                      <div>
-                        <span>
-                          <svg
-                            width="6"
-                            height="9"
-                            viewBox="0 0 6 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.49805"
-                              y="0.818359"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(45 1.49805 0.818359)"
-                              fill="#1D1D1D"
-                            />
-                            <rect
-                              x="5.58984"
-                              y="4.90918"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(135 5.58984 4.90918)"
-                              fill="#1D1D1D"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li className="category-item">
-                  <a href="/Blogs">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Blogs</span>
-                      </div>
-                      <div>
-                        <span>
-                          <svg
-                            width="6"
-                            height="9"
-                            viewBox="0 0 6 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.49805"
-                              y="0.818359"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(45 1.49805 0.818359)"
-                              fill="#1D1D1D"
-                            />
-                            <rect
-                              x="5.58984"
-                              y="4.90918"
-                              width="5.78538"
-                              height="1.28564"
-                              transform="rotate(135 5.58984 4.90918)"
-                              fill="#1D1D1D"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li className="category-item">
-                  <a href="/contact">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Contact</span>
+                        <SigninAndOutComponent color="black" weight="400" />
                       </div>
                       <div>
                         <span>
