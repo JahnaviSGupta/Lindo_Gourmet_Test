@@ -405,9 +405,8 @@ class AccountMenuComponent extends BandungComponent {
     super(props);
     this.state = {};
   }
-	render ()
-	{
-	    return(
+  render() {
+    return (
       <div className="become-seller-btn">
         <div className="black-btn w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
           <div className="flex space-x-2 items-center">
@@ -415,23 +414,48 @@ class AccountMenuComponent extends BandungComponent {
               <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                 <li className="relative">
                   <span className="flex items-center text-sm text-qwhitetext font-600 cursor-pointer ">
-                                            <span><Link to="/">Home</Link></span>
+                    <span>
+                      <Link to="/">Home</Link>
+                    </span>
                     <span className="ml-1.5 ">&#9660;</span>
                   </span>
                   <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
-                                            <div className="w-full bg-white flex justify-between items-center" style={{boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)",}}>
+                    <div
+                      className="w-full bg-white flex justify-between items-center"
+                      style={{
+                        boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
+                      }}
+                    >
                       <div className="categories-wrapper w-full h-full p-5">
                         <div>
                           <div className="category-items">
                             <ul className="flex flex-col space-y-2">
                               <li>
-                                                                    <Link to="/about">
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">About</span>
+                                <Link to="/about">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    About
+                                  </span>
                                 </Link>
                               </li>
                               <li>
-                                                                    <Link to="/contact">
-                                                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">Contact</span>
+                                <Link to="/contact">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Contact
+                                  </span>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link to="/wishlist">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Wish List
+                                  </span>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link to="/orderhistory">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Order History
+                                  </span>
                                 </Link>
                               </li>
                             </ul>
@@ -446,38 +470,42 @@ class AccountMenuComponent extends BandungComponent {
           </div>
         </div>
       </div>
-        ) ;
+    );
   }
 }
 
-class SigninAndOutComponent
-    extends BandungComponent
-{
-    constructor (props)
-	{
-		super(props) ;
-		this.state =
-		{
-		} ;
-    }
-	render ()
-    {
-        return (
-            !validSession()
-            ?
-                <Link to="/signin">
-                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                    Sign in/Join
-                    </span>
-                </Link>
-            :
-                <Link to="/dashboard" onClick={()=>{clearSession()}}>
-                    <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                    Sign out
-                    </span>
-                </Link>
-        );
-    }
+class SigninAndOutComponent extends BandungComponent {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const { color, weight } = this.props;
+
+    return !validSession() ? (
+      <Link to="/signin">
+        <span
+          className={`flex items-center text-sm text-${color} font-${weight} cursor-pointer`}
+        >
+          Sign in/Join
+        </span>
+      </Link>
+    ) : (
+      <Link
+        to="/dashboard"
+        onClick={() => {
+          clearSession();
+        }}
+      >
+        <span
+          className={`flex items-center text-sm text-${color} font-${weight} cursor-pointer`}
+        >
+          Sign out
+        </span>
+      </Link>
+    );
+  }
 }
 class ProfileComponent extends BandungComponent {
   constructor(props) {
@@ -520,8 +548,7 @@ class ProfileComponent extends BandungComponent {
         <div className="flex flex-col m-0 p-3">
           <h1 className="font-700 text-[50px]">Profile</h1>
           <hr />
-          <div className="p-[10px]"></div>
-          <div className="relative mt-[30px] mb-[30px] rounded-[10px] w-[100%] border-[1px] border-[solid]">
+          <div className="relative mt-[40px] mb-[30px] rounded-[10px] w-[100%] border-[1px] border-[solid]">
             <div className="">
               <div className="flex flex-row mt-[40px] mr-[20px] mb-[40px] ml-[20px]">
                 <img
@@ -543,51 +570,52 @@ class ProfileComponent extends BandungComponent {
               </button>
             </div>
           </div>
-          <div className="p-[10px]"></div>
-          <div className="flex flex-row">
-            <div className="relative flex-[7] mr-[40px] w-[100%]">
+          <div className="flex flex-row flex-wrap">
+            <div className="relative flex-[7] mr-[40px] w-[100%] mt-[10px] mb-[30px]">
               {this.renderGeneralTab()}
             </div>
-            <div className="flex-[5] rounded-[10px] border-[1px] border-[solid]">
-              <div className="font-700 text-qgray m-[15px]">
-                <span className="text-qblack">Account Settings</span>
-                <form className="flex flex-col mt-[10px]">
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                  <label class="form-check-label mb-[20px]">
-                    varius morbi enim nunc faucibus
-                    <input
-                      class="form-check-input ml-[20px] transform scale-150"
-                      type="checkbox"
-                    />
-                  </label>
-                </form>
+            <div className="relative flex-[5] w-[100%] mt-[10px] mb-[30px]">
+              <div className="flex flex-col font-700 text-qgray rounded-[10px] border-[1px] border-[solid] w-full">
+                <div className=" m-[15px]">
+                  <span className="text-qblack">Account Settings</span>
+                  <form className="flex flex-col mt-[10px]">
+                    <label class="form-check-label mb-[20px]">
+                      varius morbi enim nunc faucibus
+                      <input
+                        class="form-check-input ml-[20px] transform scale-150"
+                        type="checkbox"
+                      />
+                    </label>
+                    <label class="form-check-label mb-[20px]">
+                      varius morbi enim nunc faucibus
+                      <input
+                        class="form-check-input ml-[20px] transform scale-150"
+                        type="checkbox"
+                      />
+                    </label>
+                    <label class="form-check-label mb-[20px]">
+                      varius morbi enim nunc faucibus
+                      <input
+                        class="form-check-input ml-[20px] transform scale-150"
+                        type="checkbox"
+                      />
+                    </label>
+                    <label class="form-check-label mb-[20px]">
+                      varius morbi enim nunc faucibus
+                      <input
+                        class="form-check-input ml-[20px] transform scale-150"
+                        type="checkbox"
+                      />
+                    </label>
+                    <label class="form-check-label mb-[20px]">
+                      varius morbi enim nunc faucibus
+                      <input
+                        class="form-check-input ml-[20px] transform scale-150"
+                        type="checkbox"
+                      />
+                    </label>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -1203,8 +1231,8 @@ export {
   BandungComponent,
   JoinComponent,
   ProfileComponent,
-  SigninComponent,
   SigninAndOutComponent,
+  SigninComponent,
   adminPermission,
   clearSession,
   editorPermission,
