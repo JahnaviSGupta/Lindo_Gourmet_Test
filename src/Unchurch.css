@@ -477,30 +477,58 @@ body {
 /* TODO: ===============RESPONSIVE END */
 
 .curved-box {
-  border: 2px solid #236b8e; /* Teal border color */
+  border: 2px solid #236b8e; 
   padding: 10px;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px; 
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .outter-box {
   padding: 10px;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   justify-content: space-between;
 }
 
-/* TwoBoxesInLine.css */
 .container {
   display: flex;
 }
 
 .box {
-  border: 2px solid #236b8e; /* Teal border color */
-  background-color: #fff; /* White background */
+  border: 2px solid #236b8e; 
+  background-color: #fff;
   padding: 20px;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
 }
 
 .space {
   width: 20px;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 10px 20px;
+  background-color: #236b8e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.current-page {
+  font-size: 18px;
+  margin: 0 10px;
 }
