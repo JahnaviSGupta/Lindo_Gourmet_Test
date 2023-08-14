@@ -532,3 +532,12 @@ body {
   font-size: 18px;
   margin: 0 10px;
 }
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #f8f8f8;
+  font-size: 48px;
+}
