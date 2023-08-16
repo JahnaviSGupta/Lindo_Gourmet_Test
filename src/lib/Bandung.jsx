@@ -10,16 +10,19 @@ import {
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-var prefix = null;
+let prefix = null;
 function getPrefix() {
-  return prefix ? prefix : "";
+  return prefix || "";
 }
 function setPrefix(newprefix) {
   prefix = newprefix;
 }
+function getSessionUserEntityId () {
+  return getSession()?getSession().userEntityId:"";
+}
 
-var session = JSON.parse(localStorage.getItem("bandung"));
-var sessionErrorMessage = null;
+let session = JSON.parse(localStorage.getItem("bandung"));
+let sessionErrorMessage = null;
 function getSession() {
   return session;
 }
@@ -50,11 +53,7 @@ function managerPermission() {
 }
 function signin(email, password) {
   Axios.get(
-    getPrefix() +
-      "/app/session/signin?sessionEmail=" +
-      email +
-      "&sessionPassword=" +
-      password,
+    `${getPrefix()}/app/session/signin?sessionEmail=${email}&sessionPassword=${password}`,
     null
   )
     .then((response) => {
@@ -76,7 +75,7 @@ function signout() {
 }
 function fetchSession(email, password) {
   Axios.get(
-    getPrefix() + "/app/session/view?sessionToken=" + getSessionToken(),
+    `${getPrefix()}/app/session/view?sessionToken=${getSessionToken()}`,
     null
   )
     .then((response) => {
@@ -91,7 +90,7 @@ function fetchSession(email, password) {
     .finally((status) => {});
 }
 
-//If token fails try email/passcode combination from last successful signin
+// If token fails try email/passcode combination from last successful signin
 class BandungComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -104,9 +103,11 @@ class BandungComponent extends React.Component {
       loading: false,
     };
   }
+
   command(command) {
-    this.setState({ command: command });
+    this.setState({ command });
   }
+
   renderSignin() {
     return (
       <form
@@ -189,6 +190,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
+  
   // renderSignin() {
   //   return (
   //     <div className="lg:flex items-center relative">
@@ -285,6 +287,7 @@ class BandungComponent extends React.Component {
       document.getElementById("password").value
     );
   }
+
   executeSignout() {
     signout();
   }
@@ -582,6 +585,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
+  
   executeSignup(event) {
     event.preventDefault();
     var email = document.getElementById("email").value;
@@ -616,6 +620,7 @@ class AccountMenuComponent extends BandungComponent {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className="become-seller-btn">
@@ -655,20 +660,6 @@ class AccountMenuComponent extends BandungComponent {
                                   </span>
                                 </Link>
                               </li>
-                              <li>
-                                <Link to="/wishlist">
-                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Wish List
-                                  </span>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/orderhistory">
-                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Order History
-                                  </span>
-                                </Link>
-                              </li>
                             </ul>
                           </div>
                         </div>
@@ -692,13 +683,9 @@ class SigninAndOutComponent extends BandungComponent {
   }
 
   render() {
-    const { color, weight } = this.props;
-
     return !validSession() ? (
       <Link to="/signin">
-        <span
-          className={`flex items-center text-sm text-${color} font-${weight} cursor-pointer`}
-        >
+        <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
           Sign in/Join
         </span>
       </Link>
@@ -709,9 +696,7 @@ class SigninAndOutComponent extends BandungComponent {
           clearSession();
         }}
       >
-        <span
-          className={`flex items-center text-sm text-${color} font-${weight} cursor-pointer`}
-        >
+        <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
           Sign out
         </span>
       </Link>
@@ -730,143 +715,142 @@ class ProfileComponent extends BandungComponent {
     };
     this.longDescriptionEditorState = EditorState.createEmpty();
   }
+
   componentDidMount() {
     this.getProfile();
   }
+
   command(command, action) {
-    this.setState({ command: command, action: action });
+    this.setState({ command, action });
   }
+
   action(action) {
-    this.setState({ action: action });
+    this.setState({ action });
   }
+
   render() {
     if (!validSession()) return this.renderSignin();
-    else
-      return (
-        // <div className="profile-wrapper w-full mt-8 flex space-x-10">
-        //   <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-        //     <div className="flex flex-col space-y-10">
-        //       {this.renderIndex()}
-        //     </div>
-        //   </div>
-        //   <div className="flex-1">
-        //     <div className="item-body profile-wrapper w-full">
-        //       {this.renderTab()}
-        //     </div>
-        //   </div>
-        // </div>
+    return (
+      // <div className="profile-wrapper w-full mt-8 flex space-x-10">
+      //   <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
+      //     <div className="flex flex-col space-y-10">
+      //       {this.renderIndex()}
+      //     </div>
+      //   </div>
+      //   <div className="flex-1">
+      //     <div className="item-body profile-wrapper w-full">
+      //       {this.renderTab()}
+      //     </div>
+      //   </div>
+      // </div>
 
-        <div className="flex flex-col m-0 p-3">
-          <h1 className="font-700 text-[50px]">Profile</h1>
-          <hr />
-          <div className="relative mt-[40px] mb-[30px] rounded-[10px] w-[100%] border-[1px] border-[solid]">
-            <div className="">
-              <div className="flex flex-row mt-[40px] mr-[20px] mb-[40px] ml-[20px]">
-                <img
-                  className="h-[75px] w-[75px] mr-[20px] rounded-[50%]"
-                  src={`${process.env.PUBLIC_URL}/assets/images/saller-1.png`}
-                  alt=""
-                />
-                <div className="flex flex-col">
-                  <span className="font-700">hac habitasse</span>
-                  <span className="font-700 text-qgray">hac habitasse</span>
-                  <span className="font-700 text-qgray">hac habitasse</span>
-                </div>
+      <div className="flex flex-col m-0 p-3">
+        <h1 className="font-700 text-[50px]">Profile</h1>
+        <hr />
+        <div className="p-[10px]"></div>
+        <div className="relative mt-[30px] mb-[30px] rounded-[10px] w-[100%] border-[1px] border-[solid]">
+          <div className="">
+            <div className="flex flex-row mt-[40px] mr-[20px] mb-[40px] ml-[20px]">
+              <img
+                className="h-[75px] w-[75px] mr-[20px] rounded-[50%]"
+                src={`${process.env.PUBLIC_URL}/assets/images/saller-1.png`}
+                alt=""
+              />
+              <div className="flex flex-col">
+                <span className="font-700">hac habitasse</span>
+                <span className="font-700 text-qgray">hac habitasse</span>
+                <span className="font-700 text-qgray">hac habitasse</span>
               </div>
-              <button
-                className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white"
-                type="button"
-              >
-                Edit
-              </button>
             </div>
+            <button
+              className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white gradient-hover-effect"
+              type="button"
+            >
+              Edit
+            </button>
           </div>
-          <div className="flex flex-row flex-wrap">
-            <div className="relative flex-[7] mr-[40px] w-[100%] mt-[10px] mb-[30px]">
-              {this.renderGeneralTab()}
-            </div>
-            <div className="relative flex-[5] w-[100%] mt-[10px] mb-[30px]">
-              <div className="flex flex-col font-700 text-qgray rounded-[10px] border-[1px] border-[solid] w-full">
-                <div className=" m-[15px]">
-                  <span className="text-qblack">Account Settings</span>
-                  <form className="flex flex-col mt-[10px]">
-                    <label class="form-check-label mb-[20px]">
-                      varius morbi enim nunc faucibus
-                      <input
-                        class="form-check-input ml-[20px] transform scale-150"
-                        type="checkbox"
-                      />
-                    </label>
-                    <label class="form-check-label mb-[20px]">
-                      varius morbi enim nunc faucibus
-                      <input
-                        class="form-check-input ml-[20px] transform scale-150"
-                        type="checkbox"
-                      />
-                    </label>
-                    <label class="form-check-label mb-[20px]">
-                      varius morbi enim nunc faucibus
-                      <input
-                        class="form-check-input ml-[20px] transform scale-150"
-                        type="checkbox"
-                      />
-                    </label>
-                    <label class="form-check-label mb-[20px]">
-                      varius morbi enim nunc faucibus
-                      <input
-                        class="form-check-input ml-[20px] transform scale-150"
-                        type="checkbox"
-                      />
-                    </label>
-                    <label class="form-check-label mb-[20px]">
-                      varius morbi enim nunc faucibus
-                      <input
-                        class="form-check-input ml-[20px] transform scale-150"
-                        type="checkbox"
-                      />
-                    </label>
-                  </form>
-                </div>
-              </div>
+        </div>
+        <div className="p-[10px]"></div>
+        <div className="flex flex-row">
+          <div className="relative flex-[7] mr-[40px] w-[100%]">
+            {this.renderGeneralTab()}
+          </div>
+          <div className="flex-[5] rounded-[10px] border-[1px] border-[solid]">
+            <div className="font-700 text-qgray m-[15px]">
+              <span className="text-qblack">Account Settings</span>
+              <form className="flex flex-col mt-[10px]">
+                <label className="form-check-label mb-[20px]">
+                  varius morbi enim nunc faucibus
+                  <input
+                    className="form-check-input ml-[20px] transform scale-150"
+                    type="checkbox"
+                  />
+                </label>
+                <label className="form-check-label mb-[20px]">
+                  varius morbi enim nunc faucibus
+                  <input
+                    className="form-check-input ml-[20px] transform scale-150"
+                    type="checkbox"
+                  />
+                </label>
+                <label className="form-check-label mb-[20px]">
+                  varius morbi enim nunc faucibus
+                  <input
+                    className="form-check-input ml-[20px] transform scale-150"
+                    type="checkbox"
+                  />
+                </label>
+                <label className="form-check-label mb-[20px]">
+                  varius morbi enim nunc faucibus
+                  <input
+                    className="form-check-input ml-[20px] transform scale-150"
+                    type="checkbox"
+                  />
+                </label>
+                <label className="form-check-label mb-[20px]">
+                  varius morbi enim nunc faucibus
+                  <input
+                    className="form-check-input ml-[20px] transform scale-150"
+                    type="checkbox"
+                  />
+                </label>
+              </form>
             </div>
           </div>
         </div>
-      );
+      </div>
+    );
   }
+
   getProfile() {
     if (validSession() && getSession().userEntityId) {
       Axios.get(
-        getPrefix() +
-          "/app/user/view?sessionToken=" +
-          getSessionToken() +
-          "&userEntityId=" +
-          getSession().userEntityId,
+        `${getPrefix()}/app/user/view?sessionToken=${getSessionToken()}&userEntityId=${
+          getSession().userEntityId
+        }`,
         null
       ).then((response) => {
         this.setState({ userEntity: response.data });
       });
       Axios.get(
-        getPrefix() +
-          "/app/user/textshortdescription?sessionToken=" +
-          getSessionToken() +
-          "&userEntityId=" +
-          getSession().userEntityId,
+        `${getPrefix()}/app/user/textshortdescription?sessionToken=${getSessionToken()}&userEntityId=${
+          getSession().userEntityId
+        }`,
         null
       ).then((response) => {
         this.setState({ shortDescription: response.data });
       });
       Axios.get(
-        getPrefix() +
-          "/app/user/textlongdescription?sessionToken=" +
-          getSessionToken() +
-          "&userEntityId=" +
-          getSession().userEntityId,
+        `${getPrefix()}/app/user/textlongdescription?sessionToken=${getSessionToken()}&userEntityId=${
+          getSession().userEntityId
+        }`,
         null
       ).then((response) => {
         this.setState({ longDescription: response.data });
       });
     }
   }
+
   // renderIndex() {
   //   // need modify
   //   return (
@@ -1004,7 +988,7 @@ class ProfileComponent extends BandungComponent {
   //     : this.renderGeneralTab();
   // }
   renderGeneralTab() {
-    //fix shortDescription
+    // fix shortDescription
     if (!this.state.action)
       return (
         <>
@@ -1064,7 +1048,7 @@ class ProfileComponent extends BandungComponent {
             </div>
             <button
               onClick={(event) => this.action("update")}
-              className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white"
+              className="absolute font-700 w-[80px] h-[40px] top-[10px] right-[10px] rounded-[5px] bg-qyellow text-white gradient-hover-effect"
               type="button"
             >
               Edit
@@ -1108,7 +1092,7 @@ class ProfileComponent extends BandungComponent {
           </div> */}
         </>
       );
-    else if (this.state.action === "update") {
+    if (this.state.action === "update") {
       this.longDescriptionEditorState = EditorState.createEmpty();
       return (
         <form
@@ -1273,6 +1257,7 @@ class ProfileComponent extends BandungComponent {
       );
     }
   }
+
   executeGeneralUpdate(event) {
     event.preventDefault();
     const form = new FormData();
@@ -1284,15 +1269,16 @@ class ProfileComponent extends BandungComponent {
       "shortDescription",
       document.getElementById("shortDescription").value
     );
-    Axios.post(getPrefix() + "/app/session/update", form).then((response) => {
+    Axios.post(`${getPrefix()}/app/session/update`, form).then((response) => {
       this.getProfile();
       fetchSession();
     });
     this.action(null);
   }
+
   renderSettingsTab() {
-    //Use Html
-    //Notifications
+    // Use Html
+    // Notifications
     if (!this.state.action)
       return (
         <div>
@@ -1307,20 +1293,22 @@ class ProfileComponent extends BandungComponent {
           </p>
         </div>
       );
-    else if (this.state.action === "update") return null;
-    //Use Html
-    //Notifications
+    if (this.state.action === "update") return null;
+    // Use Html
+    // Notifications
   }
+
   executeSettingsUpdate(event) {
     event.preventDefault();
     const form = new FormData();
     form.append("sessionToken", getSessionToken());
     form.append("userEntityId", this.state.userEntity.userEntityId);
-    Axios.post(getPrefix() + "/app/user/update", form).then((response) => {
+    Axios.post(`${getPrefix()}/app/user/update`, form).then((response) => {
       this.setState({ command: "Settings" });
       this.getProfile();
     });
   }
+
   renderPasswordTab() {
     return (
       <div className="changePasswordTab w-full">
@@ -1355,13 +1343,17 @@ class ProfileComponent extends BandungComponent {
       </div>
     );
   }
+
   executePasswordUpdate(event) {}
+
   renderContactTab() {
     return null;
   }
+
   executeContactUpdate(event) {}
+
   renderBioTab() {
-    //longDescription
+    // longDescription
     if (!this.state.command || this.state.command === "Settings")
       return (
         <div>
@@ -1376,9 +1368,10 @@ class ProfileComponent extends BandungComponent {
           </p>
         </div>
       );
-    else return null;
-    //longDescription
+    return null;
+    // longDescription
   }
+
   executeBioUpdate(event) {
     event.preventDefault();
     const form = new FormData();
@@ -1390,38 +1383,45 @@ class ProfileComponent extends BandungComponent {
         convertToRaw(this.longDescriptionEditorState.getCurrentContent())
       )
     );
-    Axios.post(getPrefix() + "/app/user/update", form).then((response) => {
+    Axios.post(`${getPrefix()}/app/user/update`, form).then((response) => {
       this.setState({ command: "Bio" });
       this.getProfile();
     });
   }
+
   renderEmailsTab() {
     return null;
   }
+
   executeEmailUpdate(event) {}
+
   renderSocialsTab() {
     return null;
   }
+
   executeSocials(event) {}
+
   renderImageTab() {
     return null;
   }
+
   executeImage(event) {}
+
   renderQuitTab() {
     return null;
   }
+
   executeQuit(event) {}
 }
 
 class SigninComponent extends BandungComponent {
   render() {
     if (!validSession()) return this.renderSignin();
-    else
-      return (
-        <div>
-          <p>Welcome.</p>
-        </div>
-      );
+    return (
+      <div>
+        <p>Welcome.</p>
+      </div>
+    );
   }
 }
 
@@ -1464,10 +1464,12 @@ export {
   getSession,
   getSessionErrorMessage,
   getSessionToken,
+  getSessionUserEntityId,
   managerPermission,
   setPrefix,
   setSession,
   signin,
   signout,
-  validSession,
+  validSession
 };
+
