@@ -115,10 +115,71 @@ body {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+.green-btn {
+  /* @apply w-full text-[13px] text-qblacktext font-semibold bg-qyellow flex justify-center items-center h-full; */
+  /* line-height: 0; */
+  &:hover {
+    background-color: #64847b;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.hoverback li:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  display: block;
+  transition: all 0.3s ease;
+  bottom: 25%;
+}
+.hoverback li:hover::after {
+  width: 3%;
+  height: 1px;
+  background-color: #fff;
+}
+
+.gradient-hover-effect {
+  display: flex;
+  /* padding: 0.5em 2rem; */
+  background: linear-gradient(90deg, #f5be53, transparent) #eb8f0f;
+  font-family: inherit;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 1s;
+  place-content: center;
+  align-items: center;
+}
+.gradient-hover-effect:hover,
+.gradient-hover-effect:focus {
+  background-color: #e91e58;
+  color: #fff;
+}
+
+.gradient-hover-effect-blue {
+  display: flex;
+  /* padding: 0.875em 2rem; */
+  background: linear-gradient(90deg, #3b6cf9, transparent) #7a4fc0;
+  font-family: inherit;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 1s;
+  place-content: center;
+  align-items: center;
+}
+.gradient-hover-effect-blue:hover,
+.gradient-hover-effect-blue:focus {
+  background-color: #1e9be9;
+  color: #fff;
+}
 
 .yellow-btn {
   @apply w-full text-[13px] text-qblacktext font-semibold bg-qyellow flex justify-center items-center h-full;
   line-height: 0;
+  &:hover {
+    background-color: #f09440;
+    color: rgb(255, 255, 255);
+  }
 }
 .gray-btn {
   @apply flex justify-center items-center text-sm font-600;
@@ -161,7 +222,11 @@ body {
 }
 .black-btn {
   @apply bg-qblack text-white;
+  &:hover {
+    background-color: #363636;
+  }
 }
+
 .breadcrumb-wrapper span:last-child .sperator {
   display: none;
 }
@@ -199,7 +264,7 @@ body {
 
 /* ======mega menu====== */
 .nav-widget-wrapper .nav ul.nav-wrapper > li {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 .nav-widget-wrapper .nav ul li .sub-menu {
   transition: all 0.5s ease-in-out;
@@ -409,8 +474,15 @@ body {
 
 .DashPartTwo {
   position: relative;
-  height: 600px;
+  height: fit-content;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DashPartTwoCard {
+  @apply h-fit w-full border-solid border-[#9FABB4] border-2 rounded;
 }
 
 .PartTwoTable {
@@ -424,7 +496,7 @@ body {
 @media screen and (max-width: 1023px) {
   /* hide element on small screens */
   .DashPartTwo {
-    height: 2500px;
+    visibility: hidden;
   }
 }
 

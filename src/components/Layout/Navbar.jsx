@@ -5,7 +5,11 @@ import ThinBag from "../Helpers/icons/ThinBag";
 
 export default function Navbar({ className }) {
   return (
-    <div className={`nav-widget-wrapper w-full bg-qteal h-[60px] relative z-30  ${className || ""}`}>
+    <div
+      className={`nav-widget-wrapper w-full bg-qteal h-[60px] relative z-30  ${
+        className || ""
+      }`}
+    >
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
           <div className="w-full h-full d-flex flex-row-reverse justify-between items-center">
@@ -13,9 +17,9 @@ export default function Navbar({ className }) {
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li>
-                    <Link to="*">
+                    <Link to="/product">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                        Product
+                        Products
                       </span>
                     </Link>
                   </li>
@@ -34,28 +38,27 @@ export default function Navbar({ className }) {
                     </Link>
                   </li>
                   <li>
-                    <SigninAndOutComponent/>
+                    <SigninAndOutComponent color="white" weight="600" />
                   </li>
                   <li>
                     <div className="flex space-x-6 items-center">
-                      {
-                        true &&
-                          <div className="cart-wrapper group relative">
-                            <div className="cart relative cursor-pointer">
-                              <Link to="/cart">
-                                <span>
-                                  <ThinBag />
-                                </span>
-                              </Link>
-                              <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-                                15
+                      {true && (
+                        <div className="cart-wrapper group relative">
+                          <div className="cart relative cursor-pointer">
+                            <Link to="/cart">
+                              <span>
+                                <ThinBag />
                               </span>
-                            </div>
-                            {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}
-                            {/* hidden group-hover:block" */}
-                            <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
+                            </Link>
+                            <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
+                              15
+                            </span>
                           </div>
-                    }
+                          {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}
+                          {/* hidden group-hover:block" */}
+                          <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
+                        </div>
+                      )}
                     </div>
                   </li>
                   {/* <li className="relative">
@@ -263,7 +266,7 @@ export default function Navbar({ className }) {
                 </ul>
               </div>
             </div>
-            <AccountMenuComponent/>
+            <AccountMenuComponent />
           </div>
         </div>
       </div>
