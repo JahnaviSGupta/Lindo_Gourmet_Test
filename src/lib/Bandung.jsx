@@ -11,6 +11,9 @@ function getPrefix() {
 function setPrefix(newprefix) {
   prefix = newprefix;
 }
+function getSessionUserEntityId () {
+  return getSession()?getSession().userEntityId:"";
+}
 
 let session = JSON.parse(localStorage.getItem("bandung"));
 let sessionErrorMessage = null;
@@ -1214,20 +1217,19 @@ export {
   AccountMenuComponent,
   BandungComponent,
   JoinComponent,
-  ProfileComponent,
-  SigninComponent,
-  SigninAndOutComponent,
-  adminPermission,
+  ProfileComponent, SigninAndOutComponent, SigninComponent, adminPermission,
   clearSession,
   editorPermission,
   getPrefix,
   getSession,
   getSessionErrorMessage,
   getSessionToken,
+  getSessionUserEntityId,
   managerPermission,
   setPrefix,
   setSession,
   signin,
   signout,
-  validSession,
+  validSession
 };
+
