@@ -17,9 +17,9 @@ export default function Navbar({ className }) {
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li>
-                    <Link to="*">
+                    <Link to="/product">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                        Product
+                        Products
                       </span>
                     </Link>
                   </li>
