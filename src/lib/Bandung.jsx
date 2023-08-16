@@ -2,6 +2,12 @@ import Axios from "axios";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import React from "react";
+import {
+  FaAngleRight,
+  FaLinkedin,
+  FaSquareFacebook,
+  FaSquareTwitter,
+} from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 var prefix = null;
@@ -103,93 +109,175 @@ class BandungComponent extends React.Component {
   }
   renderSignin() {
     return (
-      <div className="lg:flex items-center relative">
-        <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
-          <div className="w-full">
-            <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
-              <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
-                Signin
-              </h1>
-            </div>
-            <form
-              onSubmit={(event) => {
-                this.executeSignin(event);
-              }}
-              method="POST"
-            >
-              <div className="input-area">
-                {getSessionErrorMessage() && (
-                  <div className="error_message">
-                    {getSessionErrorMessage()}
-                  </div>
-                )}
-                <div className="input-item mb-5">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="email"
-                    >
-                      Email Address*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="example@gmail.com"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="input-item mb-5">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="password"
-                    >
-                      Password*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="forgot-password-area flex justify-between items-center mb-7">
-                  <div className="remember-checkbox flex items-center space-x-2.5">
-                    <input type="checkbox" id="remember" name="remember" />
-                    <span className="text-base text-black">Remember Me</span>
-                  </div>
-                  <Link to="/resetpassword" className="text-base text-qyellow">
-                    Forgot Password
-                  </Link>
-                </div>
-                <div className="signin-area mb-3.5">
-                  <div className="flex justify-center">
-                    <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
-                      <span>Sign In</span>
-                    </button>
-                  </div>
-                </div>
-                <div className="signup-area flex justify-center">
-                  <p className="text-base text-qgraytwo font-normal">
-                    <Link to="/join" className="text-base text-qyellow">
-                      Or create an account
-                    </Link>
-                  </p>
-                </div>
+      <form
+        onSubmit={(event) => {
+          this.executeSignin(event);
+        }}
+        method="POST"
+      >
+        <div className="flex flex-col">
+          {getSessionErrorMessage() && (
+            <div className="error_message">{getSessionErrorMessage()}</div>
+          )}
+          <h1 className="text-[48px] font-bold my-[30px] text-left justify-start">
+            LindoGourmet
+          </h1>
+
+          <label className="mx-1 font-bold">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" example@gmail.com"
+            className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
+          />
+          <label className="mx-1 font-bold">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
+          />
+          <Link
+            to="/resetpassword"
+            className="flex flex-col justify-center w-[95%] text-right"
+          >
+            Forgot Password
+          </Link>
+          <div className="flex flow-root items-center mt-[70px] max-w-[95%]">
+            <div className="flex flex-row">
+              <div className="flex flex-1 items-center">
+                <input
+                  name="remember"
+                  id="remember"
+                  type="checkbox"
+                  className="p-2 ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="remember"
+                  className="mx-2 my-3 text-sm font-medium text-black"
+                >
+                  Remember Me
+                </label>
               </div>
-            </form>
+              <div className="flex-1 justify-center">
+                <button
+                  type="submit"
+                  className="items-center float-right justify-end align-right bg-[#028090] rounded-[50px] text-white px-4 py-2 flex flex-wrap"
+                >
+                  <a>Sign In &nbsp;</a>
+                  <FaAngleRight />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex flex-row mt-[70px] mb-[10px] items-center">
+              <div className="flex-1 bg-black h-[2px]" />
+              <p className="text-black mx-[10px]">or</p>
+              <div className="flex-1 bg-black h-[2px]" />
+            </div>
+
+            <div className="flex flex-row items-center justify-center gap-10">
+              <FaSquareFacebook className="w-24 h-24 p-4 text-[#028090]" />
+
+              <FaSquareTwitter className="w-24 h-24 p-4 text-[#028090]" />
+
+              <FaLinkedin className="w-24 h-24 p-4 text-[#028090]" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
+  // renderSignin() {
+  //   return (
+  //     <div className="lg:flex items-center relative">
+  //       <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
+  //         <div className="w-full">
+  //           <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
+  //             <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
+  //               Signin
+  //             </h1>
+  //           </div>
+  //           <form
+  //             onSubmit={(event) => {
+  //               this.executeSignin(event);
+  //             }}
+  //             method="POST"
+  //           >
+  //             <div className="input-area">
+  //               {getSessionErrorMessage() && (
+  //                 <div className="error_message">
+  //                   {getSessionErrorMessage()}
+  //                 </div>
+  //               )}
+  //               <div className="input-item mb-5">
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="email"
+  //                   >
+  //                     Email Address*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="email"
+  //                       id="email"
+  //                       name="email"
+  //                       placeholder="example@gmail.com"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="input-item mb-5">
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="password"
+  //                   >
+  //                     Password*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="password"
+  //                       id="password"
+  //                       name="password"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="forgot-password-area flex justify-between items-center mb-7">
+  //                 <div className="remember-checkbox flex items-center space-x-2.5">
+  //                   <input type="checkbox" id="remember" name="remember" />
+  //                   <span className="text-base text-black">Remember Me</span>
+  //                 </div>
+  //                 <Link to="/resetpassword" className="text-base text-qyellow">
+  //                   Forgot Password
+  //                 </Link>
+  //               </div>
+  //               <div className="signin-area mb-3.5">
+  //                 <div className="flex justify-center">
+  //                   <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
+  //                     <span>Sign In</span>
+  //                   </button>
+  //                 </div>
+  //               </div>
+  //               <div className="signup-area flex justify-center">
+  //                 <p className="text-base text-qgraytwo font-normal">
+  //                   <Link to="/join" className="text-base text-qyellow">
+  //                     Or create an account
+  //                   </Link>
+  //                 </p>
+  //               </div>
+  //             </div>
+  //           </form>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
   executeSignin(event) {
     event.preventDefault();
     signin(
@@ -201,185 +289,308 @@ class BandungComponent extends React.Component {
     signout();
   }
 
-  renderJoin() {
+  // renderJoin() {
+  //   return (
+  //     <div className="lg:flex items-center relative">
+  //       <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
+  //         <div className="w-full">
+  //           <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
+  //             <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
+  //               Create Account
+  //             </h1>
+  //           </div>
+  //           <form
+  //             onSubmit={(event) => {
+  //               this.executeJoin(event);
+  //             }}
+  //             method="POST"
+  //           >
+  //             <div className="input-area">
+  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="firstName"
+  //                   >
+  //                     First Name*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="text"
+  //                       id="firstName"
+  //                       name="firstName"
+  //                       placeholder="John"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="lastName"
+  //                   >
+  //                     Last Name*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="text"
+  //                       id="lastName"
+  //                       name="lastName"
+  //                       placeholder="Doe"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="email"
+  //                   >
+  //                     Email Address*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="email"
+  //                       id="email"
+  //                       name="email"
+  //                       placeholder="john.doe@gmail.com"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="emailRepeat"
+  //                   >
+  //                     Repeat Email*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="email"
+  //                       id="emailRepeat"
+  //                       name="emailRepeat"
+  //                       placeholder="john.doe@gmail.com"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="password"
+  //                   >
+  //                     Password*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="password"
+  //                       id="password"
+  //                       name="password"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //                 <div className="input-com w-full h-full">
+  //                   <label
+  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
+  //                     htmlFor="passwordRepeat"
+  //                   >
+  //                     Repeat Password*
+  //                   </label>
+  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+  //                     <input
+  //                       type="password"
+  //                       id="passwordRepeat"
+  //                       name="passwordRepeat"
+  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
+  //                     />
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="forgot-password-area flex justify-between items-center mb-7">
+  //                 <div className="remember-checkbox flex items-center space-x-2.5">
+  //                   <input type="checkbox" id="remember" name="remember" />
+  //                   <span className="text-base text-black">
+  //                     I agree all{" "}
+  //                     <Link to="/terms" className="text-base text-qyellow">
+  //                       terms and conditions
+  //                     </Link>
+  //                   </span>
+  //                 </div>
+  //               </div>
+  //               <div className="signin-area mb-3.5">
+  //                 <div className="flex justify-center">
+  //                   <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
+  //                     <span>Create Account</span>
+  //                   </button>
+  //                 </div>
+  //               </div>
+  //               <div className="signup-area flex justify-center">
+  //                 <p className="text-base text-qgraytwo font-normal">
+  //                   <Link to="/signin" className="text-base text-qyellow">
+  //                     Or sign into your account
+  //                   </Link>
+  //                 </p>
+  //               </div>
+  //             </div>
+  //           </form>
+  //         </div>
+  //       </div>
+  //       <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center">
+  //         <div
+  //           className="absolute xl:-right-20 -right-[138px]"
+  //           style={{ top: "calc(50% - 258px)" }}
+  //         ></div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  //   executeJoin(event) {
+  //     event.preventDefault();
+  //     var firstName = document.getElementById("firstName").value;
+  //     var lastName = document.getElementById("lastName").value;
+  //     var email = document.getElementById("email").value;
+  //     var emailRepeat = document.getElementById("emailRepeat").value;
+  //     var password = document.getElementById("password").value;
+  //     var passwordRepeat = document.getElementById("passwordRepeat").value;
+  //     Axios.get(
+  //       getPrefix() +
+  //         "/app/session/join?firstName=" +
+  //         firstName +
+  //         "&lastName=" +
+  //         lastName +
+  //         "&email=" +
+  //         email +
+  //         "&emailRepeat=" +
+  //         emailRepeat +
+  //         "&password=" +
+  //         password +
+  //         "&passwordRepeat=" +
+  //         passwordRepeat,
+  //       null
+  //     )
+  //       .then((response) => {
+  //         if (response.data.error) sessionErrorMessage = response.data.error;
+  //         else setSession(response.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //         sessionErrorMessage = "Signin failure.";
+  //       })
+  //       .finally((status) => {
+  //         window.location.reload();
+  //       });
+  //   }
+  // }
+  renderSignup() {
     return (
-      <div className="lg:flex items-center relative">
-        <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
-          <div className="w-full">
-            <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
-              <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
-                Create Account
-              </h1>
-            </div>
-            <form
-              onSubmit={(event) => {
-                this.executeJoin(event);
-              }}
-              method="POST"
-            >
-              <div className="input-area">
-                <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="firstName"
-                    >
-                      First Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="John"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="lastName"
-                    >
-                      Last Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Doe"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="email"
-                    >
-                      Email Address*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="john.doe@gmail.com"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="emailRepeat"
-                    >
-                      Repeat Email*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="email"
-                        id="emailRepeat"
-                        name="emailRepeat"
-                        placeholder="john.doe@gmail.com"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="password"
-                    >
-                      Password*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="passwordRepeat"
-                    >
-                      Repeat Password*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="password"
-                        id="passwordRepeat"
-                        name="passwordRepeat"
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="forgot-password-area flex justify-between items-center mb-7">
-                  <div className="remember-checkbox flex items-center space-x-2.5">
-                    <input type="checkbox" id="remember" name="remember" />
-                    <span className="text-base text-black">
-                      I agree all{" "}
-                      <Link to="/terms" className="text-base text-qyellow">
-                        terms and conditions
-                      </Link>
-                    </span>
-                  </div>
-                </div>
-                <div className="signin-area mb-3.5">
-                  <div className="flex justify-center">
-                    <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
-                      <span>Create Account</span>
-                    </button>
-                  </div>
-                </div>
-                <div className="signup-area flex justify-center">
-                  <p className="text-base text-qgraytwo font-normal">
-                    <Link to="/signin" className="text-base text-qyellow">
-                      Or sign into your account
-                    </Link>
-                  </p>
-                </div>
+      <form
+        onSubmit={(event) => {
+          this.executeSignup(event);
+        }}
+        method="POST"
+      >
+        <div className="flex flex-col">
+          {getSessionErrorMessage() && (
+            <div className="error_message">{getSessionErrorMessage()}</div>
+          )}
+          <h1 className="text-[48px] font-bold my-[30px] text-left justify-start">
+            LindoGourmet
+          </h1>
+
+          <label className="mx-1 font-bold">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" example@gmail.com"
+            className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
+          />
+          <label className="mx-1 font-bold">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
+          />
+          <label className="mx-1 font-bold">Repeat Password</label>
+          <input
+            type="password"
+            id="passwordRepeat"
+            name="passwordRepeat"
+            className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
+          />
+          <span className="text-base text-black text-[10px] mx-1 w-[95%]">
+            By signing up, I agree to the{" "}
+            <Link to="/terms" className="text-base text-qteal text-[10px]">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link to="/privacy" className="text-base text-qteal text-[10px]">
+              Privacy Policy
+            </Link>
+            .
+          </span>
+          <div className="flex flow-root items-center mt-[70px] max-w-[95%]">
+            <div className="flex flex-row">
+              <div className="flex flex-1 items-center">
+                <input
+                  name="remember"
+                  id="remember"
+                  type="checkbox"
+                  className="p-2 ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="remember"
+                  className="mx-2 my-3 text-sm font-medium text-black"
+                >
+                  I Agree
+                </label>
               </div>
-            </form>
+              <div className="flex-1 justify-center">
+                <button
+                  type="submit"
+                  className="items-center float-right justify-end align-right bg-[#028090] rounded-[50px] text-white px-4 py-2 flex flex-wrap"
+                >
+                  <a>Sign Up &nbsp;</a>
+                  <FaAngleRight />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex flex-row mt-[70px] mb-[10px] items-center">
+              <div className="flex-1 bg-black h-[2px]" />
+              <p className="text-black mx-[10px]">or</p>
+              <div className="flex-1 bg-black h-[2px]" />
+            </div>
+
+            <div className="flex flex-row items-center justify-center gap-10">
+              <FaSquareFacebook className="w-24 h-24 p-4 text-[#028090]" />
+
+              <FaSquareTwitter className="w-24 h-24 p-4 text-[#028090]" />
+
+              <FaLinkedin className="w-24 h-24 p-4 text-[#028090]" />
+            </div>
           </div>
         </div>
-        <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center">
-          <div
-            className="absolute xl:-right-20 -right-[138px]"
-            style={{ top: "calc(50% - 258px)" }}
-          ></div>
-        </div>
-      </div>
+      </form>
     );
   }
-  executeJoin(event) {
+  executeSignup(event) {
     event.preventDefault();
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
-    var emailRepeat = document.getElementById("emailRepeat").value;
     var password = document.getElementById("password").value;
     var passwordRepeat = document.getElementById("passwordRepeat").value;
     Axios.get(
       getPrefix() +
-        "/app/session/join?firstName=" +
-        firstName +
-        "&lastName=" +
-        lastName +
-        "&email=" +
+        "/app/session/join?email=" +
         email +
-        "&emailRepeat=" +
-        emailRepeat +
         "&password=" +
         password +
         "&passwordRepeat=" +
@@ -1214,9 +1425,21 @@ class SigninComponent extends BandungComponent {
   }
 }
 
-class JoinComponent extends BandungComponent {
+// class JoinComponent extends BandungComponent {
+//   render() {
+//     if (!validSession()) return this.renderJoin();
+//     else
+//       return (
+//         <div>
+//           <p>Welcome.</p>
+//         </div>
+//       );
+//   }
+// }
+
+class SignupComponent extends BandungComponent {
   render() {
-    if (!validSession()) return this.renderJoin();
+    if (!validSession()) return this.renderSignup();
     else
       return (
         <div>
@@ -1229,10 +1452,11 @@ class JoinComponent extends BandungComponent {
 export {
   AccountMenuComponent,
   BandungComponent,
-  JoinComponent,
+  // JoinComponent,
   ProfileComponent,
   SigninAndOutComponent,
   SigninComponent,
+  SignupComponent,
   adminPermission,
   clearSession,
   editorPermission,
