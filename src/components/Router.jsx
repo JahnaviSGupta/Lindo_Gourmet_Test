@@ -19,6 +19,7 @@ import Join from "./Join";
 import OrderHistory from "./Orderhistory";
 import Privacy from "./Privacy";
 import ProductList from "./ProductList";
+import ProductPage from "./ProductPage";
 import ProductView from "./ProductView";
 import Profile from "./Profile";
 import ShopList from "./ShopList";
@@ -38,6 +39,7 @@ export default function Routers() {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/profile" element={<Profile />} />
 
+        <Route exact path="/product" element={<ProductPage />} />
         <Route exact path="/productlist" element={<ProductList />} />
         <Route exact path="/productview" element={<ProductView />} />
         <Route exact path="/shoplist" element={<ShopList />} />
