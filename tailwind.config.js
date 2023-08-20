@@ -27,5 +27,9 @@ module.exports = {
       borderStyle: ["last"],
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("postcss-nesting"),
+    require("autoprefixer"),
+  ],
 };

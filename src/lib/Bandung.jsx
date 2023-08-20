@@ -17,8 +17,8 @@ function getPrefix() {
 function setPrefix(newprefix) {
   prefix = newprefix;
 }
-function getSessionUserEntityId () {
-  return getSession()?getSession().userEntityId:"";
+function getSessionUserEntityId() {
+  return getSession() ? getSession().userEntityId : "";
 }
 
 let session = JSON.parse(localStorage.getItem("bandung"));
@@ -190,7 +190,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
-  
+
   // renderSignin() {
   //   return (
   //     <div className="lg:flex items-center relative">
@@ -585,7 +585,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
-  
+
   executeSignup(event) {
     event.preventDefault();
     var email = document.getElementById("email").value;
@@ -1470,6 +1470,5 @@ export {
   setSession,
   signin,
   signout,
-  validSession
+  validSession,
 };
-
