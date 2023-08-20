@@ -25,6 +25,7 @@ import ShopList from "./ShopList";
 import ShopView from "./ShopView";
 import Signin from "./Signin";
 import Terms from "./Terms";
+import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
 export default function Routers() {
