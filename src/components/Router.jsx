@@ -7,7 +7,6 @@ import BlogItem from "./Blog/BlogItem";
 import CardPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
 import LoadingPage from "./CheckoutPage/LoadingPage";
-import OrderConfimedPage from "./CheckoutPage/OrderConfimedPage";
 import Compare from "./Compare";
 import Contact from "./Contact";
 import Dashboard from "./Dashboard";
@@ -25,8 +24,8 @@ import Profile from "./Profile";
 import ShopList from "./ShopList";
 import ShopView from "./ShopView";
 import Signin from "./Signin";
-import Stats from "./Stats";
 import Terms from "./Terms";
+import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
 export default function Routers() {
@@ -53,7 +52,8 @@ export default function Routers() {
         <Route exact path="/wishlist" element={<Wishlist />} />
         <Route exact path="/orderhistory" element={<OrderHistory />} />
         <Route exact path="/flash-sale" element={<FlashSale />} />
-        <Route exact path="/compare" element={<Compare />} />                
+        <Route exact path="/compare" element={<Compare />} />
+
         <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blogitem" element={<BlogItem />} />
         <Route exact path="/about" element={<About />} />
@@ -63,9 +63,9 @@ export default function Routers() {
         <Route exact path="/privacy" element={<Privacy />} />
         <Route exact path="*" element={<FourZeroFour />} />
         <Route exact path="/admin" element={<Admin />} />
-        <Route exact path="/stat" element={<Stats/>} />
+
         <Route exact path="/loading" element={<LoadingPage />} />
-        <Route exact path="/order-confirmed" element={<OrderConfimedPage />} />
+        <Route exact path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );
