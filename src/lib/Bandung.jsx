@@ -192,7 +192,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
-  
+
   // renderSignin() {
   //   return (
   //     <div className="lg:flex items-center relative">
@@ -586,7 +586,7 @@ class BandungComponent extends React.Component {
       </form>
     );
   }
-  
+
   executeSignup(event) {
     event.preventDefault();
     var email = document.getElementById("email").value;
