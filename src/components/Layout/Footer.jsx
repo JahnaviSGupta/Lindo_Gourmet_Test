@@ -37,27 +37,33 @@ export default function Footer() {
         {
           showImage && (<div class="flex space-x-10 mr-10 ">
           <div class="right justify-end ">
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
+            <h1 className="font-bold text-2l pb-2 text-justify"> Our Company</h1>
+            <div class="pb-2"><a href="/about">About</a></div>
+            <div class="pb-2"><a href="/contact">Contact</a></div>
+            {/* <div class="pb-2">Lorem ipsum</div>
+            <div class="pb-2">Lorem ipsum</div> */}
           </div>
           <div class="right justify-end">
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
-            <div class="pb-2">Lorem ipsum</div>
+          <h1 className="font-bold text-2l pb-2 text-justify"> Resources </h1>
+            <div class="pb-2"><a href="/product">Product</a></div>
+            <div class="pb-2"><a href="/dashboard">Dashboard</a></div>
+            {/* <div class="pb-2">Lorem ipsum</div>
+            <div class="pb-2">Lorem ipsum</div> */}
           </div>
-          <div class="right justify-end">
+          {/* <div class="right justify-end">
             <div class="pb-2">Lorem ipsum</div>
             <div class="pb-2">Lorem ipsum</div>
             <div class="pb-2">Lorem ipsum</div>
             <div class="pb-2">Lorem ipsum</div>
-          </div>
+          </div> */}
         </div>)
         }
-        
-      </div>
+    </div>
+
+
+      <div className="right justify-end">
+        &copy; 2023 LindoGourmet. All rights reserved.
+       </div>
     </footer>
   );
 }

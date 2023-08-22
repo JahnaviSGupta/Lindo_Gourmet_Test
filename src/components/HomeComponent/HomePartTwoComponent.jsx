@@ -3,11 +3,11 @@ import BasicExample from "../Helpers/Cards/Category";
 
 function HomePartTwoComponent() {
   const exampleData = [
-    { id: 1, text: "Example 1" },
-    { id: 2, text: "Example 2" },
-    { id: 3, text: "Example 3" },
-    { id: 4, text: "Example 4" },
-    { id: 5, text: "Example 5" },
+    { id: 1, text: "T-Shirt" , description: "Customize T-shirt", image:"ProductTshirt"},
+    { id: 2, text: "Laptop", description: "Customize Laptop", image:"ProductLaptop" },
+    { id: 3, text: "Coffee Mug" , description: "Customize Coffee Mug", image:"ProductCoffeeMug"},
+    { id: 4, text: "Sunglasses" , description: "Customize Sunglasses", image:"ProductSunglasses" },
+    { id: 5, text: "Vase", description: "Customize Vase", image:"ProductVase" },
     { id: 6, text: "Example 6" },
     { id: 7, text: "Example 7" },
     { id: 8, text: "Example 8" },
@@ -26,7 +26,7 @@ function HomePartTwoComponent() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const maxCardCount = 10;
+  const maxCardCount = 5;
 
   const handleScroll = (e) => {
     const { scrollLeft, scrollWidth, clientWidth } = e.target;
@@ -51,7 +51,7 @@ function HomePartTwoComponent() {
         <h1 className="flex-[6] font-600 mb-[10px] text-[40px]">Products</h1>
         <div className="">
           <button className="btn bg-qteal rounded-lg text-white px-5 py-2 font-600">
-            More
+          <a href="/generic-product">More</a>
           </button>
         </div>
       </div>
@@ -62,7 +62,14 @@ function HomePartTwoComponent() {
         >
           {exampleData.slice(0, maxCardCount).map((example) => (
             <div key={example.id} className="mt-[30px] mb-[50px]">
-              <BasicExample text={example.text} />
+              {/* <BasicExample text={example.text} /> */}
+              <BasicExample
+                title={example.text}
+                description= {example.description}
+                buttonText="Customize"
+                buttonLink="/generic-product"
+                image={example.image}
+              />
             </div>
           ))}
         </div>

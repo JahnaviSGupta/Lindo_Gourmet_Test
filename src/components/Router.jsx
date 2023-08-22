@@ -13,6 +13,7 @@ import Dashboard from "./Dashboard";
 import Faq from "./Faq";
 import FlashSale from "./FlashSale";
 import FourZeroFour from "./FourZeroFour";
+import GenericProduct from "./GenericCustomization";
 import Home from "./Home";
 import Join from "./Join";
 import OrderHistory from "./Orderhistory";
@@ -28,6 +29,7 @@ import Terms from "./Terms";
 import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
+
 export default function Routers() {
   return (
     <BrowserRouter>
@@ -66,6 +68,7 @@ export default function Routers() {
 
         <Route exact path="/loading" element={<LoadingPage />} />
         <Route exact path="/test" element={<Test />} />
+        <Route exact path="/generic-product" element={<GenericProduct />} />
       </Routes>
     </BrowserRouter>
   );
