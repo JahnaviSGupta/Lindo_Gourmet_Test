@@ -1,7 +1,6 @@
 import Layout from '../Layout';
 import DashDiagramLine from './tabs/DashDiagramLine';
 import DashDiagramPie from './tabs/DashDiagramPie';
-import DashPartFour from './tabs/DashPartFour';
 import DashPartOne from './tabs/DashPartOne';
 import DashPartTwo from './tabs/DashPartTwo';
 
@@ -9,7 +8,7 @@ export default function Dashbaord() {
 	return (
 		<>
 			<Layout>
-				<div>
+				<section>
 					<div className='DashPartOne'>
 						<DashPartOne />
 					</div>
@@ -47,11 +46,7 @@ export default function Dashbaord() {
           </div>
 
           <hr /> */}
-
-					<div className='DashPartFour'>
-						<DashPartFour />
-					</div>
-				</div>
+				</section>
 			</Layout>
 		</>
 	);
