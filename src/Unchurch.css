@@ -454,15 +454,6 @@ body {
 	background-color: lightgray;
 }
 
-.DashPartTwo {
-	position: relative;
-	height: fit-content;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .DashPartTwoCard {
 	@apply h-fit w-full border-solid border-[#9FABB4] border-2 rounded;
 }
@@ -473,13 +464,6 @@ body {
 
 .CardSize {
 	width: 20%;
-}
-
-@media screen and (max-width: 1023px) {
-	/* hide element on small screens */
-	.DashPartTwo {
-		visibility: hidden;
-	}
 }
 
 .DashPartThree {
