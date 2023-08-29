@@ -116,63 +116,62 @@ body {
 	}
 }
 .green-btn {
-  /* @apply w-full text-[13px] text-qblacktext font-semibold bg-qyellow flex justify-center items-center h-full; */
-  /* line-height: 0; */
-  
+	/* @apply w-full text-[13px] text-qblacktext font-semibold bg-qyellow flex justify-center items-center h-full; */
+	/* line-height: 0; */
 }
 
 .green-btn:hover {
-    background-color: #64847b;
-    color: rgb(255, 255, 255);
-  }
+	background-color: #64847b;
+	color: rgb(255, 255, 255);
+}
 
 .hoverback li:after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  display: block;
-  transition: all 0.3s ease;
-  bottom: 25%;
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 1px;
+	display: block;
+	transition: all 0.3s ease;
+	bottom: 25%;
 }
 .hoverback li:hover::after {
-  width: 3%;
-  height: 1px;
-  background-color: #fff;
+	width: 3%;
+	height: 1px;
+	background-color: #fff;
 }
 
 .gradient-hover-effect {
-  display: flex;
-  /* padding: 0.5em 2rem; */
-  background: linear-gradient(90deg, #f5be53, transparent) #eb8f0f;
-  font-family: inherit;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 1s;
-  place-content: center;
-  align-items: center;
+	display: flex;
+	/* padding: 0.5em 2rem; */
+	background: linear-gradient(90deg, #f5be53, transparent) #eb8f0f;
+	font-family: inherit;
+	color: #fff;
+	text-decoration: none;
+	transition: background-color 1s;
+	place-content: center;
+	align-items: center;
 }
 .gradient-hover-effect:hover,
 .gradient-hover-effect:focus {
-  background-color: #e91e58;
-  color: #fff;
+	background-color: #e91e58;
+	color: #fff;
 }
 
 .gradient-hover-effect-blue {
-  display: flex;
-  /* padding: 0.875em 2rem; */
-  background: linear-gradient(90deg, #3b6cf9, transparent) #7a4fc0;
-  font-family: inherit;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 1s;
-  place-content: center;
-  align-items: center;
+	display: flex;
+	/* padding: 0.875em 2rem; */
+	background: linear-gradient(90deg, #3b6cf9, transparent) #7a4fc0;
+	font-family: inherit;
+	color: #fff;
+	text-decoration: none;
+	transition: background-color 1s;
+	place-content: center;
+	align-items: center;
 }
 .gradient-hover-effect-blue:hover,
 .gradient-hover-effect-blue:focus {
-  background-color: #1e9be9;
-  color: #fff;
+	background-color: #1e9be9;
+	color: #fff;
 }
 
 .yellow-btn {
@@ -181,9 +180,9 @@ body {
 }
 
 .yellow-btn:hover {
-    background-color: #f09440;
-    color: rgb(255, 255, 255);
-  }
+	background-color: #f09440;
+	color: rgb(255, 255, 255);
+}
 .gray-btn {
 	@apply flex justify-center items-center text-sm font-600;
 	background: #f0f1f3;
@@ -227,8 +226,8 @@ body {
 	@apply bg-qblack text-white;
 }
 .black-btn:hover {
-    background-color: #363636;
-  }
+	background-color: #363636;
+}
 .breadcrumb-wrapper span:last-child .sperator {
 	display: none;
 }
@@ -266,7 +265,7 @@ body {
 
 /* ======mega menu====== */
 .nav-widget-wrapper .nav ul.nav-wrapper > li {
-  padding: 15px 0;
+	padding: 15px 0;
 }
 .nav-widget-wrapper .nav ul li .sub-menu {
 	transition: all 0.5s ease-in-out;
@@ -291,11 +290,7 @@ body {
 	text-transform: capitalize;
 }
 
-.header-section-wrapper
-  .topbar-dropdowns
-  .country-select
-  .my-select-box
-  .my-select-box-section {
+.header-section-wrapper .topbar-dropdowns .country-select .my-select-box .my-select-box-section {
 	width: 150px;
 	left: auto;
 	right: 0;
@@ -309,10 +304,7 @@ body {
 	left: auto;
 	right: 0;
 }
-.header-section-wrapper
-  .topbar-dropdowns
-  .my-select-box
-  .my-select-box-section {
+.header-section-wrapper .topbar-dropdowns .my-select-box .my-select-box-section {
 	width: 120px;
 	left: auto;
 	right: 0;
@@ -365,12 +357,7 @@ body {
 
 /*TODO: ===============all product page============ */
 
-.products-page-wrapper
-  .filter-widget
-  .filter-subject-item
-  .filter-items
-  ul
-  li.item:last-child {
+.products-page-wrapper .filter-widget .filter-subject-item .filter-items ul li.item:last-child {
 	margin-bottom: 0;
 }
 /* range slider */
@@ -401,10 +388,7 @@ body {
 
 /*TODO: =============== product compaire============ */
 
-.products-compaire-wrapper
-  .table-wrapper
-  .table-row-wrapper
-  .product:last-child {
+.products-compaire-wrapper .table-wrapper .table-row-wrapper .product:last-child {
 	border-right: none;
 }
 .products-compaire-wrapper .table-wrapper .table-row-wrapper:nth-child(2) td {
@@ -454,13 +438,9 @@ body {
 @media (max-width: 1536px) {
 }
 
-/* DashBoard */
-.DashPartOne {
-	height: 50px;
-	margin: 5% 10% 2% 10%;
-	font-size: 3rem;
-}
-
+/**********************
+	DASHBOARD
+***********************/
 .Dashpic {
 	height: 60px;
 	width: 260px;
@@ -472,15 +452,6 @@ body {
 
 .dashPartOneCard:hover {
 	background-color: lightgray;
-}
-
-.DashPartTwo {
-	position: relative;
-	height: fit-content;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .DashPartTwoCard {
@@ -495,24 +466,11 @@ body {
 	width: 20%;
 }
 
-@media screen and (max-width: 1023px) {
-	/* hide element on small screens */
-	.DashPartTwo {
-		visibility: hidden;
-	}
-}
-
 .DashPartThree {
 	position: relative;
 	height: 530px;
 	width: 100%;
 	margin: 5% 10% 0% 10%;
-}
-@media screen and (max-width: 1023px) {
-	/* hide element on small screens */
-	.DashPartThree {
-		height: 1300px;
-	}
 }
 
 .buyAgainPic {
@@ -544,10 +502,6 @@ body {
 	}
 }
 
-.DashPartFour {
-	margin: 7% 7% 10% 7%;
-}
-
 /* TODO: ===============RESPONSIVE END */
 .curved-box {
 	border: 2px solid #236b8e;
@@ -555,8 +509,8 @@ body {
 	border-radius: 20px;
 	justify-content: space-between;
 	margin-bottom: 20px;
-  }
-  
+}
+
 .outter-box {
 	padding: 10px;
 	border-radius: 20px;
