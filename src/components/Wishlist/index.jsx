@@ -32,7 +32,7 @@ export default function Wishlist({ wishlist = true }) {
           </div>
           <div className="w-full mt-[23px]">
             <div className="container-x mx-auto">
-              <ProductsTable className="mb-[30px]" />
+              <ProductsTable className="mb-[30px] max-h-[436px] min-h-[436px] overflow-y-auto border border-[#EDEDED]" />
               <div className="w-full mt-[30px] flex sm:justify-end justify-start">
                 <div className="sm:flex sm:space-x-[30px] items-center">
                   <button type="button">
@@ -41,7 +41,10 @@ export default function Wishlist({ wishlist = true }) {
                     </div>
                   </button>
                   <div className="w-[180px] h-[50px]">
-                    <button type="button" className="yellow-btn">
+                    <button
+                      type="button"
+                      className="bg-[#028090] hover:bg-cyan-900 w-full h-full rounded-lg"
+                    >
                       <div className="w-full text-sm font-semibold">
                         Add to Cart All
                       </div>
