@@ -14,22 +14,24 @@ function HomePartThreeComponent({ showImage }) {
   return (
     <div>
       <div className="">
-        <div className="flex flex-row space-x-[231px]">
-          <div className="flex-[8] col-lg-6">
-            <h1 className="font-600 mb-[44px] text-[40px]">Our Vision</h1>
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2">
+            <h1 className="font-600 mb-4 text-2xl md:text-4xl">Our Vision</h1>
             <p className="font-400 mb-[22px] text-justify text-sans-serif italic">
-            At LindoGourmet, we envision a world where self-expression and uniqueness take center stage.
-            We believe that every individual is unique, and their possessions should reflect that distinctiveness. 
-            Our mission is to provide a platform that enables you to break away 
-            from the limitations of mass-produced goods and embrace the joy of owning products that are as unique as you are.
+              At LindoGourmet, we envision a world where self-expression and
+              uniqueness take center stage. We believe that every individual is
+              unique, and their possessions should reflect that distinctiveness.
+              Our mission is to provide a platform that enables you to break
+              away from the limitations of mass-produced goods and embrace the
+              joy of owning products that are as unique as you are.
             </p>
           </div>
           {showImage && (
-            <div className="flex-[4] col-lg-6">
+            <div className="md:w-1/2 md:pl-4 flex justify-end items-center">
               <LinkContainer to="/about">
                 <p>
                   <img
-                    className="rounded-lg w-[350px] h-[300px]"
+                    className="max-h-[455px] min-h-[155px] rounded"
                     src={`${process.env.PUBLIC_URL}/assets/images/home/home2.jpg`}
                     alt="Products-img"
                   ></img>
@@ -41,23 +43,23 @@ function HomePartThreeComponent({ showImage }) {
       </div>
 
       {showImage && (
-        <div className="flex flex-row space-x-[10%] mt-[5%]">
-          <div className="flex-[6] col-lg-6">
+        <div className="flex justify-center space-x-[10%] mt-[5%]">
+          <div className="">
             <LinkContainer to="/about">
               <p>
                 <img
-                  className="rounded-lg h-[200px] w-full"
+                  className="rounded-lg max-w-[855px] min-w-[155px] max-h-[455px] min-h-[155px] w-full"
                   src={`${process.env.PUBLIC_URL}/assets/images/home/home3.jpg`}
                   alt="img"
                 ></img>
               </p>
             </LinkContainer>
           </div>
-          <div className="flex-[6] col-lg-6">
+          <div className="">
             <LinkContainer to="/about">
               <p>
                 <img
-                  className="rounded-lg h-[200px] w-full"
+                  className="rounded-lg max-w-[855px] min-w-[155px] max-h-[455px] min-h-[155px] w-full"
                   src={`${process.env.PUBLIC_URL}/assets/images/home/home4.jpg`}
                   alt="img"
                 ></img>

@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import Layout from "./Layout";
 
-import { useEffect, useState } from "react";
 import HomePartOneComponent from "./HomeComponent/HomePartOneComponent";
 import HomePartThreeComponent from "./HomeComponent/HomePartThreeComponent";
 import HomePartTwoComponent from "./HomeComponent/HomePartTwoComponent";
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div className="">
+        <div className="px-[100px]">
           <div className="m-[70px]">
             <HomePartOneComponent showImage={showImage} />
           </div>

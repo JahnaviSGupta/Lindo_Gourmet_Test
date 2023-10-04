@@ -357,8 +357,14 @@ export default function GenericProduct() {
 
   return (
     <Layout>
-      <div className="w-full h-full">
-        <JsonToReact jsonData={productData1} />
+      <div className="product-view-main-wrapper bg-white pt-[30px] w-full">
+        <div className="breadcrumb-wrapper w-full ">
+          <div className="container-x mx-auto">
+            <div className="w-full h-full">
+              <JsonToReact jsonData={productData1} />
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

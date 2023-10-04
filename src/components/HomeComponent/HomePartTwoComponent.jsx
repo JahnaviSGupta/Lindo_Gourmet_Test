@@ -3,11 +3,36 @@ import BasicExample from "../Helpers/Cards/Category";
 
 function HomePartTwoComponent() {
   const exampleData = [
-    { id: 1, text: "T-Shirt" , description: "Customize T-shirt", image:"ProductTshirt"},
-    { id: 2, text: "Laptop", description: "Customize Laptop", image:"ProductLaptop" },
-    { id: 3, text: "Coffee Mug" , description: "Customize Coffee Mug", image:"ProductCoffeeMug"},
-    { id: 4, text: "Sunglasses" , description: "Customize Sunglasses", image:"ProductSunglasses" },
-    { id: 5, text: "Vase", description: "Customize Vase", image:"ProductVase" },
+    {
+      id: 1,
+      text: "T-Shirt",
+      description: "Customize T-shirt",
+      image: "ProductTshirt",
+    },
+    {
+      id: 2,
+      text: "Laptop",
+      description: "Customize Laptop",
+      image: "ProductLaptop",
+    },
+    {
+      id: 3,
+      text: "Coffee Mug",
+      description: "Customize Coffee Mug",
+      image: "ProductCoffeeMug",
+    },
+    {
+      id: 4,
+      text: "Sunglasses",
+      description: "Customize Sunglasses",
+      image: "ProductSunglasses",
+    },
+    {
+      id: 5,
+      text: "Vase",
+      description: "Customize Vase",
+      image: "ProductVase",
+    },
     { id: 6, text: "Example 6" },
     { id: 7, text: "Example 7" },
     { id: 8, text: "Example 8" },
@@ -51,7 +76,7 @@ function HomePartTwoComponent() {
         <h1 className="flex-[6] font-600 mb-[10px] text-[40px]">Products</h1>
         <div className="">
           <button className="btn bg-qteal rounded-lg text-white px-5 py-2 font-600">
-          <a href="/generic-product">More</a>
+            <a href="/generic-product">More</a>
           </button>
         </div>
       </div>
@@ -65,7 +90,7 @@ function HomePartTwoComponent() {
               {/* <BasicExample text={example.text} /> */}
               <BasicExample
                 title={example.text}
-                description= {example.description}
+                description={example.description}
                 buttonText="Customize"
                 buttonLink="/generic-product"
                 image={example.image}

@@ -3,34 +3,36 @@ import React from "react";
 function HomePartOneComponent({ showImage }) {
   return (
     <div className="">
-      <div className="flex flex-row">
-        <div className="flex-[6] col-md-12 col-lg-6">
-          <div className="">
-            <h1 className="font-600 mb-[44px] text-[40px]">About</h1>
-            <p className="font-400 mb-[22px] text-justify text-sans-serif italic" >
-            LindoGourmet is here to revolutionize your shopping experience by offering you the opportunity to be the designer. 
-            Our intuitive customization tools empower you to handpick details of your desired product, 
-            ensuring that it perfectly aligns with your tastes and preferences. 
-            We are your ultimate destination for personalized products that allows you to unleash your imagination 
-            and create items that truly reflect your style, personality, and preferences.
+      <div className="">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2">
+            <h1 className="font-600 mb-4 text-2xl md:text-4xl">About</h1>
+            <p className="font-400 mb-4 text-sans-serif italic">
+              LindoGourmet! is here to revolutionize your shopping experience by
+              offering you the opportunity to be the designer. Our intuitive
+              customization tools empower you to handpick details of your
+              desired product, ensuring that it perfectly aligns with your
+              tastes and preferences. We are your ultimate destination for
+              personalized products that allow you to unleash your imagination
+              and create items that truly reflect your style, personality, and
+              preferences.
             </p>
           </div>
-        </div>
-        {showImage && (
-          <div className="flex-[6] col-md-12 col-lg-6 mr-[25px]">
-            <div className="flex justify-end">
+          {showImage && (
+            <div className="md:w-1/2 md:pl-4 flex justify-end items-center">
               <img
-                className="mt-[10px] w-[35vh] h-[45vh] rounded"
+                // Set max and min width and height for the image
+                className="max-w-[855px] min-w-[155px] max-h-[855px] min-h-[155px] md:w-auto md:h-auto rounded"
                 // src={`${process.env.PUBLIC_URL}/assets/images/about-banner.png`}
                 src={`${process.env.PUBLIC_URL}/assets/images/home/home1.jpg`}
                 alt="homepage-about-img"
               ></img>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="flex justify-center">
-        <hr className="m-[30px] mb-[0px] border-[3px] w-[80%] rounded-[5px]" />
+        <hr className="m-6 mb-0 border-3 w-4/5 md:w-4/5 rounded-5" />
       </div>
     </div>
   );
