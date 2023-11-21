@@ -16,6 +16,24 @@ function HomePartTwoComponent() {
       image: "ProductLaptop",
     },
     {
+      id: 6,
+      text: "Shoes",
+      description: "Customize Shoes",
+      image: "ProductCustomizedShoes",
+    },
+    {
+      id: 7,
+      text: "Pouch",
+      description: "Customize Pouch",
+      image: "ProductCustomizedPouch",
+    },
+    {
+      id: 8,
+      text: "Cap",
+      description: "Customize Cap",
+      image: "ProductCustomizedCap",
+    },
+    {
       id: 3,
       text: "Coffee Mug",
       description: "Customize Coffee Mug",
@@ -23,9 +41,9 @@ function HomePartTwoComponent() {
     },
     {
       id: 4,
-      text: "Sunglasses",
-      description: "Customize Sunglasses",
-      image: "ProductSunglasses",
+      text: "Sunglass",
+      description: "Customize Sunglass",
+      image: "ProductSunglass",
     },
     {
       id: 5,
@@ -33,14 +51,36 @@ function HomePartTwoComponent() {
       description: "Customize Vase",
       image: "ProductVase",
     },
-    { id: 6, text: "Example 6" },
-    { id: 7, text: "Example 7" },
-    { id: 8, text: "Example 8" },
-    { id: 9, text: "Example 9" },
-    { id: 10, text: "Example 10" },
-    { id: 11, text: "Example 11" },
-    { id: 12, text: "Example 12" },
-    { id: 13, text: "Example 13" },
+    {
+      id: 9,
+      text: "Drawstring Bag",
+      description: "Customize Drawstring Bag",
+      image: "ProductCustomizedDrawstringBag",
+    },
+    {
+      id: 10,
+      text: "Coaster",
+      description: "Customize Coaster",
+      image: "ProductCustomizedCoaster",
+    },
+    {
+      id: 11,
+      text: "Key Chain",
+      description: "Customize Key Chain",
+      image: "keychain",
+    },
+    {
+      id: 12,
+      text: "Bottle",
+      description: "Customize Bottle",
+      image: "ProductCustomizedBottle",
+    },
+    {
+      id: 13,
+      text: "Plate",
+      description: "Customize Plate",
+      image: "plate",
+    },
     { id: 14, text: "Example 14" },
     { id: 15, text: "Example 15" },
     { id: 16, text: "Example 16" },
@@ -51,7 +91,7 @@ function HomePartTwoComponent() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const maxCardCount = 5;
+  const maxCardCount = 13;
 
   const handleScroll = (e) => {
     const { scrollLeft, scrollWidth, clientWidth } = e.target;
