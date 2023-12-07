@@ -29,6 +29,11 @@ import Terms from "./Terms";
 import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
+import Payment from "./Dashboard/tabs/Payment";
+import AddressesTab from "./Dashboard/tabs/AddressesTab";
+import SupportTab from "./Dashboard/tabs/SupportTab";
+import PasswordTab from "./Dashboard/tabs/PasswordTab";
+
 
 export default function Routers() {
   return (
@@ -69,6 +74,10 @@ export default function Routers() {
         <Route exact path="/loading" element={<LoadingPage />} />
         <Route exact path="/test" element={<Test />} />
         <Route exact path="/generic-product" element={<GenericProduct />} />
+        <Route exact path="/payment" element={<Payment/>}/>
+        <Route exact path="/address" element={<AddressesTab/>}/>
+        <Route exact path="support" element={<SupportTab/>}/>
+        <Route exact path="loginandsecurity" element={<PasswordTab/>}/>
       </Routes>
     </BrowserRouter>
   );

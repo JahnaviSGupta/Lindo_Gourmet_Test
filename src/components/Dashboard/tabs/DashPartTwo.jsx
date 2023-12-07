@@ -50,7 +50,7 @@ export default function DashPartTwo() {
           />
         </picture>
         <div className="p-1">
-          <Link to="/Profile" className="text-2xl font-bold">
+          <Link to="/Wishlist" className="text-2xl font-bold">
             Wish List
           </Link>
           <p className="text-base">
@@ -69,7 +69,7 @@ export default function DashPartTwo() {
           />
         </picture>
         <div className="p-1">
-          <Link to="/Profile" className="text-2xl font-bold">
+          <Link to="/Payment" className="text-2xl font-bold">
             Payment Methods
           </Link>
           <p className="text-base">
@@ -88,7 +88,7 @@ export default function DashPartTwo() {
           />
         </picture>
         <div className="p-1">
-          <Link to="/Profile" className="text-2xl font-bold">
+          <Link to="/loginandsecurity" className="text-2xl font-bold">
             Login And Security
           </Link>
           <p className="text-base">
@@ -107,7 +107,7 @@ export default function DashPartTwo() {
           />
         </picture>
         <div className="p-1">
-          <Link to="/Profile" className="text-2xl font-bold">
+          <Link to="/Address" className="text-2xl font-bold">
             Your Address
           </Link>
           <p className="text-base">
@@ -126,7 +126,7 @@ export default function DashPartTwo() {
           />
         </picture>
         <div className="p-1">
-          <Link to="/Profile" className="text-2xl font-bold">
+          <Link to="/support" className="text-2xl font-bold">
             Your Messages
           </Link>
           <p className="text-base">

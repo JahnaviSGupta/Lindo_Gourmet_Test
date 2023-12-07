@@ -3,6 +3,7 @@ import Layout from '../Layout';
 import DashDiagramLine from './tabs/DashDiagramLine';
 import DashDiagramPie from './tabs/DashDiagramPie';
 import DashPartTwo from './tabs/DashPartTwo';
+import Payment from './tabs/Payment';
 
 import UnevenSetsInfinite from './tabs/DashboardCarousel';
 
