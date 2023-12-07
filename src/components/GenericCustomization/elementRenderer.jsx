@@ -1,6 +1,6 @@
 import React from "react";
-import Selectbox from "../Helpers/Selectbox";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
+import Selectbox from "../Helpers/Selectbox";
 
 // Custom components must be hardcoded
 // Use of xml with generic html tags will make more sense

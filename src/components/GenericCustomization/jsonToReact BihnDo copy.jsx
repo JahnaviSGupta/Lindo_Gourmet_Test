@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import Checkbox from "../Helpers/Checkbox.jsx";
 import {
-  SetupElement,
   QuantityElement,
   SelectOptions,
+  SetupElement,
 } from "./elementRenderer.jsx";
-import Checkbox from "../Helpers/Checkbox.jsx";
 
 export default function JsonToReact({ jsonData }) {
   //TODO - Design the custom handling of inputs
