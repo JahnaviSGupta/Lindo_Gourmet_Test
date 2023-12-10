@@ -16,6 +16,8 @@ import {
 import { ImGoogle2 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import SignInImage from "../components/Helpers/SignInImage";
+import JoinComponent from "../components/JoinComponent";
+import SigninComponent from "../components/SigninComponent";
 
 let prefix = null;
 function getPrefix() {
@@ -975,6 +977,7 @@ class SigninAndOutComponent extends BandungComponent {
         to="/dashboard"
         onClick={() => {
           clearSession();
+          window.location.reload();
         }}
       >
         <span
@@ -1012,21 +1015,13 @@ class ProfileComponent extends BandungComponent {
   }
 
   render() {
-    if (!validSession()) return this.renderSignin();
+    if (!validSession()) {
+      return (
+        <SigninComponent
+        />
+      );
+    }
     return (
-      // <div className="profile-wrapper w-full mt-8 flex space-x-10">
-      //   <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-      //     <div className="flex flex-col space-y-10">
-      //       {this.renderIndex()}
-      //     </div>
-      //   </div>
-      //   <div className="flex-1">
-      //     <div className="item-body profile-wrapper w-full">
-      //       {this.renderTab()}
-      //     </div>
-      //   </div>
-      // </div>
-
       <section className="flex flex-col m-0 p-3">
         <h1 className="font-700 text-3xl sm:text-[50px] mb-2">Profile</h1>
         <hr />
@@ -1134,142 +1129,7 @@ class ProfileComponent extends BandungComponent {
     }
   }
 
-  // renderIndex() {
-  //   // need modify
-  //   return (
-  //     <>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("general", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">General</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("settings", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Settings</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("password", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Password</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("contact", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Contact</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("bio", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Bio</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("emails", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Emails</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("socials", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Socials</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("image", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Image</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("quit", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Quit</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-  // renderTab() {
-  //   return !this.state.command || this.state.command === "general"
-  //     ? this.renderGeneralTab()
-  //     : this.state.command === "settings"
-  //     ? this.renderSettingsTab()
-  //     : this.state.command === "password"
-  //     ? this.renderPasswordTab()
-  //     : this.state.command === "contact"
-  //     ? this.renderContactTab()
-  //     : this.state.command === "bio"
-  //     ? this.renderBioTab()
-  //     : this.state.command === "emails"
-  //     ? this.renderEmailsTab()
-  //     : this.state.command === "socials"
-  //     ? this.renderSocialsTab()
-  //     : this.state.command === "image"
-  //     ? this.renderImageTab()
-  //     : this.state.command === "quit"
-  //     ? this.renderQuitTab()
-  //     : this.renderGeneralTab();
-  // }
+  
   renderGeneralTab() {
     // fix shortDescription
     if (!this.state.action)
@@ -1337,42 +1197,7 @@ class ProfileComponent extends BandungComponent {
               Edit
             </button>
           </div>
-          {/* <div className="flex space-x-8">
-            <div className="w-[570px] ">
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                      First Name
-                    </label>
-                    <div className="input-wrapper w-full h-full overflow-hidden relative ">
-                      {getSession().firstName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                      Last Name
-                    </label>
-                    <div className="input-wrapper w-full h-full overflow-hidden relative">
-                      {getSession().lastName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="action-area flex space-x-4 items-center">
-            <button
-              onClick={(event) => this.action("update")}
-              className="w-[164px] h-[50px] bg-qblack text-white text-sm"
-            >
-              Update
-            </button>
-          </div> */}
+         
         </>
       );
     if (this.state.action === "update") {
@@ -1459,85 +1284,7 @@ class ProfileComponent extends BandungComponent {
               Cancel
             </button>
           </div>
-          {/* <div className="flex space-x-8">
-            <div className="w-[570px] ">
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="firstName"
-                    >
-                      First Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        defaultValue={getSession().firstName}
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="lastName"
-                    >
-                      Last Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        defaultValue={getSession().lastName}
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="shortDescription"
-                    >
-                      Last Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <textarea
-                        id="shortDescription"
-                        name="shortDescription"
-                        className="text_area fields"
-                        defaultValue={getSession().shortDescription}
-                        rows="4"
-                        cols="50"
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="action-area flex space-x-4 items-center">
-            <button
-              onClick={(event) => this.action(null)}
-              className="text-sm text-qred font-semibold"
-            >
-              Cancel
-            </button>
-            <button className="w-[164px] h-[50px] bg-qblack text-white text-sm">
-              Save
-            </button>
-          </div> */}
+          
         </form>
       );
     }
@@ -1710,41 +1457,43 @@ class ProfileComponent extends BandungComponent {
 
 class AdminSignInComponent extends BandungComponent {
   render() {
-    if (!validSession()) return this.adminRenderSignin();
-    return (
-      <div>
-        <p>Welcome Admin.</p>
-      </div>
-    );
+    if (!validSession()) {
+      return (
+        <SigninComponent/>
+      );
+      
+    }
+    if (adminPermission()) {
+      return (
+        <header className='flex justify-between mt-8 mb-3 px-2'>
+						<h1 className='text-3xl font-bold'>Admin</h1>
+						<Link to='/stats' className='hidden sm:block'>
+							<button type='button' className='btn bg-qteal w-[130px]'>
+								<span className='text-white'>Stats</span>
+							</button>
+						</Link>
+					</header>
+      );
+    }
+    else {
+      return (
+        <div>
+          <p>Not Admin. Access denied!</p>
+        </div>
+      );   
+    }
+
   }
 }
 
-class SigninComponent extends BandungComponent {
-  render() {
-    if (!validSession()) return this.renderSignin();
-    return (
-      <div>
-        <p>Welcome.</p>
-      </div>
-    );
-  }
-}
-
-// class JoinComponent extends BandungComponent {
-//   render() {
-//     if (!validSession()) return this.renderJoin();
-//     else
-//       return (
-//         <div>
-//           <p>Welcome.</p>
-//         </div>
-//       );
-//   }
-// }
 
 class SignupComponent extends BandungComponent {
   render() {
-    if (!validSession()) return this.renderSignup();
+    if (!validSession()) {
+      return (
+        <JoinComponent/>
+      );
+    }
     return (
       <div>
         <p>Welcome.</p>
@@ -1754,25 +1503,16 @@ class SignupComponent extends BandungComponent {
 }
 
 export {
-  AccountMenuComponent,
-  BandungComponent,
-  // JoinComponent,
-  ProfileComponent,
-  SigninAndOutComponent,
-  AdminSignInComponent,
-  SigninComponent,
-  SignupComponent,
-  adminPermission,
-  clearSession,
+  AccountMenuComponent, adminPermission, AdminSignInComponent, BandungComponent, clearSession,
   editorPermission,
   getPrefix,
   getSession,
   getSessionErrorMessage,
   getSessionToken,
-  managerPermission,
+  JoinComponent,
+  managerPermission, ProfileComponent,
   setPrefix,
   setSession,
-  signin,
-  signout,
-  validSession,
+  signin, SigninAndOutComponent, SigninComponent, signout, SignupComponent, validSession
 };
+
