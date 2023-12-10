@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 import "./Unchurch.css";
 import Router from "./components/Router";
-import { setPrefix } from "./lib/Bandung";
+// import { setPrefix } from "./lib/Bandung";
+import { setPrefix } from "./bandung";
 import "./lib/Bandung.css";
 
 // setPrefix("http://localhost:5000/https://www.unchurch.org") ;
