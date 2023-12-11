@@ -51,7 +51,7 @@ export default function Navbar({ className }) {
                               </span>
                             </Link>
                             <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-                              15
+                              5
                             </span>
                           </div>
                           {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}
