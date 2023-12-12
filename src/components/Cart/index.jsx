@@ -1,5 +1,12 @@
-import { rowsData } from "../CartPage/ProductsTable";
-export default function Cart({ className}) {
+import { connect } from 'react-redux';
+import { removeRow } from "../../lib/CartActions";
+
+const Cart = ({ className, rowsData, removeRow }) => {
+
+  const handleRemove = (removedRowData) => {
+    removeRow(removedRowData);
+  };
+
   return (
     <>
       <div
@@ -33,7 +40,8 @@ export default function Cart({ className}) {
                     </p>
                   </div>
                 </div>
-                <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
+                {/* <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer " onClick={handleRemove}> */}
+                 {/* <span onClick={handleRemove} style={{ cursor: 'pointer' }}> 
                   <svg
                     width="8"
                     height="8"
@@ -44,7 +52,7 @@ export default function Cart({ className}) {
                   >
                     <path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z" />
                   </svg>
-                </span>
+                </span> */}
               </li>
             ))};
             </ul>
@@ -85,3 +93,13 @@ export default function Cart({ className}) {
     </>
   );
 }
+
+const mapStateToProps = (state) => ({
+  rowsData: state.rowsData,
+});
+
+const mapDispatchToProps = {
+  removeRow,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

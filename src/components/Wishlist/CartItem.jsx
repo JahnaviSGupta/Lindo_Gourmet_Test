@@ -3,7 +3,7 @@ import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function CartItem(props) {
   // Recieves row data from parent (ProductsTable.jsx) using props
-  const { rowsData, onRemove } = props;
+  const { rowsData, onRemove, onAdd } = props;
   const [quantity, setQuantity] = useState(1);
 
   const handleRemoveClick = () => {
@@ -13,6 +13,10 @@ export default function CartItem(props) {
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
+
+  const handleAddClick = () => {
+    onAdd(rowsData);
+  }
 
   const total = rowsData[4] * quantity;
   
@@ -76,6 +80,7 @@ export default function CartItem(props) {
         <button
           type="button"
           className="bg-[#028090] hover:bg-cyan-900 rounded-lg flex-center space-x-1 items-center justify-center"
+          onClick={handleAddClick}
         >
           <div className="w-full text-white text-sm font-semibold p-3">
             Add to Cart

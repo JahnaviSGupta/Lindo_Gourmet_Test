@@ -1,7 +1,26 @@
 import React from "react";
+import { connect, useDispatch } from 'react-redux';
+import { addRows, removeRow } from '../../../lib/CartActions';
 import InputQuantityCom from "../../Helpers/InputQuantityCom";
 
-export default function WishlistTab({ className }) {
+
+const mapStateToProps = (state) => ({
+  rowsData: state.rowsData,
+});
+
+const mapDispatchToProps = {
+  removeRow,
+  addRows,
+};
+
+const WishlistTab = ({ className, rowsData, removeRow, addRow }) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddAll = () => {
+    dispatch(addRows(rowsData));
+  };
+
   return (
     <>
       <div className={`w-full ${className || ""}`}>
@@ -198,7 +217,7 @@ export default function WishlistTab({ className }) {
             </div>
           </button>
           <div className="w-[180px] h-[50px]">
-            <button type="button" className="yellow-btn">
+            <button type="button" className="yellow-btn" onClick={handleAddAll}>
               <div className="w-full text-sm font-semibold">
                 Add to Cart All
               </div>
@@ -209,3 +228,5 @@ export default function WishlistTab({ className }) {
     </>
   );
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(WishlistTab);

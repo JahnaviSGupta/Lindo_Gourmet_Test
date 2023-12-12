@@ -1,17 +1,20 @@
 import { useState } from "react";
+import { connect, useDispatch } from 'react-redux';
+import { addRow, removeRow } from '../../lib/CartActions';
 import CartItem from "./CartItem";
 
-export default function ProductsTable({ className }) {
-  // Temp Array for Wishlist Table
-  const [rowsData, setRowsData] = useState([
-    // Order: Images, Product, Color, Size, Prize, Total
-    ["1.jpg", "Black Teas", "#E4BC87", "Small", "120" ],
-    ["2.jpg", "Green Teas", "#E4BC87", "Small", "38"],
-    ["3.jpg", "White Teas", "#E4BC87", "Medium", "28"],
-    ["4.jpg", "Oolong Teas", "#E4BC87", "Small", "20"],
-    ["5.jpg", "Tisanes-caffeine free", "#E4BC87", "Big", "150"],
-    ["6.jpg", "Red Teas", "#E4BC87", "Small", "25"],
-  ]);
+
+const mapStateToProps = (state) => ({
+  rowsData: state.rowsData,
+});
+
+const mapDispatchToProps = {
+  removeRow,
+  addRow,
+};
+
+const ProductsTable = ({ className, rowsData, removeRow, addRow }) => {
+  
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -24,8 +27,13 @@ export default function ProductsTable({ className }) {
   );
 
   const handleRemove = (removedRowData) => {
-    const updatedRowsData = rowsData.filter((rowData) => rowData !== removedRowData);
-    setRowsData(updatedRowsData);
+    removeRow(removedRowData);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleAddRow = (addRowData) => {
+    dispatch(addRow(addRowData));
   };
 
   return (
@@ -60,7 +68,7 @@ export default function ProductsTable({ className }) {
               {/* table heading end */}
 
               {filteredRowsData.map((rowData) => (
-                <CartItem rowsData={rowData} key={rowData[0]} onRemove={handleRemove} />
+                <CartItem rowsData={rowData} key={rowData[0]} onRemove={handleRemove} onAdd={handleAddRow} />
               ))}
 
               
@@ -75,3 +83,5 @@ export default function ProductsTable({ className }) {
     </div>
   );
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsTable);

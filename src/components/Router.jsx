@@ -1,4 +1,6 @@
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import store from "../lib/Store";
 import About from "./About";
 import AddShop from "./AddShop";
 import Admin from "./Admin";
@@ -10,6 +12,10 @@ import LoadingPage from "./CheckoutPage/LoadingPage";
 import Compare from "./Compare";
 import Contact from "./Contact";
 import Dashboard from "./Dashboard";
+import AddressesTab from "./Dashboard/tabs/AddressesTab";
+import PasswordTab from "./Dashboard/tabs/PasswordTab";
+import Payment from "./Dashboard/tabs/Payment";
+import SupportTab from "./Dashboard/tabs/SupportTab";
 import Faq from "./Faq";
 import FlashSale from "./FlashSale";
 import FourZeroFour from "./FourZeroFour";
@@ -30,11 +36,6 @@ import Terms from "./Terms";
 import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
-import Payment from "./Dashboard/tabs/Payment";
-import AddressesTab from "./Dashboard/tabs/AddressesTab";
-import SupportTab from "./Dashboard/tabs/SupportTab";
-import PasswordTab from "./Dashboard/tabs/PasswordTab";
-
 
 export default function Routers() {
   return (
@@ -57,7 +58,7 @@ export default function Routers() {
         <Route exact path="/checkout" element={<CheckoutPage />} />
         <Route exact path="/order" element={<TrackingOrder />} />
 
-        <Route exact path="/wishlist" element={<Wishlist />} />
+        <Route exact path="/wishlist" element={<Provider  store={store}><Wishlist /></Provider>} />
         <Route exact path="/orderhistory" element={<OrderHistory />} />
         <Route exact path="/flash-sale" element={<FlashSale />} />
         <Route exact path="/compare" element={<Compare />} />
