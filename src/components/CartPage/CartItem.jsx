@@ -75,12 +75,14 @@ export default function CartItem(props) {
       {/* Cross Mark */}
       <td className="text-right py-4">
         <div className="flex space-x-1 items-center justify-center">
-        <span onClick={handleRemoveClick} style={{ cursor: 'pointer' }}>
+        {/* <span onClick={handleRemoveClick} className="mt-[20px] mr-[15px] inline-flex cursor-pointer "> */}
+        <span onClick={handleRemoveClick} style={{ cursor: 'pointer' }}> 
             <svg
               width="10"
               height="10"
               viewBox="0 0 10 10"
               fill="none"
+              className="inline fill-current text-[#AAAAAA] hover:text-qred"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
