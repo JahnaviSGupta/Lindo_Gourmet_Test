@@ -1,7 +1,5 @@
-import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Layout";
-import BankCardPayment from "./BankCardPayment";
 export default function CheckoutPage() {
   return (
     <Layout>
@@ -40,7 +38,7 @@ export default function CheckoutPage() {
               </div>
             </div>
             <div className="w-full lg:flex lg:space-x-[30px]">
-              <div className="lg:w-1/2 w-full">
+              {/* <div className="lg:w-1/2 w-full">
                 <h1 className="sm:text-2xl text-xl text-qblack font-medium mb-5">
                   Billing Details
                 </h1>
@@ -173,7 +171,7 @@ export default function CheckoutPage() {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
               <div className="flex-1">
                 <h1 className="sm:text-2xl text-xl text-qblack font-medium mb-5">
                   Order Summary
@@ -288,12 +286,68 @@ export default function CheckoutPage() {
                   </div>
 
                   <div className="mt-[30px]">
-                    <div className=" flex justify-between mb-5">
+                    <div className=" flex justify-between mb-4">
                       <p className="text-2xl font-medium text-qblack">Total</p>
                       <p className="text-2xl font-medium text-qred">$365</p>
                     </div>
                   </div>
-                  <BankCardPayment />
+                  {/* <BankCardPayment /> */}
+                  <ul className="flex flex-col space-y-4 mb-[20px]">
+                    <li>
+                      <div className="flex flex-col space-y-1">
+                        <div className="flex space-x-2.5 items-center">
+                          <div className="input-radio">
+                            <input
+                              type="radio"
+                              name="price"
+                              className="accent-pink-500"
+                            />
+                          </div>
+                          <span className="text-[13px] text-normal">
+                            Direct Bank Transfer
+                          </span>
+                        </div>
+                        <div className="text-[12px] text-qgraytwo ml-[24px]">
+                          <span>
+                            Make your payment directly into our bank account.
+                            Please use your Order ID as the payment reference.
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <div className="flex space-x-2.5 items-center">
+                          <div className="input-radio">
+                            <input
+                              type="radio"
+                              name="price"
+                              className="accent-pink-500"
+                            />
+                          </div>
+                          <span className="text-[13px] text-normal">
+                            Cash on Delivery
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex">
+                        <div className="flex space-x-2.5 items-center">
+                          <div className="input-radio">
+                            <input
+                              type="radio"
+                              name="price"
+                              className="accent-pink-500"
+                            />
+                          </div>
+                          <span className="text-[13px] text-normal">
+                            Local Delivery
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                   <a href="/loading">
                     <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
                       <span className="text-sm text-white font-semibold">
