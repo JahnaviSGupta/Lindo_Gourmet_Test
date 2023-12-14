@@ -683,6 +683,7 @@ body {
 }
 @media only screen and (min-width: 1200px) {
   body {
+    background-color: lightslategray;
     width: 100%; /* Occupy full width on smaller screens */
     padding: 5px; /* Adjust padding for smaller screens */
     font-size: 14px;
@@ -702,4 +703,9 @@ body {
   font-size: x-large;
   font: bold;
   margin-left: 20px;
+}
+.page-content {
+  margin: auto;
+  padding: 0 40px;
+  text-align: center;
 }

@@ -115,7 +115,7 @@ export default function ProductPage() {
           </div>
           <p class="featured-title">Featured Products</p>
           <br></br>
-          <div class="productimg2 flex">
+          <div class="productimg2 flex justify-content-center">
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
               class="w-40 h-48 m-10"
