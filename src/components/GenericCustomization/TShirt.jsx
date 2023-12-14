@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/extensions */
 import React, { useState } from "react";
-import { TwitterPicker } from "react-color";
 import Draggable from "react-draggable";
 import "react-resizable/css/styles.css";
 export default ({
@@ -11,7 +10,24 @@ export default ({
   theme4Style,
   setTheme4Style,
 }) => {
-  const [color, setColor] = useState("#000EE0");
+  const [currentColor, setCurrentColor] = useState("yellow");
+
+  const handleColorClick = (color) => {
+    setCurrentColor(color);
+  };
+
+  const getImageForColor = () => {
+    switch (currentColor) {
+      case "black":
+        return `${process.env.PUBLIC_URL}/assets/images/black_tshirt.png`;
+      case "yellow":
+        return `${process.env.PUBLIC_URL}/assets/images/yellow_tshirt.png`;
+      case "blue":
+        return `${process.env.PUBLIC_URL}/assets/images/blue_tshirt.png`;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div>
@@ -21,22 +37,21 @@ export default ({
             style={{
               height: 250,
               width: 250,
-              backgroundColor: color,
               position: "relative",
             }}
           >
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/shadow.png`}
-              style={{ position: "absolute", height: "100%", opacity: 0.29 }}
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/collar.png`}
-              style={{ position: "absolute", height: "100%", opacity: 0.33 }}
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/outerr.png`}
-              style={{ position: "absolute", height: "100%" }}
-            />
+            {currentColor && (
+              <div>
+                <img
+                  src={getImageForColor()}
+                  alt={`Image for ${currentColor}`}
+                  style={{
+                    position: "absolute",
+                    height: "100%",
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
         <div
@@ -55,26 +70,38 @@ export default ({
             <ThemeFour customStyle={theme4Style} setStyle={setTheme4Style} />
           )}
         </div>
-      </div>
-
-      <div style={{ marginTop: 20 }}>
-        <TwitterPicker
-          colors={[
-            "#550000",
-            "#0CAC68",
-            "#FFF040",
-            "#0019A3",
-            "#A24A79",
-            "#9F9F9F",
-            "#313131",
-            "#349146",
-            "#FFFFFF",
-            "#005C8D",
-          ]}
-          onChange={(color) => {
-            setColor(color.hex);
-          }}
-        />
+        <div>
+          <button
+            style={{
+              backgroundColor: "yellow", // Set your desired background color for the button
+              padding: "10px", // Set your desired padding
+              margin: "5px", // Set your desired margin
+              border: "none", // Remove the default button border
+              cursor: "pointer", // Set cursor to pointer for better UX
+            }}
+            onClick={() => handleColorClick("yellow")}
+          ></button>
+          <button
+            style={{
+              backgroundColor: "black", // Set your desired background color for the button
+              padding: "10px", // Set your desired padding
+              margin: "5px", // Set your desired margin
+              border: "none", // Remove the default button border
+              cursor: "pointer", // Set cursor to pointer for better UX
+            }}
+            onClick={() => handleColorClick("black")}
+          ></button>
+          <button
+            style={{
+              backgroundColor: "#6299DD", // Set your desired background color for the button
+              padding: "10px", // Set your desired padding
+              margin: "5px", // Set your desired margin
+              border: "none", // Remove the default button border
+              cursor: "pointer", // Set cursor to pointer for better UX
+            }}
+            onClick={() => handleColorClick("blue")}
+          ></button>
+        </div>
       </div>
     </div>
   );
@@ -88,8 +115,8 @@ const ThemeOne = ({ customStyle }) => {
           background: customStyle.backColor ? customStyle.backColor : "orange",
           display: "flex",
           justifyContent: "center",
-          height: 45,
-          width: 90,
+          height: 30,
+          width: 70,
           margin: "auto",
           marginTop: 40,
           borderRadius: 5,
@@ -101,7 +128,7 @@ const ThemeOne = ({ customStyle }) => {
         <div
           style={{
             fontWeight: "800",
-            fontSize: 18,
+            fontSize: 12,
             display: "flex",
             justifyContent: "center",
             position: "absolute",
@@ -115,10 +142,10 @@ const ThemeOne = ({ customStyle }) => {
         <div
           style={{
             fontWeight: "800",
-            fontSize: 18,
+            fontSize: 14,
             position: "absolute",
-            marginBottom: 10,
-            top: 18,
+            marginBottom: 7,
+            top: 10,
             width: "100%",
           }}
           className="font1"
