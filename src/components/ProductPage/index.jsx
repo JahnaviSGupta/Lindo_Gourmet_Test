@@ -3,119 +3,124 @@ export default function ProductPage() {
   return (
     <Layout>
       <div class="divide-y-2">
-        <div class="text-2xl font-bold px-[10] pt-[30px] pb-[5px]">
+        <div class="text-2xl font-bold px-[10] pt-[30px] pb-[5px] flex justify-content-center">
           Products
         </div>
 
         {/* <!-- Categories and images --> */}
         <div>
-          <div class="products pt-[10px] flex">
-            <div class="categories w-52">
-              <h2 class="pb-3 px-2 ">Categories&nbsp;&nbsp; {">"}</h2>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
+          <div class="product-container">
+            <div class="products pt-[10px] flex">
+              <div class="categories w-52">
+                <h2 class="pb-3 px-2 ">Categories&nbsp;&nbsp; {">"}</h2>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+                <div class="pl-9 flex pb-3">
+                  <p>risus ultricies</p>
+                  <div class="pl-4">
+                    <input type="checkbox" />
+                  </div>
                 </div>
               </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
+
+              <div class="productImages1 pl-9">
+                {/* <!-- cdcdccd --> */}
+                <div class="flex">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+                    class="w-40 h-48 m-10"
+                    alt="Description of the image"
+                  />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
+                    class="w-40 h-48 m-10"
+                    alt="Description of the image"
+                  />
                 </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
+                <div class="flex">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product3.png`}
+                    class="w-40 h-48 m-10"
+                    alt="Description of the image"
+                  />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product4.png`}
+                    class="w-40 h-48 m-10"
+                    alt="Description of the image"
+                  />
                 </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-              <div class="pl-9 flex pb-3">
-                <p>risus ultricies</p>
-                <div class="pl-4">
-                  <input type="checkbox" />
-                </div>
-              </div>
-            </div>
-            <div class="productImages1 pl-9">
-              {/* <!-- cdcdccd --> */}
-              <div class="flex">
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
-              </div>
-              <div class="flex">
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product3.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product4.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
               </div>
             </div>
           </div>
-          <p class="featured-title">Featured Products</p>
+          <p class="featured-title flex justify-content-center">
+            Featured Products
+          </p>
           <br></br>
-          <div class="productimg2 flex">
+          <div class="productimg2 flex justify-content-center">
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
               class="w-40 h-48 m-10"
