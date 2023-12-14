@@ -596,6 +596,7 @@ body {
 @media only screen and (max-width: 600px) {
   body {
     text-align: center;
+
     width: 100%; /* Occupy full width on smaller screens */
     font-size: 10px;
   }
@@ -623,6 +624,9 @@ body {
     margin: 5px;
     max-width: 100%;
   }
+  .product-container {
+    padding-left: 0in;
+  }
 }
 @media only screen and (min-width: 601px) {
   body {
@@ -636,7 +640,7 @@ body {
   }
   .productImages1 img {
     width: 35%;
-    height: 35%;
+    height: 45%;
     margin: 5px;
     padding: 10px;
   }
@@ -644,6 +648,10 @@ body {
     width: 20%;
     height: 25%;
     margin: 10px;
+  }
+  .product-container {
+    justify-content: center;
+    padding-left: 1in;
   }
 }
 @media only screen and (min-width: 820px) {
@@ -653,15 +661,40 @@ body {
     font-size: 14px;
   }
   .productImages1 img {
-    width: 23%;
-    height: 25%;
+    width: 33%;
+    height: 30%;
     margin: 5px;
     padding: 10px;
   }
   .productimg2 img {
-    width: 17%;
-    height: 15%;
+    width: 20%;
+    height: 25%;
     margin: 10px;
+  }
+  .product-container {
+    justify-content: center;
+    padding-left: 1in;
+  }
+}
+@media only screen and (min-width: 912px) {
+  body {
+    width: 100%; /* Occupy full width on smaller screens */
+    /* Adjust padding for smaller screens */
+    font-size: 14px;
+  }
+  .productImages1 img {
+    width: 40%;
+    height: 24%;
+    margin: 0px;
+  }
+  .productimg2 img {
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+  }
+  .product-container {
+    justify-content: center;
+    padding-left: 1.5in;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -671,14 +704,18 @@ body {
     font-size: 14px;
   }
   .productImages1 img {
-    width: 20%;
-    height: 10%;
+    width: 28%;
+    height: 24%;
     margin: 0px;
   }
   .productimg2 img {
-    width: 15%;
-    height: 10%;
+    width: 20%;
+    height: 20%;
     margin: 10px;
+  }
+  .product-container {
+    justify-content: center;
+    padding-left: 2in;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -689,7 +726,7 @@ body {
     font-size: 14px;
   }
   .productImages1 img {
-    width: 18%;
+    width: 22%;
     height: 17%;
     margin: -5px;
   }
@@ -698,11 +735,14 @@ body {
     height: 10%;
     margin: 5px;
   }
+  .product-container {
+    padding-left: 4in;
+  }
 }
 .featured-title {
   font-size: x-large;
   font: bold;
-  margin-left: 20px;
+  justify-content: center;
 }
 .page-content {
   margin: auto;
