@@ -94,58 +94,40 @@ export default function ProductPage() {
                   alt="Description of the image"
                 />
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
                   class="w-40 h-48 m-10"
                   alt="Description of the image"
                 />
               </div>
               <div class="flex">
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product3.png`}
                   class="w-40 h-48 m-10"
                   alt="Description of the image"
                 />
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
-                  class="w-40 h-48 m-10"
-                  alt="Description of the image"
-                />
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+                  src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product4.png`}
                   class="w-40 h-48 m-10"
                   alt="Description of the image"
                 />
               </div>
             </div>
           </div>
-          <div class="flex">
+          <p class="featured-title">Featured Products</p>
+          <br></br>
+          <div class="productimg2 flex">
             <img
-              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product2.png`}
               class="w-40 h-48 m-10"
               alt="Description of the image"
             />
             <img
-              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product4.png`}
               class="w-40 h-48 m-10"
               alt="Description of the image"
             />
             <img
-              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
-              class="w-40 h-48 m-10"
-              alt="Description of the image"
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
-              class="w-40 h-48 m-10"
-              alt="Description of the image"
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product1.png`}
+              src={`${process.env.PUBLIC_URL}/assets/images/productsPage/Product3.png`}
               class="w-40 h-48 m-10"
               alt="Description of the image"
             />
