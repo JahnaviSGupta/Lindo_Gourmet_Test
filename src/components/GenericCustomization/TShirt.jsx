@@ -2,7 +2,6 @@
 /* eslint-disable import/extensions */
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import "react-resizable/css/styles.css";
 export default ({
   themeNumber,
   theme1Style,
