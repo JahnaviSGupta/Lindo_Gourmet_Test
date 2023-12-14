@@ -1,4 +1,6 @@
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import store from "../lib/Store";
 import About from "./About";
 import AddShop from "./AddShop";
 import Admin from "./Admin";
@@ -10,12 +12,16 @@ import LoadingPage from "./CheckoutPage/LoadingPage";
 import Compare from "./Compare";
 import Contact from "./Contact";
 import Dashboard from "./Dashboard";
+import AddressesTab from "./Dashboard/tabs/AddressesTab";
+import PasswordTab from "./Dashboard/tabs/PasswordTab";
+import Payment from "./Dashboard/tabs/Payment";
+import SupportTab from "./Dashboard/tabs/SupportTab";
 import Faq from "./Faq";
 import FlashSale from "./FlashSale";
 import FourZeroFour from "./FourZeroFour";
 import GenericProduct from "./GenericCustomization";
 import Home from "./Home";
-import Join from "./Join";
+import JoinComponent from "./JoinComponent";
 import OrderHistory from "./Orderhistory";
 import Privacy from "./Privacy";
 import ProductList from "./ProductList";
@@ -24,24 +30,20 @@ import ProductView from "./ProductView";
 import Profile from "./Profile";
 import ShopList from "./ShopList";
 import ShopView from "./ShopView";
-import Signin from "./Signin";
+import SignInJoinComponent from "./SignInJoinComponent";
+import Stats from "./Stats";
 import Terms from "./Terms";
 import Test from "./Test";
 import TrackingOrder from "./TrackingOrder";
 import Wishlist from "./Wishlist";
-import Payment from "./Dashboard/tabs/Payment";
-import AddressesTab from "./Dashboard/tabs/AddressesTab";
-import SupportTab from "./Dashboard/tabs/SupportTab";
-import PasswordTab from "./Dashboard/tabs/PasswordTab";
-
 
 export default function Routers() {
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/signin" element={<Signin />} />
-        <Route exact path="/join" element={<Join />} />
+        <Route exact path="/signin" element={<SignInJoinComponent />} />
+        <Route exact path="/join" element={<JoinComponent />} />
         <Route exact path="/addshop" element={<AddShop />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/profile" element={<Profile />} />
@@ -56,7 +58,7 @@ export default function Routers() {
         <Route exact path="/checkout" element={<CheckoutPage />} />
         <Route exact path="/order" element={<TrackingOrder />} />
 
-        <Route exact path="/wishlist" element={<Wishlist />} />
+        <Route exact path="/wishlist" element={<Provider  store={store}><Wishlist /></Provider>} />
         <Route exact path="/orderhistory" element={<OrderHistory />} />
         <Route exact path="/flash-sale" element={<FlashSale />} />
         <Route exact path="/compare" element={<Compare />} />
@@ -70,7 +72,7 @@ export default function Routers() {
         <Route exact path="/privacy" element={<Privacy />} />
         <Route exact path="*" element={<FourZeroFour />} />
         <Route exact path="/admin" element={<Admin />} />
-
+        <Route exact path="/stats" element={<Stats/>} />
         <Route exact path="/loading" element={<LoadingPage />} />
         <Route exact path="/test" element={<Test />} />
         <Route exact path="/generic-product" element={<GenericProduct />} />

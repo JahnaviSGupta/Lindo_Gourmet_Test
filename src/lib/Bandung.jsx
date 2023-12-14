@@ -16,6 +16,8 @@ import {
 import { ImGoogle2 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import SignInImage from "../components/Helpers/SignInImage";
+import JoinComponent from "../components/JoinComponent";
+import SigninComponent from "../components/SigninComponent";
 
 let prefix = null;
 function getPrefix() {
@@ -125,205 +127,6 @@ class BandungComponent extends React.Component {
     signout();
   }
 
-  // renderJoin() {
-  //   return (
-  //     <div className="lg:flex items-center relative">
-  //       <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
-  //         <div className="w-full">
-  //           <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
-  //             <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
-  //               Create Account
-  //             </h1>
-  //           </div>
-  //           <form
-  //             onSubmit={(event) => {
-  //               this.executeJoin(event);
-  //             }}
-  //             method="POST"
-  //           >
-  //             <div className="input-area">
-  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="firstName"
-  //                   >
-  //                     First Name*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="text"
-  //                       id="firstName"
-  //                       name="firstName"
-  //                       placeholder="John"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="lastName"
-  //                   >
-  //                     Last Name*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="text"
-  //                       id="lastName"
-  //                       name="lastName"
-  //                       placeholder="Doe"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="email"
-  //                   >
-  //                     Email Address*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="email"
-  //                       id="email"
-  //                       name="email"
-  //                       placeholder="john.doe@gmail.com"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="emailRepeat"
-  //                   >
-  //                     Repeat Email*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="email"
-  //                       id="emailRepeat"
-  //                       name="emailRepeat"
-  //                       placeholder="john.doe@gmail.com"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //               <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="password"
-  //                   >
-  //                     Password*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="password"
-  //                       id="password"
-  //                       name="password"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="passwordRepeat"
-  //                   >
-  //                     Repeat Password*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="password"
-  //                       id="passwordRepeat"
-  //                       name="passwordRepeat"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //               <div className="forgot-password-area flex justify-between items-center mb-7">
-  //                 <div className="remember-checkbox flex items-center space-x-2.5">
-  //                   <input type="checkbox" id="remember" name="remember" />
-  //                   <span className="text-base text-black">
-  //                     I agree all{" "}
-  //                     <Link to="/terms" className="text-base text-qyellow">
-  //                       terms and conditions
-  //                     </Link>
-  //                   </span>
-  //                 </div>
-  //               </div>
-  //               <div className="signin-area mb-3.5">
-  //                 <div className="flex justify-center">
-  //                   <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
-  //                     <span>Create Account</span>
-  //                   </button>
-  //                 </div>
-  //               </div>
-  //               <div className="signup-area flex justify-center">
-  //                 <p className="text-base text-qgraytwo font-normal">
-  //                   <Link to="/signin" className="text-base text-qyellow">
-  //                     Or sign into your account
-  //                   </Link>
-  //                 </p>
-  //               </div>
-  //             </div>
-  //           </form>
-  //         </div>
-  //       </div>
-  //       <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center">
-  //         <div
-  //           className="absolute xl:-right-20 -right-[138px]"
-  //           style={{ top: "calc(50% - 258px)" }}
-  //         ></div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  //   executeJoin(event) {
-  //     event.preventDefault();
-  //     var firstName = document.getElementById("firstName").value;
-  //     var lastName = document.getElementById("lastName").value;
-  //     var email = document.getElementById("email").value;
-  //     var emailRepeat = document.getElementById("emailRepeat").value;
-  //     var password = document.getElementById("password").value;
-  //     var passwordRepeat = document.getElementById("passwordRepeat").value;
-  //     Axios.get(
-  //       getPrefix() +
-  //         "/app/session/join?firstName=" +
-  //         firstName +
-  //         "&lastName=" +
-  //         lastName +
-  //         "&email=" +
-  //         email +
-  //         "&emailRepeat=" +
-  //         emailRepeat +
-  //         "&password=" +
-  //         password +
-  //         "&passwordRepeat=" +
-  //         passwordRepeat,
-  //       null
-  //     )
-  //       .then((response) => {
-  //         if (response.data.error) sessionErrorMessage = response.data.error;
-  //         else setSession(response.data);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         sessionErrorMessage = "Signin failure.";
-  //       })
-  //       .finally((status) => {
-  //         window.location.reload();
-  //       });
-  //   }
-  // }
 
   static executeSignup(event) {
     event.preventDefault();
@@ -703,179 +506,6 @@ class BandungComponent extends React.Component {
     );
   }
 
-  // OLD Render Sign in
-  //   renderSignin() {
-  //     return (
-  //       <form
-  //         onSubmit={(event) => {
-  //           this.executeSignin(event);
-  //         }}
-  //         method="POST"
-  //       >
-  //         <div className="flex flex-col">
-  //           {getSessionErrorMessage() && (
-  //             <div className="error_message">{getSessionErrorMessage()}</div>
-  //           )}
-  //           <h1 className="text-[48px] font-bold my-[30px] text-left justify-start">
-  //             LindoGourmet
-  //           </h1>
-
-  //           <label className="mx-1 font-bold">Email</label>
-  //           <input
-  //             type="email"
-  //             id="email"
-  //             name="email"
-  //             placeholder=" example@gmail.com"
-  //             className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
-  //           />
-  //           <label className="mx-1 font-bold">Password</label>
-  //           <input
-  //             type="password"
-  //             id="password"
-  //             name="password"
-  //             className="bg-slate-200 p-0 border text-black rounded-lg max-h-[10%] mx-1 mb-3 max-w-[100%] border-black"
-  //           />
-  //           <Link
-  //             to="/resetpassword"
-  //             className="flex flex-col justify-center w-[95%] text-right"
-  //           >
-  //             Forgot Password
-  //           </Link>
-  //           <div className="flex items-center mt-[70px] max-w-[95%]">
-  //             <div className="flex flex-row">
-  //               <div className="flex flex-1 items-center">
-  //                 <input
-  //                   name="remember"
-  //                   id="remember"
-  //                   type="checkbox"
-  //                   className="p-2 ml-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-  //                 />
-  //                 <label
-  //                   htmlFor="remember"
-  //                   className="mx-2 my-3 text-sm font-medium text-black"
-  //                 >
-  //                   Remember Me
-  //                 </label>
-  //               </div>
-  //               <div className="flex-1 justify-center">
-  //                 <button
-  //                   type="submit"
-  //                   className="items-center float-right justify-end align-right bg-[#028090] rounded-[50px] text-white px-4 py-2 flex flex-wrap"
-  //                 >
-  //                   <a>Sign In &nbsp;</a>
-  //                   <FaAngleRight />
-  //                 </button>
-  //               </div>
-  //             </div>
-
-  //             <div className="flex flex-row mt-[70px] mb-[10px] items-center">
-  //               <div className="flex-1 bg-black h-[2px]" />
-  //               <p className="text-black mx-[10px]">or</p>
-  //               <div className="flex-1 bg-black h-[2px]" />
-  //             </div>
-
-  //             <div className="flex flex-row items-center justify-center gap-10">
-  //               <FaSquareFacebook className="w-24 h-24 p-4 text-[#028090]" />
-
-  //               <FaSquareTwitter className="w-24 h-24 p-4 text-[#028090]" />
-
-  //               <FaLinkedin className="w-24 h-24 p-4 text-[#028090]" />
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </form>
-  //     );
-  //   }
-
-  // renderSignin() {
-  //   return (
-  //     <div className="lg:flex items-center relative">
-  //       <div className="lg:w-[572px] w-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
-  //         <div className="w-full">
-  //           <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
-  //             <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
-  //               Signin
-  //             </h1>
-  //           </div>
-  //           <form
-  //             onSubmit={(event) => {
-  //               this.executeSignin(event);
-  //             }}
-  //             method="POST"
-  //           >
-  //             <div className="input-area">
-  //               {getSessionErrorMessage() && (
-  //                 <div className="error_message">
-  //                   {getSessionErrorMessage()}
-  //                 </div>
-  //               )}
-  //               <div className="input-item mb-5">
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="email"
-  //                   >
-  //                     Email Address*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="email"
-  //                       id="email"
-  //                       name="email"
-  //                       placeholder="example@gmail.com"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //               <div className="input-item mb-5">
-  //                 <div className="input-com w-full h-full">
-  //                   <label
-  //                     className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal"
-  //                     htmlFor="password"
-  //                   >
-  //                     Password*
-  //                   </label>
-  //                   <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-  //                     <input
-  //                       type="password"
-  //                       id="password"
-  //                       name="password"
-  //                       className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-  //                     />
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //               <div className="forgot-password-area flex justify-between items-center mb-7">
-  //                 <div className="remember-checkbox flex items-center space-x-2.5">
-  //                   <input type="checkbox" id="remember" name="remember" />
-  //                   <span className="text-base text-black">Remember Me</span>
-  //                 </div>
-  //                 <Link to="/resetpassword" className="text-base text-qyellow">
-  //                   Forgot Password
-  //                 </Link>
-  //               </div>
-  //               <div className="signin-area mb-3.5">
-  //                 <div className="flex justify-center">
-  //                   <button className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center">
-  //                     <span>Sign In</span>
-  //                   </button>
-  //                 </div>
-  //               </div>
-  //               <div className="signup-area flex justify-center">
-  //                 <p className="text-base text-qgraytwo font-normal">
-  //                   <Link to="/join" className="text-base text-qyellow">
-  //                     Or create an account
-  //                   </Link>
-  //                 </p>
-  //               </div>
-  //             </div>
-  //           </form>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 }
 
 class AccountMenuComponent extends BandungComponent {
@@ -975,6 +605,7 @@ class SigninAndOutComponent extends BandungComponent {
         to="/dashboard"
         onClick={() => {
           clearSession();
+          window.location.reload();
         }}
       >
         <span
@@ -1012,21 +643,13 @@ class ProfileComponent extends BandungComponent {
   }
 
   render() {
-    if (!validSession()) return this.renderSignin();
+    if (!validSession()) {
+      return (
+        <SigninComponent
+        />
+      );
+    }
     return (
-      // <div className="profile-wrapper w-full mt-8 flex space-x-10">
-      //   <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-      //     <div className="flex flex-col space-y-10">
-      //       {this.renderIndex()}
-      //     </div>
-      //   </div>
-      //   <div className="flex-1">
-      //     <div className="item-body profile-wrapper w-full">
-      //       {this.renderTab()}
-      //     </div>
-      //   </div>
-      // </div>
-
       <section className="flex flex-col m-0 p-3">
         <h1 className="font-700 text-3xl sm:text-[50px] mb-2">Profile</h1>
         <hr />
@@ -1134,142 +757,7 @@ class ProfileComponent extends BandungComponent {
     }
   }
 
-  // renderIndex() {
-  //   // need modify
-  //   return (
-  //     <>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("general", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">General</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("settings", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Settings</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("password", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Password</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("contact", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Contact</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("bio", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Bio</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("emails", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Emails</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("socials", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Socials</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("image", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Image</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="item group">
-  //         <div
-  //           onClick={() => {
-  //             this.command("quit", null);
-  //           }}
-  //           style={{ cursor: "pointer" }}
-  //         >
-  //           <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-  //             <span className=" font-normal text-base">Quit</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-  // renderTab() {
-  //   return !this.state.command || this.state.command === "general"
-  //     ? this.renderGeneralTab()
-  //     : this.state.command === "settings"
-  //     ? this.renderSettingsTab()
-  //     : this.state.command === "password"
-  //     ? this.renderPasswordTab()
-  //     : this.state.command === "contact"
-  //     ? this.renderContactTab()
-  //     : this.state.command === "bio"
-  //     ? this.renderBioTab()
-  //     : this.state.command === "emails"
-  //     ? this.renderEmailsTab()
-  //     : this.state.command === "socials"
-  //     ? this.renderSocialsTab()
-  //     : this.state.command === "image"
-  //     ? this.renderImageTab()
-  //     : this.state.command === "quit"
-  //     ? this.renderQuitTab()
-  //     : this.renderGeneralTab();
-  // }
+  
   renderGeneralTab() {
     // fix shortDescription
     if (!this.state.action)
@@ -1337,42 +825,7 @@ class ProfileComponent extends BandungComponent {
               Edit
             </button>
           </div>
-          {/* <div className="flex space-x-8">
-            <div className="w-[570px] ">
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                      First Name
-                    </label>
-                    <div className="input-wrapper w-full h-full overflow-hidden relative ">
-                      {getSession().firstName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                      Last Name
-                    </label>
-                    <div className="input-wrapper w-full h-full overflow-hidden relative">
-                      {getSession().lastName}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="action-area flex space-x-4 items-center">
-            <button
-              onClick={(event) => this.action("update")}
-              className="w-[164px] h-[50px] bg-qblack text-white text-sm"
-            >
-              Update
-            </button>
-          </div> */}
+         
         </>
       );
     if (this.state.action === "update") {
@@ -1459,85 +912,7 @@ class ProfileComponent extends BandungComponent {
               Cancel
             </button>
           </div>
-          {/* <div className="flex space-x-8">
-            <div className="w-[570px] ">
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="firstName"
-                    >
-                      First Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        defaultValue={getSession().firstName}
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="lastName"
-                    >
-                      Last Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        defaultValue={getSession().lastName}
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="input-item mb-8">
-                <div className="w-full">
-                  <div className="input-com w-full h-full">
-                    <label
-                      className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal"
-                      htmlFor="shortDescription"
-                    >
-                      Last Name*
-                    </label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                      <textarea
-                        id="shortDescription"
-                        name="shortDescription"
-                        className="text_area fields"
-                        defaultValue={getSession().shortDescription}
-                        rows="4"
-                        cols="50"
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="action-area flex space-x-4 items-center">
-            <button
-              onClick={(event) => this.action(null)}
-              className="text-sm text-qred font-semibold"
-            >
-              Cancel
-            </button>
-            <button className="w-[164px] h-[50px] bg-qblack text-white text-sm">
-              Save
-            </button>
-          </div> */}
+          
         </form>
       );
     }
@@ -1710,41 +1085,43 @@ class ProfileComponent extends BandungComponent {
 
 class AdminSignInComponent extends BandungComponent {
   render() {
-    if (!validSession()) return this.adminRenderSignin();
-    return (
-      <div>
-        <p>Welcome Admin.</p>
-      </div>
-    );
+    if (!validSession()) {
+      return (
+        <SigninComponent/>
+      );
+      
+    }
+    if (adminPermission()) {
+      return (
+        <header className='flex justify-between mt-8 mb-3 px-2'>
+						<h1 className='text-3xl font-bold'>Admin</h1>
+						<Link to='/stats' className='hidden sm:block'>
+							<button type='button' className='btn bg-qteal w-[130px]'>
+								<span className='text-white'>Stats</span>
+							</button>
+						</Link>
+					</header>
+      );
+    }
+    else {
+      return (
+        <div>
+          <p>Not Admin. Access denied!</p>
+        </div>
+      );   
+    }
+
   }
 }
 
-class SigninComponent extends BandungComponent {
-  render() {
-    if (!validSession()) return this.renderSignin();
-    return (
-      <div>
-        <p>Welcome.</p>
-      </div>
-    );
-  }
-}
-
-// class JoinComponent extends BandungComponent {
-//   render() {
-//     if (!validSession()) return this.renderJoin();
-//     else
-//       return (
-//         <div>
-//           <p>Welcome.</p>
-//         </div>
-//       );
-//   }
-// }
 
 class SignupComponent extends BandungComponent {
   render() {
-    if (!validSession()) return this.renderSignup();
+    if (!validSession()) {
+      return (
+        <JoinComponent/>
+      );
+    }
     return (
       <div>
         <p>Welcome.</p>
@@ -1754,25 +1131,16 @@ class SignupComponent extends BandungComponent {
 }
 
 export {
-  AccountMenuComponent,
-  BandungComponent,
-  // JoinComponent,
-  ProfileComponent,
-  SigninAndOutComponent,
-  AdminSignInComponent,
-  SigninComponent,
-  SignupComponent,
-  adminPermission,
-  clearSession,
+  AccountMenuComponent, adminPermission, AdminSignInComponent, BandungComponent, clearSession,
   editorPermission,
   getPrefix,
   getSession,
   getSessionErrorMessage,
   getSessionToken,
-  managerPermission,
+  JoinComponent,
+  managerPermission, ProfileComponent,
   setPrefix,
   setSession,
-  signin,
-  signout,
-  validSession,
+  signin, SigninAndOutComponent, SigninComponent, signout, SignupComponent, validSession
 };
+

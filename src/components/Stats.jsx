@@ -1,8 +1,8 @@
 import Axios from "axios";
 import React from 'react';
-import { BandungComponent, adminPermission, getPrefix, getSessionToken } from "../lib/Bandung";
+import { getPrefix } from "../bandung";
+import { BandungComponent, adminPermission, getSessionToken } from "../lib/Bandung";
 import Layout from "./Layout";
-
 
 const itemsPerPage = 5;
 

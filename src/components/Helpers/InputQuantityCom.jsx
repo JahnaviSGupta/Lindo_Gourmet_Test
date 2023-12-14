@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-export default function InputQuantityCom() {
+export default function InputQuantityCom({onQuantityChange}) {
   const [quantity, setQuantity] = useState(1);
   const increment = () => {
     setQuantity((prev) => prev + 1);
+    onQuantityChange(prev => prev + 1);
   };
   const decrement = () => {
     if (quantity > 1) {
       setQuantity((prev) => prev - 1);
+      onQuantityChange(prev => prev - 1);
     }
   };
   return (

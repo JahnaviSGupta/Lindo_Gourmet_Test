@@ -1,9 +1,25 @@
+import { useState } from "react";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function CartItem(props) {
   // Recieves row data from parent (ProductsTable.jsx) using props
-  const { rowsData } = props;
+  const { rowsData, onRemove, onAdd } = props;
+  const [quantity, setQuantity] = useState(1);
 
+  const handleRemoveClick = () => {
+    onRemove(rowsData);
+  };
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+  };
+
+  const handleAddClick = () => {
+    onAdd(rowsData);
+  }
+
+  const total = rowsData[4] * quantity;
+  
   return (
     <tr className="bg-white border-b hover:bg-gray-50" key={rowsData[0]}>
       {/* Product */}
@@ -11,7 +27,7 @@ export default function CartItem(props) {
         <div className="flex space-x-6 items-center">
           <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
             <img
-              src={`${process.env.PUBLIC_URL}/assets/PlaceholderImagesCart/${rowsData[0]}`}
+              src={`${process.env.PUBLIC_URL}/assets/images/Cart/${rowsData[0]}`}
               alt="product"
               className="w-full h-full object-contain"
             />
@@ -41,21 +57,21 @@ export default function CartItem(props) {
       {/* Price */}
       <td className="text-center py-4 px-2">
         <div className="flex space-x-1 items-center justify-center">
-          <span className="text-[15px] font-normal">{rowsData[4]}</span>
+          <span className="text-[15px] font-normal">${rowsData[4]}</span>
         </div>
       </td>
 
       {/* Quantity Selector */}
       <td className=" py-4">
         <div className="flex justify-center items-center">
-          <InputQuantityCom />
+          <InputQuantityCom onQuantityChange={handleQuantityChange}/>
         </div>
       </td>
 
-      {/* Prize */}
+      {/* Total Price */}
       <td className="text-right py-4">
         <div className="flex space-x-1 items-center justify-center">
-          <span className="text-[15px] font-normal">{rowsData[5]}</span>
+          <span className="text-[15px] font-normal">${total}</span>
         </div>
       </td>
 
@@ -64,6 +80,7 @@ export default function CartItem(props) {
         <button
           type="button"
           className="bg-[#028090] hover:bg-cyan-900 rounded-lg flex-center space-x-1 items-center justify-center"
+          onClick={handleAddClick}
         >
           <div className="w-full text-white text-sm font-semibold p-3">
             Add to Cart
@@ -74,7 +91,7 @@ export default function CartItem(props) {
       {/* Cross Mark */}
       <td className="text-right py-4">
         <div className="flex space-x-1 items-center justify-center">
-          <span>
+        <span onClick={handleRemoveClick} style={{ cursor: 'pointer' }}>
             <svg
               width="10"
               height="10"
