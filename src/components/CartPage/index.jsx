@@ -1,11 +1,11 @@
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
+import store from "../../lib/Store";
 import Breadcrumbs from "../Breadcrumbs";
 import EmptyCardError from "../EmptyCardError";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Layout";
 import ProductsTable from "./ProductsTable";
-import store from "../../lib/Store";
 
 export default function CardPage({ cart = true }) {
   return (
@@ -35,8 +35,8 @@ export default function CardPage({ cart = true }) {
           </div>
           <div className="w-full mt-[23px]">
             <div className="container-x mx-auto">
-            <Provider store={store}> 
-              <ProductsTable className="mb-[30px]" />
+              <Provider store={store}>
+                <ProductsTable className="mb-[30px]" />
               </Provider>
               <div className="w-full sm:flex justify-between">
                 <div className="discount-code sm:w-[270px] w-full mb-5 sm:mb-0 h-[50px] flex">
@@ -56,14 +56,146 @@ export default function CardPage({ cart = true }) {
                     </div>
                   </a>
                   <a href="#">
-                    <div className="w-[140px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                    <div className="w-[140px] h-[50px] bg-[#028090] flex justify-center items-center">
                       <span className="text-sm font-semibold">Update Cart</span>
                     </div>
                   </a>
                 </div>
               </div>
-              <div className="w-full mt-[30px] flex sm:justify-end">
-                <div className="sm:w-[370px] w-full border border-[#EDEDED] px-[30px] py-[26px]">
+              <div className="w-full mt-[30px] flex gap-2">
+                <div className="flex-[7] sm:w-full w-full border border-[#EDEDED] px-[30px] py-[26px] ml-auto">
+                  <div className="mb-6">
+                    <div className=" flex justify-between mb-6">
+                      <p className="text-[25px] font-medium text-qblack">
+                        Credential Details
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                      Name On Card<span className="text-red-500">*</span>
+                    </span>
+                    <div className="w-full h-[50px]">
+                      <InputCom
+                        inputClasses="w-full h-full"
+                        type="text"
+                        placeholder="Name here"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex mb-6 gap-3">
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        Expiration Date<span className="text-red-500">*</span>
+                      </span>
+                      <div className="w-full h-[50px]">
+                        <InputCom
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="**/**"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        Security Code<span className="text-red-500">*</span>
+                      </span>
+                      <div className="w-full h-[50px]">
+                        <InputCom
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="***"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mb-6">
+                    <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                      Card Number<span className="text-red-500">*</span>
+                    </span>
+                    <div className="w-full h-[50px]">
+                      <InputCom
+                        inputClasses="w-full h-full"
+                        type="text"
+                        placeholder="****-****-****-****"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex mb-6 gap-3">
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        Email Address<span className="text-red-500">*</span>
+                      </span>
+                      <div className="w-full h-[50px]">
+                        <InputCom
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="demoemail@gmail.com"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        Phone Number<span className="text-red-500">*</span>
+                      </span>
+                      <div className="w-full h-[50px]">
+                        <InputCom
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="012 3 *******"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mb-6">
+                    <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                      Country<span className="text-red-500">*</span>
+                    </span>
+                    <select className="w-full h-[50px] border text-[12px] font-medium text-qgraytwo pl-[20px]">
+                      <option value="" disabled selected hidden>
+                        Select Country
+                      </option>
+                    </select>
+                  </div>
+                  <div className="mb-6">
+                    <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                      Address<span className="text-red-500">*</span>
+                    </span>
+                    <div className="w-full h-[50px]">
+                      <InputCom
+                        inputClasses="w-full h-full"
+                        type="text"
+                        placeholder="Select Country"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex mb-6 gap-3">
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        City<span className="text-red-500">*</span>
+                      </span>
+                      <select className="w-full h-[50px] border text-[12px] font-medium text-qgraytwo pl-[20px]">
+                        <option value="" disabled selected hidden>
+                          Select City
+                        </option>
+                      </select>
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-[12px] font-medium text-qgraytwo mb-[8px] block">
+                        Postcode / ZIP<span className="text-red-500">*</span>
+                      </span>
+                      <div className="w-full h-[50px]">
+                        <InputCom
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="12345"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-[5] sm:w-[370px] w-full px-[30px] py-[26px] ml-auto">
                   <div className="sub-total mb-6">
                     <div className=" flex justify-between mb-6">
                       <p className="text-[15px] font-medium text-qblack">
@@ -137,7 +269,7 @@ export default function CardPage({ cart = true }) {
                       </li>
                     </ul>
                   </div>
-                  <div className="shipping-calculation w-full mb-3">
+                  {/* <div className="shipping-calculation w-full mb-3">
                     <div className="title mb-[17px]">
                       <h1 className="text-[15px] font-medium">
                         Calculate Shipping
@@ -169,9 +301,9 @@ export default function CardPage({ cart = true }) {
                         placeholder="Postcode / ZIP"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <button type="button" className="w-full mb-10">
-                    <div className="w-full h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
                       <span className="text-sm font-semibold">Update Cart</span>
                     </div>
                   </button>
@@ -180,11 +312,11 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[18px] font-medium text-qblack">
                         Total
                       </p>
-                      <p className="text-[18px] font-medium text-qred">$365</p>
+                      <p className="text-[18px] font-medium">$365</p>
                     </div>
                   </div>
                   <a href="/checkout">
-                    <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                    <div className="w-full h-[50px] bg-[#028090] flex justify-center items-center">
                       <span className="text-sm font-semibold">
                         Proceed to Checkout
                       </span>
