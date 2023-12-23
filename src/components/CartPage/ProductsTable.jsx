@@ -46,7 +46,7 @@ const ProductsTable = ({ className, rowsData, removeRow }) => {
 
     dispatch(updateCart(updatedCartItems));
 
-    console.log("购物车已更新:", updatedCartItems);
+    console.log("update", updatedCartItems);
   };
   const [totalPrice, setTotalPrice] = useState(0);
 
