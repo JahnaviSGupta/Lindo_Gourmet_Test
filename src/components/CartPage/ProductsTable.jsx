@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { connect } from 'react-redux';
-import { removeRow } from '../../lib/CartActions';
+import { useEffect, useState } from "react"; // Import useEffect
+import { connect, useDispatch } from "react-redux";
+import { updateCart } from "../../actions/cartActions";
+import { removeRow } from "../../lib/CartActions";
 import CartItem from "./CartItem";
-
 
 const mapStateToProps = (state) => ({
   rowsData: state.rowsData,
@@ -13,10 +13,8 @@ const mapDispatchToProps = {
 };
 
 const ProductsTable = ({ className, rowsData, removeRow }) => {
-  // Temp Array for Wishlist Table
-
-
   const [searchTerm, setSearchTerm] = useState("");
+  const [updatedQuantities, setUpdatedQuantities] = useState({});
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -29,8 +27,38 @@ const ProductsTable = ({ className, rowsData, removeRow }) => {
   const handleRemove = (removedRowData) => {
     removeRow(removedRowData);
   };
-  
 
+  const handleQuantityUpdate = (itemId, newQuantity) => {
+    setUpdatedQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [itemId]: newQuantity,
+    }));
+  };
+  const dispatch = useDispatch();
+
+  const handleUpdateCart = () => {
+    const updatedCartItems = rowsData.map((item) => {
+      const updatedQuantity = updatedQuantities[item[0]];
+      return updatedQuantity !== undefined
+        ? { ...item, quantity: updatedQuantity }
+        : item;
+    });
+
+    dispatch(updateCart(updatedCartItems));
+
+    console.log("购物车已更新:", updatedCartItems);
+  };
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // Step 2: Calculate the total price based on the quantity of each item
+  useEffect(() => {
+    let newTotalPrice = 0;
+    for (const rowData of filteredRowsData) {
+      const quantity = updatedQuantities[rowData[0]] || rowData[2].quantity; // Use the updated quantity if available, otherwise use the original quantity
+      newTotalPrice += quantity * rowData[3].price; // Calculate the total price for each item and add it to the total
+    }
+    setTotalPrice(newTotalPrice);
+  }, [filteredRowsData, updatedQuantities]);
   return (
     <div className={`w-full ${className || ""}`}>
       <div className="relative w-full">
@@ -57,16 +85,18 @@ const ProductsTable = ({ className, rowsData, removeRow }) => {
                 <td className="py-4 whitespace-nowrap text-center">price</td>
                 <td className="py-4 whitespace-nowrap text-center">quantity</td>
                 <td className="py-4 whitespace-nowrap text-center">total</td>
-                
+
                 <td className="py-4 whitespace-nowrap text-right w-[114px]"></td>
               </tr>
               {/* table heading end */}
 
               {filteredRowsData.map((rowData) => (
-                <CartItem rowsData={rowData} key={rowData[0]} onRemove={handleRemove} />
+                <CartItem
+                  rowsData={rowData}
+                  key={rowData[0]}
+                  onRemove={handleRemove}
+                />
               ))}
-
-              
             </tbody>
           </table>
         ) : (
@@ -77,6 +107,6 @@ const ProductsTable = ({ className, rowsData, removeRow }) => {
       </div>
     </div>
   );
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsTable);
