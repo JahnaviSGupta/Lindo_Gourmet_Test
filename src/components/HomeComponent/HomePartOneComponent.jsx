@@ -2,12 +2,14 @@ import React from "react";
 
 function HomePartOneComponent({ showImage }) {
   return (
-    <div className="">
+    <div className="home-about">
       <div className="">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2">
-            <h1 className="font-600 mb-4 text-2xl md:text-4xl">About</h1>
-            <p className="font-400 mb-4 text-sans-serif italic">
+            <h1 className="font-600 mb-4 text-2xl md:text-4xl home-title">
+              About
+            </h1>
+            <p className="font-400 mb-4 text-sans-serif italic home-parag">
               LindoGourmet! is here to revolutionize your shopping experience by
               offering you the opportunity to be the designer. Our intuitive
               customization tools empower you to handpick details of your

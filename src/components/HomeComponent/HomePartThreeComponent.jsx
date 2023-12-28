@@ -16,8 +16,10 @@ function HomePartThreeComponent({ showImage }) {
       <div className="">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2">
-            <h1 className="font-600 mb-4 text-2xl md:text-4xl">Our Vision</h1>
-            <p className="font-400 mb-[22px] text-justify text-sans-serif italic">
+            <h1 className="font-600 mb-4 text-2xl md:text-4xl home-title">
+              Our Vision
+            </h1>
+            <p className="font-400 mb-[22px] text-justify text-sans-serif italic home-parag">
               At LindoGourmet, we envision a world where self-expression and
               uniqueness take center stage. We believe that every individual is
               unique, and their possessions should reflect that distinctiveness.
