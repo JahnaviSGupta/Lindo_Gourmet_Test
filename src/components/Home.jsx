@@ -31,8 +31,8 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div className="px-[100px]">
-          <div className="m-[70px]">
+        <div className="px-[20px]">
+          <div className="md:px-[100px]">
             <HomePartOneComponent showImage={showImage} />
           </div>
 
