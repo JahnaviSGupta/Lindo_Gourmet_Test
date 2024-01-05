@@ -2,8 +2,7 @@ import { useState } from "react";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function CartItem(props) {
-  // Recieves row data from parent (ProductsTable.jsx) using props
-  const { rowsData, onRemove } = props;
+  const { rowsData, onRemove, onQuantityUpdate } = props; // Destructure onQuantityUpdate from props
   const [quantity, setQuantity] = useState(1);
 
   const handleRemoveClick = () => {
@@ -12,9 +11,15 @@ export default function CartItem(props) {
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
+
+    // Calculate the total price here based on the updated quantity
+    const total = rowsData[4] * newQuantity;
+
+    // Call the onQuantityUpdate function to notify the parent component (ProductsTable)
+    onQuantityUpdate(rowsData[0], newQuantity);
   };
 
-  const total = rowsData[4] * quantity;
+  const total = rowsData[4] * quantity; // Calculate the total price based on the current quantity
 
   return (
     <tr className="bg-white border-b hover:bg-gray-50" key={rowsData[0]}>
@@ -65,7 +70,7 @@ export default function CartItem(props) {
       </td>
 
       {/* Total Price */}
-      
+
       <td className="text-right py-4">
         <div className="flex space-x-1 items-center justify-center">
           <span className="text-[15px] font-normal">${total}</span>
@@ -75,8 +80,8 @@ export default function CartItem(props) {
       {/* Cross Mark */}
       <td className="text-right py-4">
         <div className="flex space-x-1 items-center justify-center">
-        {/* <span onClick={handleRemoveClick} className="mt-[20px] mr-[15px] inline-flex cursor-pointer "> */}
-        <span onClick={handleRemoveClick} style={{ cursor: 'pointer' }}> 
+          {/* <span onClick={handleRemoveClick} className="mt-[20px] mr-[15px] inline-flex cursor-pointer "> */}
+          <span onClick={handleRemoveClick} style={{ cursor: "pointer" }}>
             <svg
               width="10"
               height="10"
