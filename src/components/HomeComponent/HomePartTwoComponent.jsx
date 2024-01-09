@@ -127,7 +127,6 @@ function HomePartTwoComponent() {
         >
           {exampleData.slice(0, maxCardCount).map((example) => (
             <div key={example.id} className="mt-[30px] mb-[50px]">
-              {/* <BasicExample text={example.text} /> */}
               <BasicExample
                 title={example.text}
                 description={example.description}
