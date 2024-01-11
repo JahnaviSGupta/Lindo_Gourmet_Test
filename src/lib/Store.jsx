@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 const initialState = {
   rowsData: [
@@ -14,18 +14,20 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'REMOVE_ROW':
+    case "REMOVE_ROW":
       return {
         ...state,
-        rowsData: state.rowsData.filter(rowData => rowData !== action.payload),
+        rowsData: state.rowsData.filter(
+          (rowData) => rowData !== action.payload
+        ),
       };
-      case 'ADD_ROW':
-        return {
-          ...state,
-          rowsData: [...state.rowsData, action.payload],
-        };
-      case 'ADD_ROWS':
-        return {
+    case "ADD_ROW":
+      return {
+        ...state,
+        rowsData: [...state.rowsData, action.payload],
+      };
+    case "ADD_ROWS":
+      return {
         ...state,
         rowsData: [...state.rowsData, ...action.payload],
       };
