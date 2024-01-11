@@ -48,15 +48,15 @@ export default function CardPage({ cart = true }) {
                   </button>
                 </div>
                 <div className="flex space-x-2.5 items-center">
-                  <a href="#">
-                    <div className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                  <a href="/product">
+                    <div className="btn bg-qteal rounded-lg text-white px-5 py-2 font-600 flex justify-center items-center">
                       <span className="text-sm font-semibold">
                         Continue Shopping
                       </span>
                     </div>
                   </a>
                   <a href="#">
-                    <div className="w-[140px] h-[50px] bg-[#028090] flex justify-center items-center">
+                    <div className="btn bg-qteal rounded-lg text-white px-5 py-2 font-600 flex justify-center items-center">
                       <span className="text-sm font-semibold">Update Cart</span>
                     </div>
                   </a>
