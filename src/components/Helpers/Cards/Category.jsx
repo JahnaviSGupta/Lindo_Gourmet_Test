@@ -27,7 +27,7 @@ function BasicExample({
   buttonText,
   buttonLink,
   image,
-  cost,
+  // cost,
   dollar,
 }) {
   return (
@@ -39,7 +39,7 @@ function BasicExample({
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Card.Text>{cost}</Card.Text>
+        {/* <Card.Text>{cost}</Card.Text> */}
         <LinkContainer to={buttonLink}>
           <Button className="categoryButton" variant="primary">
             {buttonText}

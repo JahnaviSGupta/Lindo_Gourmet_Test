@@ -1,4 +1,6 @@
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { LinkContainer } from "react-router-bootstrap";
 
 // function BasicExample() {
 //   return (
@@ -37,12 +39,13 @@ function FeaturedProduct({
       <Card.Body>
         <div className="text-muted d-flex justify-content-between mb-2">
           <Card.Title>{title}</Card.Title>
+
           {/* <Card.Text>{description}</Card.Text> */}
 
           <img
             src={`${process.env.PUBLIC_URL}/assets/images/Favourite.png`}
             alt="Description of the image"
-            className="smaller-image"
+            className="smaller-image mr-3"
           />
         </div>
         <div className="text-muted d-flex justify-content-between align-items-center">
@@ -54,11 +57,21 @@ function FeaturedProduct({
             />
             <Card.Text>{cost}</Card.Text>
           </div>
-          <img
+          <LinkContainer to={buttonLink}>
+            <Button className="categoryButton" variant="primary">
+              {/* {buttonText} */}
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/images/Tools.png`}
+                alt="Description of the image"
+                className="smaller-image"
+              />
+            </Button>
+          </LinkContainer>
+          {/* <img
             src={`${process.env.PUBLIC_URL}/assets/images/Tools.png`}
             alt="Description of the image"
             className="smaller-image"
-          />
+          /> */}
         </div>
         {/* <LinkContainer to={buttonLink}>
           <Button className="categoryButton" variant="primary">

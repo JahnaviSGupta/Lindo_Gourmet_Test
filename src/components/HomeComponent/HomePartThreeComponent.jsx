@@ -156,7 +156,7 @@ function HomePartThreeComponent({ showImage }) {
               <FeaturedProduct
                 title={example.text}
                 // description={example.description}
-                buttonText="Customize"
+                // buttonText="Customize"
                 buttonLink="/generic-product"
                 image={example.image}
                 cost={example.cost}

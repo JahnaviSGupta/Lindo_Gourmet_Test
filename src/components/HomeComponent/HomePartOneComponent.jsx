@@ -44,8 +44,8 @@ function HomePartOneComponent({ showImage }) {
         />
         <div class="overlay">
           <div class="title">Create with us</div>
-          <h2>Endless product customization</h2>
-          <button className="btn bg-qteal rounded-lg text-white px-5 py-2 font-600 mt-5">
+          <h2 className="heading ml-4">Endless product customization</h2>
+          <button className="btn-shop bg-qteal rounded-lg text-white px-5 py-2 font-600 mt-5 pl-1">
             Shop
           </button>
         </div>
