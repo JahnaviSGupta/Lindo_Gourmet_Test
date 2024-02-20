@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import "../lib/emailForm.css";
 import Layout from "./Layout";
 
+import EmailFormComponent from "./HomeComponent/EmailFormComponent";
 import HomePartFourComponent from "./HomeComponent/HomePartFourComponent";
 import HomePartOneComponent from "./HomeComponent/HomePartOneComponent";
 import HomePartThreeComponent from "./HomeComponent/HomePartThreeComponent";
@@ -8,9 +10,15 @@ import HomePartThreeComponent from "./HomeComponent/HomePartThreeComponent";
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showImage, setShowImage] = useState(true);
+  const [showEmailForm, setShowEmailForm] = useState(true);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
+  };
+
+  const handleEmailFormSubmit = () => {
+    console.log("Test Pass");
+    setShowEmailForm(false);
   };
 
   useEffect(() => {
@@ -32,6 +40,12 @@ export default function Home() {
     <>
       <Layout>
         {/* <div className="px-[20px]"> */}
+
+        {showEmailForm && (
+          <div className="email-form-overlay">
+            <EmailFormComponent onSubmit={handleEmailFormSubmit} />
+          </div>
+        )}
 
         {/* <div className="md:px-[100px]"> */}
         <div>
