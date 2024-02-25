@@ -274,11 +274,28 @@ export default function ProductPage() {
                         <label htmlFor={category.name}>{category.name}</label>
                       </div>
                     </div>
+
+
                   </div>
                 ))}
+              {/* Price Range Slider  */}
+              <h2 className="category-title">Price Range&nbsp; {">"}</h2>
+              <div className="slider-container">
+                <input type="range" min="0" max="100" value="50" className="slider" id="myRange" />
+                  <div class="slider-labels">
+                    <span class="min-label">$0</span>
+                    <span class="max-label">$1000</span>
+                  </div>
+                  <div id="priceDisplay">Price: $500</div>
+              </div>
               </div>
             </div>
 
+           {/* Adding the javascript code  */}
+
+            
+            
+            
             <div className="images m-2">
               <div className="card-img ml-10">
                 <div className="flex flex-wrap">
@@ -301,6 +318,7 @@ export default function ProductPage() {
                 </div>
               </div>
             </div>
+            
           </div>
           <div className="flex justify-content-center">
             <p class="featured-title flex justify-content-center">

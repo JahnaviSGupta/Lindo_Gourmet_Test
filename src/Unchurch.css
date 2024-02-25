@@ -403,6 +403,55 @@ body {
   box-shadow: 0px 3px 10px 0px rgba(204, 204, 204, 1);
 }
 
+
+/*Product Page Slider */
+
+
+.slider {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none;
+  width: 100%; /* Set the width of the slider */
+  height: 10px; /* Set the height of the slider */
+  background: #ccc; /* Default background color of the slider track */
+  border-radius: 5px; /* Set border radius */
+  cursor: pointer;
+  
+}
+
+/* Define the color of the slider thumb (handle) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 15px; /* Set the width of the slider thumb */
+  height: 15px; /* Set the height of the slider thumb */
+  background: #3f51b5; /* Set the color of the slider thumb */
+  border-radius: 50%; /* Set border radius to make it round */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 20px; /* Set the width of the slider thumb for Firefox */
+  height: 20px; /* Set the height of the slider thumb for Firefox */
+  background: #3f51b5; /* Set the color of the slider thumb for Firefox */
+  border-radius: 50%; /* Set border radius to make it round for Firefox */
+  cursor: pointer; /* Add cursor pointer on hover for Firefox */
+}
+
+
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.min-label,
+.max-label {
+  font-size: 12px;
+  color: #666;
+}
+
+
 /*TODO: =============== product compaire============ */
 
 .products-compaire-wrapper
@@ -841,11 +890,15 @@ body {
   border: none;
 }
 
-.prod-container {
-  display: flex;
+.prod-container-sidebar {
+  display: block;
   justify-content: space-between;
 }
 
+.prod-container {
+  display: flex;
+  justify-content: space-between;
+} 
 .categories {
   width: 20%; /* Adjust the width as needed */
 }
