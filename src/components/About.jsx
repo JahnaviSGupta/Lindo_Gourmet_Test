@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import blog from "../data/blogs.json";
 import BlogCard from "./Helpers/Cards/BlogCard";
-import DataIteration from "./Helpers/DataIteration";
+import Star from "./Helpers/icons/Star";
 import PageTitle from "./Helpers/PageTitle";
 import SimpleSlider from "./Helpers/SliderCom";
-import Star from "./Helpers/icons/Star";
 import Layout from "./Layout";
+import blog from "../data/blogs.json";
+import DataIteration from "./Helpers/DataIteration";
 
 export default function About() {
   const settings = {
@@ -75,7 +75,7 @@ export default function About() {
                   What is e-commerce business?
                 </h1>
                 <p className="text-[15px] text-qgraytwo leading-7 mb-2.5">
-                  Lorem Ipsum is  dummy text of the printing and
+                  Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
                   printer took a galley of type and scrambled it to make a type

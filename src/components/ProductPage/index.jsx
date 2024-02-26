@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FeaturedProduct from "../Helpers/Cards/FeaturedProduct";
 import Layout from "../Layout";
 
@@ -117,6 +117,7 @@ export default function ProductPage() {
     { id: 18, text: "Example 18" },
     { id: 19, text: "Example 19" },
   ];
+
 
   const [filteredImages, setFilteredImages] = useState([]);
   const handleCheckboxChange = (id) => {
@@ -250,6 +251,30 @@ export default function ProductPage() {
     },
   ];
 
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [priceDisplay, setPriceDisplay] = useState('Price: $500');
+
+  useEffect(() => {
+    const slider = document.getElementById("priceSlider");
+    const handleSliderChange = () => {
+      const price = parseInt(slider.value);
+      setPriceDisplay(`Price: $${price}`);
+      filterProducts(price);
+    };
+    slider.addEventListener("input", handleSliderChange);
+
+    return () => {
+      slider.removeEventListener("input", handleSliderChange);
+    };
+  }, []);
+
+  const filterProducts = (price) => {
+    // Replace 'exampleData' with your actual product data array
+    const filtered = exampleData.filter(item => item.cost <= price);
+    setFilteredProducts(filtered);
+  }
+  
+
   return (
     <Layout>
       <div>
@@ -274,8 +299,6 @@ export default function ProductPage() {
                         <label htmlFor={category.name}>{category.name}</label>
                       </div>
                     </div>
-
-
                   </div>
                 ))}
               {/* Price Range Slider  */}
@@ -291,10 +314,7 @@ export default function ProductPage() {
               </div>
             </div>
 
-           {/* Adding the javascript code  */}
 
-            
-            
             
             <div className="images m-2">
               <div className="card-img ml-10">

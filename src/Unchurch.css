@@ -408,12 +408,12 @@ body {
 
 
 .slider {
-  -webkit-appearance: none; /* Remove default styling */
+  -webkit-appearance: none; 
   appearance: none;
-  width: 100%; /* Set the width of the slider */
-  height: 10px; /* Set the height of the slider */
-  background: #ccc; /* Default background color of the slider track */
-  border-radius: 5px; /* Set border radius */
+  width: 100%;
+  height: 10px; 
+  background: #ccc; 
+  border-radius: 5px; 
   cursor: pointer;
   
 }
@@ -422,19 +422,19 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; 
   appearance: none;
-  width: 15px; /* Set the width of the slider thumb */
-  height: 15px; /* Set the height of the slider thumb */
-  background: #3f51b5; /* Set the color of the slider thumb */
-  border-radius: 50%; /* Set border radius to make it round */
-  cursor: pointer; /* Add cursor pointer on hover */
+  width: 15px; 
+  height: 15px; 
+  background: #3f51b5; 
+  border-radius: 50%; 
+  cursor: pointer; 
 }
 
 .slider::-moz-range-thumb {
-  width: 20px; /* Set the width of the slider thumb for Firefox */
-  height: 20px; /* Set the height of the slider thumb for Firefox */
-  background: #3f51b5; /* Set the color of the slider thumb for Firefox */
-  border-radius: 50%; /* Set border radius to make it round for Firefox */
-  cursor: pointer; /* Add cursor pointer on hover for Firefox */
+  width: 20px; 
+  height: 20px; 
+  background: #3f51b5; 
+  border-radius: 50%; 
+  cursor: pointer; 
 }
 
 
@@ -725,6 +725,7 @@ body {
     font-size: small;
     font-weight: 500;
   }
+  
 }
 
 @media only screen and (min-width: 601px) {
