@@ -255,7 +255,7 @@ export default function ProductPage() {
   const [priceDisplay, setPriceDisplay] = useState('Price: $500');
 
   useEffect(() => {
-    const slider = document.getElementById("priceSlider");
+    const slider = document.getElementById("myRange");
     const handleSliderChange = () => {
       const price = parseInt(slider.value);
       setPriceDisplay(`Price: $${price}`);
@@ -304,7 +304,7 @@ export default function ProductPage() {
               {/* Price Range Slider  */}
               <h2 className="category-title">Price Range&nbsp; {">"}</h2>
               <div className="slider-container">
-                <input type="range" min="0" max="100" value="50" className="slider" id="myRange" />
+                <input type="range" min="0" max="1000" value="500" className="slider" id="myRange" />
                   <div class="slider-labels">
                     <span class="min-label">$0</span>
                     <span class="max-label">$1000</span>
